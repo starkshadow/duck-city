@@ -7,7 +7,7 @@ define('WEBROOT', '/duck-city/');
 
 <?php
 //debug des variables sessions
-var_dump($_SESSION);
+//var_dump($_SESSION);
 ?>
 
 <?php

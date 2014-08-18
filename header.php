@@ -71,10 +71,7 @@ endif;
 
                 <body>
                     <header>
-                        <?php if (isset($_SESSION['prompt']) && !empty($_SESSION['prompt'])): ?>
-                            <div id="prompt" class="<?php echo $_SESSION['prompt']['class']; ?>"><?php echo $_SESSION['prompt']['msg']; ?></div>
-                            <?php unset($_SESSION['prompt']); ?>
-                        <?php endif; ?>                        
+                                            
                         <nav>
                             <div id="nav">
                                 <div id="nav-logo">
@@ -122,6 +119,14 @@ endif;
                                 <div class="bg3"></div>
                             </div>
                         <?php endif; ?>
+
+                       <div class="box-prompt">
+                            <?php if (isset($_SESSION['prompt']) && !empty($_SESSION['prompt'])): ?>
+                                <div id="prompt" class="<?php echo $_SESSION['prompt']['class']; ?>"><?php echo $_SESSION['prompt']['msg']; ?></div>
+                                <?php unset($_SESSION['prompt']); ?>
+                            <?php endif; ?>  
+                        </div>
+
                     </header>
 
 

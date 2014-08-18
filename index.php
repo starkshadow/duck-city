@@ -46,7 +46,7 @@ endif;
 
 </div>
 <div class="index-zone3">
-    <img src="images/image1-2.jpg">
+    <img src="images/arriere-voiture-duck.jpg">
 
 </div>
 

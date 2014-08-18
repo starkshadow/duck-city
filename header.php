@@ -96,6 +96,8 @@ endif;
                                                             <li><a id="profil" href="<?php echo WEBROOT . 'views/users/profil.php'; ?>">Mon profil</a></li>
                                                             <li><a <?php if ($nav_en_cours == 'page-collection') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/products/ma-collection.php'; ?>">Ma collection</a></li>
                                                         </ul>
+                                                </li>
+                                                <li>
                                                         <a id="deconnection" href="<?php echo WEBROOT . 'actions/users/logout.php' ?>">Se déconnecter</a>
                                                     <?php else: ?>
                                                         <a <?php if ($nav_en_cours == 'page-inscription') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/users/inscription.php'; ?>">Créer un compte</a>

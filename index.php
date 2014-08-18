@@ -1,3 +1,13 @@
+<?php session_start(); ?>
+<?php
+//récupération des données pour la vue
+$vars = array();
+if (isset($_SESSION['viewvars']) && !empty($_SESSION['viewvars'])):
+    $vars = $_SESSION['viewvars'];
+    unset($_SESSION['viewvars']);
+endif;
+?>
+
 <?php $nav_en_cours = ''; ?>
 <?php require "header.php"; ?>
 

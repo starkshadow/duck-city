@@ -5,11 +5,9 @@
 define('WEBROOT', '/duck-city/');
 ?>
 
-<?php session_start(); ?>
-
-<?php 
+<?php
 //debug des variables sessions
-//var_dump($_SESSION); 
+var_dump($_SESSION); 
 ?>
 
 <?php
@@ -84,19 +82,19 @@ endif;
                                             <a href='javascript: vaEtVient()'  class="menu-deroulant">Menu <img src="<?php echo WEBROOT . 'images/fleche-connection.png'; ?>"></a>
                                             <ul id="invisible" class="nav-menu" >
                                                 <li><a <?php if ($nav_en_cours == 'page-shop') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'shop.php'; ?>">Shop</a></li>
-                                                <li><a <?php if ($nav_en_cours == 'page-personnalisation') echo ' id="en-cours"'; ?>href="<?php echo WEBROOT . 'personnalisation.php'; ?>">Personnalisation</a></li>
-                                                <li><a <?php if ($nav_en_cours == 'page-collection') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'ma-collection.php'; ?>">Ma collection</a></li>
+                                                <li><a <?php if ($nav_en_cours == 'page-personnalisation') echo ' id="en-cours"'; ?>href="<?php echo WEBROOT . 'personnalisation.php'; ?>">Personnalisation</a></li>                                                
                                                 <li><a <?php if ($nav_en_cours == 'page-contact') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'contact.php'; ?>">Contact</a></li>
                                                 <li class="trait-separation">|</li>
 
                                                 <li class="connexion">
                                                     <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true): ?>                                                    
-                                                    <a><?php echo 'Bonjour ' . $_SESSION['user']['pseudo']; ?></a>
-                                                        <ul>
-                                                            <li><a id="deconnection" href="" style="display:none;">Se déconnecter</a></li>
-                                                            <li><a id="panier" href="<?php echo WEBROOT . 'panier.php'; ?>">Mon panier</a></li>
-                                                            <li><a id="profil" href="<?php echo WEBROOT . 'profil.php'; ?>">Mon profil</a></li>
+                                                        <a><?php echo 'Bonjour ' . $_SESSION['user']['pseudo']; ?></a>
+                                                        <ul>                                                            
+                                                            <li><a id="panier" href="<?php echo WEBROOT . 'views/products/panier.php'; ?>">Mon panier</a></li>
+                                                            <li><a id="profil" href="<?php echo WEBROOT . 'views/users/profil.php'; ?>">Mon profil</a></li>
+                                                            <li><a <?php if ($nav_en_cours == 'page-collection') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/products/ma-collection.php'; ?>">Ma collection</a></li>
                                                         </ul>
+                                                        <a id="deconnection" href="<?php echo WEBROOT . 'actions/users/logout.php' ?>">Se déconnecter</a>
                                                     <?php else: ?>
                                                         <a <?php if ($nav_en_cours == 'page-inscription') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/users/inscription.php'; ?>">Créer un compte</a>
                                                         <a <?php if ($nav_en_cours == 'page-connexion') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/users/connexion.php'; ?>">Connexion</a>
@@ -138,14 +136,14 @@ endif;
                                     <div id="nav-menu">
                                     <ul>
                                             <li class="shop">
-                                                    <a <?php //if ($nav_en_cours == 'page-shop') {echo ' id="en-cours"';}                       ?>>Shop</a>
+                                                    <a <?php //if ($nav_en_cours == 'page-shop') {echo ' id="en-cours"';}                        ?>>Shop</a>
                                                     <ul class="">
                                                             <li><a href="gallery.php">Galerie</a></li>
                                                             <li><a href="customisation.php">Customisation</a></li>
                                                     </ul>
                                             </li>
-                                            <li ><a <?php //if ($nav_en_cours == 'page-collection') {echo ' id="en-cours"';}                       ?> href="ma-collection.php">Ma collection</a></li>
-                                            <li><a <?php //if ($nav_en_cours == 'page-contact') {echo ' id="en-cours"';}                       ?> href="contact.php">Contact</a></li>
+                                            <li ><a <?php //if ($nav_en_cours == 'page-collection') {echo ' id="en-cours"';}                        ?> href="ma-collection.php">Ma collection</a></li>
+                                            <li><a <?php //if ($nav_en_cours == 'page-contact') {echo ' id="en-cours"';}                        ?> href="contact.php">Contact</a></li>
                                             <li class="connexion">|</li>
                                             <li class="menu" id="menu1" onclick="afficheMenu(this)"><a>Connexion <img src="images/fleche-connection.png"></a>
                                                     <ul id="sousmenu1" style="display:none">

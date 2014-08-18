@@ -1,19 +1,13 @@
+<?php session_start(); ?>
 <?php $nav_en_cours = 'page-connexion'; ?>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
 
 <?php
-$errors = array();
-$postdata = array();
-//récupérer les données post pour remplir le formulaire en cas d'échec
-if (isset($_SESSION['viewvars']['post_data']) && !empty($_SESSION['viewvars']['post_data'])) {
-    $postdata = $_SESSION['viewvars']['post_data'];
-    unset($_SESSION['viewvars']['post_data']);
-}
-
-//récupérer les messages d'erreur
-if (isset($_SESSION['viewvars']['errors_form']) && !empty($_SESSION['viewvars']['errors_form'])):
-    $errors = $_SESSION['viewvars']['errors_form'];
-    unset($_SESSION['viewvars']['errors_form']);
+//récupération des données pour la vue
+$vars = array();
+if (isset($_SESSION['viewvars']) && !empty($_SESSION['viewvars'])):
+    $vars = $_SESSION['viewvars'];
+    unset($_SESSION['viewvars']);
 endif;
 ?>
 
@@ -43,16 +37,16 @@ endif;
                     <h4>CONNEXION</h4>
                     <li>
                         <label>Email :</label></br>
-                        <input type="text" id="" class="" name="email" size="30" placeholder="daffy.duck@gmail.com" value="<?php if (isset($postdata['email'])) echo $postdata['email']; ?>">
-                        <?php if (isset($errors['email']) && !empty($errors['email'])): ?>
-                            <span><?php echo $errors['email']; ?></span>
+                        <input type="text" id="" class="" name="email" size="30" placeholder="daffy.duck@gmail.com" value="<?php if (isset($vars['post_data']['email'])) echo $vars['post_data']['email']; ?>">
+                        <?php if (isset($vars['errors']['email']) && !empty($vars['errors']['email'])): ?>
+                            <span><?php echo $vars['errors']['email']; ?></span>
                         <?php endif; ?>
                     </li>
                     <li>
                         <label>Mot de passe :</label></br>
                         <input type="password" id="" class="" name="password" size="30" placeholder="* * * * * *">
-                        <?php if (isset($errors['password']) && !empty($errors['password'])): ?>
-                            <span><?php echo $errors['password']; ?></span>
+                        <?php if (isset($vars['errors']['password']) && !empty($vars['errors']['password'])): ?>
+                            <span><?php echo $vars['errors']['password']; ?></span>
                         <?php endif; ?>                        
                     </li>
                     <li>

@@ -54,6 +54,6 @@ if (isset($_POST) && !empty($_POST)) {
         exit();
     }
 } else {
-    header("Location: http://localhost/TFE-aout/duck-city/inscription.php");
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/inscription.php');
     exit();
 }

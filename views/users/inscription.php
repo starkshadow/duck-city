@@ -37,29 +37,30 @@ endif;
                 <h4>Inscription</h4>
                 <li>
                     <ul>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Pseudo : *</label>
                             <input type="text" id="" class="" name="pseudo" size="30" placeholder="_Daffy89" value="<?php if (isset($postdata['pseudo'])) echo $postdata['pseudo']; ?>">
                             <?php if (isset($errors['pseudo']) && !empty($errors['pseudo'])): ?>
                                 <span><?php echo $errors['pseudo']; ?></span>
                             <?php endif; ?>                            
                         </li>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Email : *</label>
                             <input type="text" id="" class="" name="email" size="30" placeholder="daffy-duck@gmail.com" value="<?php if (isset($postdata['email'])) echo $postdata['email']; ?>">
                             <?php if (isset($errors['email']) && !empty($errors['email'])): ?>
                                 <span><?php echo $errors['email']; ?></span>
                             <?php endif; ?>                            
                         </li>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Mot de passe : *</label>
-                            <span>(entre 5 et 8 caractères alphanumériques, minimum un chiffre)</span>
+                            
                             <input type="password" id="" class="" name="password" size="30" placeholder=" * * * * * ">
+                            <span>(entre 5 et 8 caractères alphanumériques, minimum un chiffre)</span>
                             <?php if (isset($errors['password']) && !empty($errors['password'])): ?>
                                 <span><?php echo $errors['password']; ?></span>
                             <?php endif; ?>
                         </li>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Verification mot de passe : *</label>
                             <input type="password" id="" class="" name="confirmpassword" size="30" placeholder=" * * * * * ">
                             <?php if (isset($errors['confirmpassword']) && !empty($errors['confirmpassword'])): ?>
@@ -70,11 +71,11 @@ endif;
                 </li>                
                 <li>
                     <ul>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Nom : </label>
                             <input type="text" id="" class="" name="firstname" size="30" placeholder="Duck" value="<?php if (isset($postdata['firstname'])) echo $postdata['firstname']; ?>">
                         </li>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Prénom : </label>
                             <input type="text" id="" class="" name="lastname" size="30" placeholder="Daffy" value="<?php if (isset($postdata['lastname'])) echo $postdata['lastname']; ?>">
                         </li>
@@ -82,7 +83,7 @@ endif;
                 </li>
                 <li>
                     <ul>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Adresse : *</label>
                             <input type="text" id="" class="numero" name="number" size="30" placeholder="4" value="<?php if (isset($postdata['number'])) echo $postdata['number']; ?>">
                             <input type="text" id="" class="rue" name="street" size="30" placeholder="Rue du Canard" value="<?php if (isset($postdata['street'])) echo $postdata['street']; ?>">
@@ -93,21 +94,21 @@ endif;
                                 <span><?php echo $errors['street']; ?></span>
                             <?php endif; ?>                                
                         </li>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Code postal : </label>
                             <input type="text" id="" class="" name="postcode" size="30" placeholder="5000" value="<?php if (isset($postdata['postcode'])) echo $postdata['postcode']; ?>">
                             <?php if (isset($errors['postcode']) && !empty($errors['postcode'])): ?>
                                 <span><?php echo $errors['postcode']; ?></span>
                             <?php endif; ?>                            
                         </li>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Ville : </label>
                             <input type="text" id="" class="" name="city" size="30" placeholder="Duckcity" value="<?php if (isset($postdata['city'])) echo $postdata['city']; ?>">
                             <?php if (isset($errors['city']) && !empty($errors['city'])): ?>
                                 <span><?php echo $errors['city']; ?></span>
                             <?php endif; ?>                            
                         </li>
-                        <li>
+                        <li class="inscription-errors">
                             <label>Pays : </label>
                             <input type="text" id="" class="" name="country" size="30" placeholder="Duckland" value="<?php if (isset($postdata['country'])) echo $postdata['country']; ?>">
                             <?php if (isset($errors['country']) && !empty($errors['country'])): ?>

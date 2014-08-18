@@ -82,7 +82,7 @@ class User extends Model {
         if (isset($pseudo) && !empty($pseudo)) {
             return null;
         } else {
-            return 'Champ pseudo vide';
+            return 'Le champ pseudo est vide';
         }
     }
 
@@ -97,13 +97,13 @@ class User extends Model {
                 if (!$this->exists('', $email)) {
                     return null;
                 } else {
-                    return 'Email d&eacute;jagrave; utilis&eacute;';
+                    return 'Le champ de l\'email d&eacute;jagrave; utilis&eacute;';
                 }
             } else {
-                return 'Email invalide';
+                return 'Le champ de l\'email est invalide';
             }
         } else {
-            return 'Champ email vide';
+            return 'Le champ de l\'email est vide';
         }
     }
 
@@ -127,12 +127,12 @@ class User extends Model {
                  */
                 return null;
             } else {
-                return 'Mot de passe invalide';
+                return 'Le mot de passe est invalide';
             }
 
             return null;
         } else {
-            return 'Mot de passe vide';
+            return 'Le champ du mot de passe est vide';
         }
     }
 
@@ -147,10 +147,10 @@ class User extends Model {
             if ($vars['confirm'] === $vars['password']) {
                 return null;
             } else {
-                return 'Doit &ecirc;tre identique au mot de passe';
+                return 'Le champ doit &ecirc;tre identique au mot de passe';
             }
         } else {
-            return 'Champ vide';
+            return 'Le champ est vide';
         }
     }
 
@@ -164,10 +164,10 @@ class User extends Model {
             if (filter_var($number, FILTER_VALIDATE_INT) !== false) {
                 return null;
             } else {
-                return 'Doit &ecirc;tre un entier';
+                return 'Le champ du numéro doit &ecirc;tre un chiffre';
             }
         } else {
-            return 'Champ numéro vide';
+            return 'Le champ du numéro est vide';
         }
     }
 
@@ -180,7 +180,7 @@ class User extends Model {
         if (isset($street) && !empty($street)) {
             return null;
         } else {
-            return 'Champ rue vide';
+            return 'Le champ de la rue est vide';
         }
     }
 
@@ -194,10 +194,10 @@ class User extends Model {
             if (filter_var($postcode, FILTER_VALIDATE_INT) !== false) {
                 return null;
             } else {
-                return 'Doit &ecirc;tre un entier';
+                return 'Le code postal doit &ecirc;tre un chiffre';
             }
         } else {
-            return 'Code postal vide';
+            return 'Le code postal est vide';
         }
     }
 
@@ -210,7 +210,7 @@ class User extends Model {
         if (isset($city) && !empty($city)) {
             return null;
         } else {
-            return 'Champ de ville vide';
+            return 'Le champ de la ville est vide';
         }
     }
 
@@ -223,7 +223,7 @@ class User extends Model {
         if (isset($country) && !empty($country)) {
             return null;
         } else {
-            return 'Champ de pays vide';
+            return 'Le champ du pays est vide';
         }
     }
 

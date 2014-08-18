@@ -7,9 +7,14 @@ define('WEBROOT', '/duck-city/');
 
 <?php session_start(); ?>
 
+<?php 
+//debug des variables sessions
+//var_dump($_SESSION); 
+?>
+
 <?php
 //set la variable session de l'utilisateur si elle n'existe pas
-if (!isset($_SESSION['user']) || !empty($_SESSION['user'])):
+if (!isset($_SESSION['user']) || empty($_SESSION['user'])):
     $_SESSION['user'] = array('logged' => false);
 endif;
 ?>

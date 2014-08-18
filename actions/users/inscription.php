@@ -1,12 +1,10 @@
 <?php
-
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
 
-if (isset($_POST) && !empty($_POST)) {    
-    $_SESSION['post_data'] = $_POST;
+if (isset($_POST) && !empty($_POST)) {
     $model = new User();
     $user = array(
         'pseudo' => $_POST['pseudo'],
@@ -39,13 +37,15 @@ if (isset($_POST) && !empty($_POST)) {
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
             exit();
         } else {
+            $_SESSION['viewvars']['post_data'] = $_POST;
             $_SESSION['prompt'] = array(
                 'class' => 'error',
                 'msg' => 'Erreur lors de l\'inscription. R&eacute;essayez svp',
             );
         }
     } else {
-        $_SESSION['errors_form'] = $validation;
+        $_SESSION['viewvars']['post_data'] = $_POST;
+        $_SESSION['viewvars']['errors_form'] = $validation;
         $_SESSION['prompt'] = array(
             'class' => 'error',
             'msg' => 'Des erreurs ont &eacute;t&eacute; trouv&eacute;es dans votre formulaire',

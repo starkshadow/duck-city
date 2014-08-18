@@ -26,7 +26,7 @@ class User extends Model {
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $result = $db->select(self::$tablename, 'email LIKE "' . $email . '"');            
-            return $result;
+            return $result[0];
         } catch (PDOException $ex) {
             die($ex->getMessage());
         }

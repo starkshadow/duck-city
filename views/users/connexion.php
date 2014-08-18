@@ -5,15 +5,15 @@
 $errors = array();
 $postdata = array();
 //récupérer les données post pour remplir le formulaire en cas d'échec
-if (isset($_SESSION['post_data']) && !empty($_SESSION['post_data'])) {
-    $postdata = $_SESSION['post_data'];
-    unset($_SESSION['post_data']);
+if (isset($_SESSION['viewvars']['post_data']) && !empty($_SESSION['viewvars']['post_data'])) {
+    $postdata = $_SESSION['viewvars']['post_data'];
+    unset($_SESSION['viewvars']['post_data']);
 }
 
 //récupérer les messages d'erreur
-if (isset($_SESSION['errors_form']) && !empty($_SESSION['errors_form'])):
-    $errors = $_SESSION['errors_form'];
-    unset($_SESSION['errors_form']);
+if (isset($_SESSION['viewvars']['errors_form']) && !empty($_SESSION['viewvars']['errors_form'])):
+    $errors = $_SESSION['viewvars']['errors_form'];
+    unset($_SESSION['viewvars']['errors_form']);
 endif;
 ?>
 

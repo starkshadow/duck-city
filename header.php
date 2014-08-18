@@ -111,10 +111,6 @@ endif;
                                 </div>
                             </div>
                         </nav>
-                        <?php if (isset($_SESSION['prompt']) && !empty($_SESSION['prompt'])): ?>
-                            <div id="prompt" class="<?php echo $_SESSION['prompt']['class']; ?>"><?php echo $_SESSION['prompt']['msg']; ?></div>
-                            <?php unset($_SESSION['prompt']); ?>
-                        <?php endif; ?>
                         <?php
                         //N'affichez que si page courante = homepage
                         if ($_SERVER['PHP_SELF'] == WEBROOT . 'index.php'):

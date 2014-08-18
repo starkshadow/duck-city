@@ -37,7 +37,7 @@ endif;
 
 <div class="connexion-zone3">
     <div class="container">
-        <div class="one-half column">
+        <div class="sixteen columns">
             <form class="connexion" method="POST" action="<?php echo WEBROOT . 'actions/users/connexion.php' ?>">
                 <ul>
                     <h4>CONNEXION</h4>

@@ -5,7 +5,7 @@
 
 
 	<div class="customisation-zone1">
-			<img src="images/image1-3.jpg">
+			<img src="images/bg-personnalisation.jpg">
 			<div class="title-page">
 			<h2 class="h2-title-page">Personnalisation</h2>
 			</div>

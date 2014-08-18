@@ -7,7 +7,7 @@
 
 
 	<div class="ma-collection-zone1">
-			<img src="images/image1-4.jpg">
+			<img src="images/bg-collection.jpg">
 			<div class="title-page">
 			<h2 class="h2-title-page">Ma collection</h2>
 			</div>

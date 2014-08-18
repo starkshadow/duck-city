@@ -26,7 +26,6 @@ endif;
         <link href="<?php echo WEBROOT . 'css/style.css'; ?>" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="<?php echo WEBROOT . 'css/grid.css'; ?>">
             <link rel="stylesheet" href="<?php echo WEBROOT . 'css/font.css'; ?>" type="text/css" charset="utf-8" />
-            <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,900,700,500' rel='stylesheet' type='text/css'>
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
                 <script type="text/javascript" src="<?php echo WEBROOT . 'scripts/jquery.parallax-1.1.3.js'; ?>"></script>
                 <script type="text/javascript" src="<?php echo WEBROOT . 'scripts/jquery.localscroll-1.2.7-min.js'; ?>"></script>
@@ -64,7 +63,7 @@ endif;
                     });
                 </script>
                 <!--boutton partage facebook-->
-                <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+                <!--<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>-->
 
                 </head>
 

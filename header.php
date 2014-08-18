@@ -7,7 +7,7 @@ define('WEBROOT', '/duck-city/');
 
 <?php
 //debug des variables sessions
-//var_dump($_SESSION); 
+//var_dump($_SESSION);
 ?>
 
 <?php
@@ -21,6 +21,7 @@ endif;
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="<?php echo WEBROOT . 'scripts/jquery-1.11.1.min.js'; ?>"></script>
         <title>DUCK CITY</title>
         <link rel="icon" type="image/png" href="<?php echo WEBROOT . 'images/favicon.png'; ?>" />
         <link href="<?php echo WEBROOT . 'css/style.css'; ?>" rel="stylesheet" type="text/css" />
@@ -43,7 +44,8 @@ endif;
                         }
                     }
                 </script>
-
+                <!-- script pour les réactions communes à toutes les pages !-->
+                <script src="<?php echo WEBROOT . '/scripts/common.js'; ?>"></script>
 
 
                 <!--script pour le temp de monté de effet parralax-->
@@ -69,6 +71,10 @@ endif;
 
                 <body>
                     <header>
+                        <?php if (isset($_SESSION['prompt']) && !empty($_SESSION['prompt'])): ?>
+                            <div id="prompt" class="<?php echo $_SESSION['prompt']['class']; ?>"><?php echo $_SESSION['prompt']['msg']; ?></div>
+                            <?php unset($_SESSION['prompt']); ?>
+                        <?php endif; ?>                        
                         <nav>
                             <div id="nav">
                                 <div id="nav-logo">
@@ -135,14 +141,14 @@ endif;
                                     <div id="nav-menu">
                                     <ul>
                                             <li class="shop">
-                                                    <a <?php //if ($nav_en_cours == 'page-shop') {echo ' id="en-cours"';}                        ?>>Shop</a>
+                                                    <a <?php //if ($nav_en_cours == 'page-shop') {echo ' id="en-cours"';}                            ?>>Shop</a>
                                                     <ul class="">
                                                             <li><a href="gallery.php">Galerie</a></li>
                                                             <li><a href="customisation.php">Customisation</a></li>
                                                     </ul>
                                             </li>
-                                            <li ><a <?php //if ($nav_en_cours == 'page-collection') {echo ' id="en-cours"';}                        ?> href="ma-collection.php">Ma collection</a></li>
-                                            <li><a <?php //if ($nav_en_cours == 'page-contact') {echo ' id="en-cours"';}                        ?> href="contact.php">Contact</a></li>
+                                            <li ><a <?php //if ($nav_en_cours == 'page-collection') {echo ' id="en-cours"';}                            ?> href="ma-collection.php">Ma collection</a></li>
+                                            <li><a <?php //if ($nav_en_cours == 'page-contact') {echo ' id="en-cours"';}                            ?> href="contact.php">Contact</a></li>
                                             <li class="connexion">|</li>
                                             <li class="menu" id="menu1" onclick="afficheMenu(this)"><a>Connexion <img src="images/fleche-connection.png"></a>
                                                     <ul id="sousmenu1" style="display:none">

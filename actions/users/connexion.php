@@ -41,7 +41,7 @@ if (isset($_POST) && !empty($_POST)) {
         exit();
     } else {
         $_SESSION['viewvars']['post_data'] = $_POST;
-        $_SESSION['viewvars']['errors_form'] = $validation;
+        $_SESSION['viewvars']['errors'] = $validation;
         $_SESSION['prompt'] = array(
             'class' => 'error',
             'msg' => 'Login ou mot de passe incorrect',

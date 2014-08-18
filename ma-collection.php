@@ -36,7 +36,7 @@
 			</div>
 			<div class="one-half column">
 				<h2 class="h2-title-zone">Peut-être le futur canard de ta collection ?</h2>
-				<h3 class="h3-nom-duck"><a href="#">Duck royal guard</a></h3>
+				<h3 class="h3-nom-duck"><a href="#">Le duck royal guard</a></h3>
 				<div class="duck">
 					<img src="images/shop-galerie/duck-royal-guard-p.png">
 				</div>

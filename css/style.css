@@ -86,15 +86,15 @@ h2{
 
 .h3-nom-duck{
 	font-size: 24px;
-	text-transform: uppercase;
+
 	color: #343833;
 	padding:20px;
 	font-weight: 900;
-	font-family: 'la_unicaregular', Verdana, serif;
+	font-family: 'aleoregular', Verdana, serif;
 
 }
 .h3-nom-duck a{
-	font-family: 'la_unicaregular', Verdana, serif;
+	font-family: 'aleoregular', Verdana, serif;
 }
 .texte-intro{
 	font-family: 'la_unicaregular', Verdana, serif;
@@ -112,6 +112,7 @@ h2{
 	text-align: center;
 	text-decoration: none;
 	-webkit-transition:0.5s;
+	font-family: aleobold,Verdana,arial,sans-serif;
 }
 .btn:hover{
 	color:white;
@@ -413,7 +414,8 @@ nav #nav #menu-deroulant ul li ul#nav-menu ul li ul li #panier{
 }
  .index-zone2 p{
 	text-align: center;
-	color: #383433
+	color: #383433;
+	font-family: 'aleoregular',Verdana,arial,sans-serif;
 }
 .index-zone2 img{
 	width: 620px;
@@ -543,7 +545,7 @@ left: 60px;
 	margin-top: 60px;
 }
 .index-zone4 .promo-newsletter p{
-	font-family:  'la_unicaregular',helvetica,arial,sans-serif;
+	font-family:  'aleoregular',helvetica,arial,sans-serif;
 	text-align: center;
 	font-size: 22px;
 }
@@ -603,6 +605,7 @@ display: table;
 #slide1 ul li a.btn p{
 	margin-bottom: 0px;
 	font-size: 18px;
+	font-family:'aleobold', Verdana, arial,sans-serif;
 }
 #slide1-btn {
   width: 960px;
@@ -802,7 +805,7 @@ top: 150px;
 	font-weight: 900;
 	text-align: center;
 	padding-bottom: 30px;
-	font-family: 'la_unicaregular', Verdana, serif;
+	font-family: 'aleoregular', Verdana, serif;
 }
 .gallery-zone5 .container a.btn {
 	display: table;
@@ -1068,6 +1071,7 @@ top: 150px;
 	margin: 0px;
 	background: #343833;
 	color: white;
+	font-family: aleoregular, Verdana,arial,sans-serif;
 }
 .customisation-zone3 .container .etape h4{
 	margin-bottom: 10px;
@@ -1189,7 +1193,7 @@ top: 150px;
 .customisation-zone3 .container .etape .etape1-couleur a.btn-etape,
 .customisation-zone3 .container .etape .etape2-accessoire a.btn-etape,
 .customisation-zone3 .container .etape .etape3-costume a.btn-etape{
-	font-size: 15px !important;
+	font-size: 11px !important;
 	padding: 5px;
 	border: 3px solid black;
 	font-weight: 700;
@@ -1757,6 +1761,7 @@ color: white;
 font-weight: 900;
 background: #383433;
 cursor: pointer;
+font-family:'aleoregular',Verdana,arial,sans-serif;
 }
 input.newsletter[type="submit"]:hover{
 	background: white;

@@ -7,7 +7,7 @@
 	<div class="gallery-zone1">
 		<img src="images/bg-shop.jpg">
 			<div class="title-page">
-			<h2 class="h2-title-page">Le shop</h2>
+			<h2 class="h2-title-page">shop</h2>
 			</div>
 		</div>
 

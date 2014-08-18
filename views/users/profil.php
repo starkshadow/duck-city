@@ -8,7 +8,7 @@
 <div class="profil-zone1">
     <img src="<?php echo WEBROOT . 'images/bg-contact.jpg'; ?>">
     <div class="title-page">
-        <h2 class="h2-title-page">Profil</h2>
+        <h2 class="h2-title-page">Mon Profil</h2>
     </div>
 </div>
 

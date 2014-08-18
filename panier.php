@@ -7,7 +7,7 @@
 	<div class="panier-zone1">
 		<img src="images/bg-panier.jpg">
 			<div class="title-page">
-			<h2 class="h2-title-page">Ton panier</h2>
+			<h2 class="h2-title-page">Mon panier</h2>
 			</div>
 		</div>
 

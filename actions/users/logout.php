@@ -2,10 +2,9 @@
 
 session_start();
 
-if (isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['user']['logged']) && !empty($_SESSION['user']['logged'])) {
+if (isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true) {
     //destruction des données de l'utilisateur en session
     unset($_SESSION['user']);
-
     //ré-initialisation des données de l'utilisateur en session
     $_SESSION['user'] = array('logged' => false);
 

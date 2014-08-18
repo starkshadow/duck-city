@@ -9,7 +9,7 @@ if (isset($_POST) && !empty($_POST)) {
     $model = new User();
 
     if ($model->exists('', $_POST['email'], sha1($_POST['password']))) {
-        $user = $model->getone($_POST['email']);
+        $user = $model->getone('', $_POST['email']);
         
         $_SESSION['user'] = array(
             'id' => (int) $user['id'],
@@ -50,9 +50,6 @@ if (isset($_POST) && !empty($_POST)) {
         exit();
     }
 } else {
-    var_dump($_SESSION);
-    var_dump($_POST);
-    die('KO');
     $_SESSION['viewvars']['post_data'] = $_POST;
     $_SESSION['prompt'] = array(
         'class' => 'error',

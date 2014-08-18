@@ -15,23 +15,32 @@ class User extends Model {
     public function __construct() {
         self::$tablename = 'users';
     }
-    
+
     /**
      * aller cherche un seule instance de la table
      * @param type $email
      */
-    public function getone($email) {
-        try {            
+    public function getone($id = '', $email = '') {
+        try {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $result = $db->select(self::$tablename, 'email LIKE "' . $email . '"');            
-            return $result[0];
+            if (isset($id) && !empty($id)) {
+                $result = $db->select(self::$tablename, 'id = "' . $id . '"');
+            } else {
+                $result = $db->select(self::$tablename, 'email LIKE "' . $email . '"');
+            }
+
+            if ($result) {
+                return $result[0];
+            } else {
+                return null;
+            }
         } catch (PDOException $ex) {
             die($ex->getMessage());
         }
 //        public function select($table, $where = "", $bind = "", $fields = "*")
-    }    
+    }
 
     /**
      * vérifie si un utilisateur existe en DB

@@ -7,7 +7,7 @@ define('WEBROOT', '/duck-city/');
 
 <?php
 //debug des variables sessions
-//var_dump($_SESSION);
+var_dump($_SESSION);
 ?>
 
 <?php
@@ -93,7 +93,7 @@ endif;
                                                         <a><?php echo 'Bonjour ' . $_SESSION['user']['pseudo']; ?></a>
                                                         <ul>                                                            
                                                             <li><a id="panier" href="<?php echo WEBROOT . 'views/products/panier.php'; ?>">Mon panier</a></li>
-                                                            <li><a id="profil" href="<?php echo WEBROOT . 'views/users/profil.php'; ?>">Mon profil</a></li>
+                                                            <li><a id="profil" href="<?php echo WEBROOT . 'actions/users/profil.php'; ?>">Mon profil</a></li>
                                                             <li><a <?php if ($nav_en_cours == 'page-collection') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/products/ma-collection.php'; ?>">Ma collection</a></li>
                                                         </ul>
                                                 </li>

@@ -100,8 +100,12 @@ endif;
                                                 <li>
                                                         <a id="deconnection" href="<?php echo WEBROOT . 'actions/users/logout.php' ?>">Se déconnecter</a>
                                                     <?php else: ?>
-                                                        <a <?php if ($nav_en_cours == 'page-inscription') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/users/inscription.php'; ?>">Créer un compte</a>
-                                                        <a <?php if ($nav_en_cours == 'page-connexion') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/users/connexion.php'; ?>">Connexion</a>
+                                                        <li>
+                                                            <a <?php if ($nav_en_cours == 'page-inscription') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/users/inscription.php'; ?>">Créer un compte</a>
+                                                        </li>
+                                                        <li>
+                                                            <a <?php if ($nav_en_cours == 'page-connexion') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/users/connexion.php'; ?>">Connexion</a>
+                                                        </li>
                                                     <?php endif; ?>
                                                 </li>
                                             </ul>

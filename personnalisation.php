@@ -27,39 +27,27 @@
 					<div id="slide2" class="scroll-img2">
 						<ul>
 							<li class="etape1-couleur">
-								<h4>La base</h4>
 								<div class="couleur jaune"></div>
-								<p>0,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape1-couleur">
-								<h4>Rouge</h4>
 								<div class="couleur rouge"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape1-couleur">
-								<h4>Bleu</h4>
 								<div class="couleur bleu"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape1-couleur">
-								<h4>Rose</h4>
 								<div class="couleur rose"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape1-couleur">
-								<h4>Peau blanche</h4>
 								<div class="couleur blanche"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape1-couleur">
-								<h4>Peau noire</h4>
 								<div class="couleur noire"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 						</ul>
@@ -75,39 +63,27 @@
 					<div id="slide3" class="scroll-img3">
 						<ul>
 							<li class="etape2-accessoire">
-								<h4>La base</h4>
 								<div class="accessoire base"></div>
-								<p>0,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape2-accessoire">
-								<h4>Lunette solaire</h4>
 								<div class="accessoire lunette-solaire"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape2-accessoire">
-								<h4>Lunette</h4>
 								<div class="accessoire lunette-geek"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape2-accessoire">
-								<h4>Corne de diable</h4>
 								<div class="accessoire corne"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape2-accessoire">
-								<h4>Tatouage</h4>
 								<div class="accessoire tatouage"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape2-accessoire">
-								<h4>Trident</h4>
 								<div class="accessoire trident"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 						</ul>
@@ -124,27 +100,19 @@
 					<div id="slide4" class="scroll-img4">
 						<ul>
 							<li class="etape3-costume">
-								<h4>La base</h4>
 								<div class="costume base"></div>
-								<p>0,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape3-costume">
-								<h4>Vacancier</h4>
 								<div class="costume vacancier"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape3-costume">
-								<h4>Costume</h4>
 								<div class="costume class"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 							<li class="etape3-costume">
-								<h4>Chemise</h4>
 								<div class="costume chemise"></div>
-								<p>1,00 €</p>
 								<a class="btn btn-etape" href="#">Choisir</a>
 							</li>
 						</ul>

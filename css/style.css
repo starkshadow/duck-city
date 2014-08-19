@@ -292,6 +292,7 @@ h2{
 
 
 	.gallery-zone3,
+	.gallery-zone5,
 	.customisation-zone3,
 	.ma-collection-zone3,
 	.panier-zone3,
@@ -304,9 +305,9 @@ h2{
 	 	background: url(../images/bg40.png) repeat;
 		padding-top: 40px;
 		padding-bottom: 40px;
-}
+	}	
 
-	}
+	
 
 
 
@@ -436,6 +437,9 @@ h2{
 	margin-top: 60px;
 	margin-bottom: 60px;
 }
+.index-zone4 .container div img {
+width: 100%;
+}
 .index-zone4 a.btn {
 	margin: auto;
 	display: table;
@@ -460,16 +464,25 @@ h2{
 .index-zone4 .promo p:nth-child(1){
 	font-size: 34px;
 	margin-bottom: 0px;
-	padding-top: 40px;
+	padding-top: 0px;
 }
 .index-zone4 .promo p:nth-child(2){
 	font-size: 40px;
 	margin-bottom: 5px;
+	margin-top: 10px;
 
 }
 .index-zone4 .promo p:nth-child(3){
 text-decoration: line-through;
 }
+
+
+
+
+
+
+
+
 .index-zone4 .nom-duck{
 	background: url(../images/rond-nom.png) no-repeat;
 	width: 350px;
@@ -483,7 +496,7 @@ text-decoration: line-through;
 	font-family: 'la_unicaregular',helvetica,arial,sans-serif;
 	text-align: center;
 	font-size: 80px;
-	padding-top: 70px;
+	padding-top: 0px;
 }
 
 .index-zone4 .dure-promo {
@@ -502,11 +515,12 @@ text-decoration: line-through;
 .index-zone4 .dure-promo p:nth-child(1){
 	font-size: 28px;
 	margin-bottom: 0px;
-	padding-top: 30px;
+	padding-top: 0px;
 }
 .index-zone4 .dure-promo p:nth-child(2){
 	font-size: 20px;
 	margin-bottom: 5px;
+	margin-top: 5px;
 }
 .index-zone4 .promo-newsletter {
 	margin-top: 60px;
@@ -616,7 +630,7 @@ display: table;
 /************* Z O N E 3 ****************/
 
 .gallery-zone3 .container .gallery-duck{
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 }
 
 .gallery-zone3 .container .gallery-duck img{
@@ -661,11 +675,7 @@ display: table;
 
 /************* Z O N E 5 ****************/
 
-.gallery-zone5{
-	background: url(../images/bg40.png) repeat;
-	padding-top: 60px;
-	padding-bottom: 60px;
-}
+
 .gallery-zone5 .container{
 	width: 50%;
 	margin-bottom: auto;
@@ -836,7 +846,7 @@ display: table;
 	width: 70px;
 	height: 70px;
 	margin: auto;
-	margin-bottom: 5px;
+	margin-bottom: 25px;
 }
 
 /*** COULEUR ****/
@@ -945,13 +955,13 @@ display: table;
   position: relative;
   
   width: 960px;
-  height: 205px;
+  height: 145px;
   overflow: hidden;
   font-size: 0;
 }
 .scroll-img2 ul {
   width: 960px;
-  height: 205px;
+  height: 115px;
   margin: 0;
 }
 .scroll-img2 ul li {
@@ -995,13 +1005,13 @@ width: 15px;
   position: relative;
   
   width: 960px;
-  height: 205px;
+  height: 145px;
   overflow: hidden;
   font-size: 0;
 }
 .scroll-img3 ul {
   width: 960px;
-  height: 205px;
+  height: 115px;
   margin: 0;
 }
 .scroll-img3 ul li {
@@ -1045,13 +1055,13 @@ width: 15px;
   position: relative;
   
   width: 960px;
-  height: 205px;
+  height: 145px;
   overflow: hidden;
   font-size: 0;
 }
 .scroll-img4 ul {
   width: 960px;
-  height: 205px;
+  height: 115px;
   margin: 0;
 }
 .scroll-img4 ul li {
@@ -1486,7 +1496,7 @@ footer .container .paypal div{
 	height: 34px;
 }
 
-
+	
 
 
 
@@ -1644,6 +1654,8 @@ footer .container .paypal div{
 	.index-zone2 p{
 		margin: 0px 10px;
 	}
+
+
 
 
 	/********* B A C K G R O U N D **********/
@@ -1961,6 +1973,11 @@ footer .container .paypal div{
 		margin-bottom: 20px;
 	}
 
+	/******* Z O N E 4 *********/
+	.box-newsletter input.newsletter.email{
+		width: auto;
+	}
+
 	/************** S L I D E  **************/
 
 	.scroll-img1,
@@ -2053,6 +2070,25 @@ footer .container .paypal div{
 	}
 	iframe.carte{
 		width: 300px;
+	}
+
+	/******* I N S C R I P T I O N *********/
+
+	.inscription-zone3 ul li ul{
+		padding-left: 0px;
+	}
+	.inscription-zone3 ul{
+		padding-left: 25px;
+	}
+	.inscription-zone3 form ul li input,
+	input.numero,
+	input.rue{
+		width: auto !important;
+	}
+
+	/********  C O N N E X I O N **********/
+	.connexion-zone3 form{
+		width: auto;
 	}
 
 	/************* F O O T E R  **************/

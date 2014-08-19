@@ -1,9 +1,6 @@
 <?php
-
-session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionsconf.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
 
 if (isset($_POST) && !empty($_POST)) {
     $model = new User();
@@ -32,6 +29,9 @@ if (isset($_POST) && !empty($_POST)) {
             'postcode' => (int) $user['postcode'],
             'city' => $user['city'],
             'country' => $user['country'],
+            'isadmin' => $user['isadmin'],
+            'created' => $user['created'],
+            'modified' => $user['modified'],
         );
         $_SESSION['prompt'] = array(
             'class' => 'success',

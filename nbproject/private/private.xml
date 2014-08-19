@@ -4,9 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/xampp/htdocs/duck-city/actions/users/connexion.php</file>
+            <file>file:/D:/xampp/htdocs/duck-city/actions/users/inscription.php</file>
+            <file>file:/D:/xampp/htdocs/duck-city/actions/users/logout.php</file>
+            <file>file:/D:/xampp/htdocs/duck-city/views/users/inscription.php</file>
+            <file>file:/D:/xampp/htdocs/duck-city/models/User.class.php</file>
+            <file>file:/D:/xampp/htdocs/duck-city/views/users/profil.php</file>
+            <file>file:/D:/xampp/htdocs/duck-city/actions/users/update.php</file>
             <file>file:/D:/xampp/htdocs/duck-city/views/users/connexion.php</file>
             <file>file:/D:/xampp/htdocs/duck-city/header.php</file>
-            <file>file:/D:/xampp/htdocs/duck-city/index.php</file>
         </group>
     </open-files>
 </project-private>

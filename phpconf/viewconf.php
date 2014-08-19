@@ -1,9 +1,14 @@
 <?php session_start(); ?>
 <?php
+
+//debug session
+//var_dump($_SESSION);
+
 //si historique de navigation n'existe pas en session => le créer
 if (!isset($_SESSION['nav']) || empty($_SESSION['nav'])):
     $_SESSION['nav'] = array(
         'last_page' => '',
+        'prev' => false, // si on atterit sur la page en cliquant le bouton 'précédent' du web browser
         'refreshed' => false, //définit si la page a subi un refresh et est passée par l'action correspondante        
     );
 //s'il s'agit d'un refresh de la vue => rediriger vers l'action de la page

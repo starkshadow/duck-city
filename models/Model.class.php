@@ -22,12 +22,15 @@ class Model {
     /**
      * valide les champs
      * @param type $vars
+     * @param type $mode précise quel mode (update, create ...)
      * @return boolean
      */
-    public function validate($vars) {
+    public function validate($vars, $mode) {
         $errors = array();
         foreach ($vars as $key => $value) {
-            if (method_exists($this, 'check' . $key)) {
+            if (method_exists($this, 'check' . $key . '_' . $mode)) {
+                $errors[$key] = $this->{'check' . $key . '_' . $mode}($value);
+            } elseif (method_exists($this, 'check' . $key)) {
                 $errors[$key] = $this->{'check' . $key}($value);
             }
         }
@@ -76,6 +79,17 @@ class Model {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $db->insert(self::$tablename, $vars);
+        } catch (PDOException $ex) {
+            die($ex->getMessage());
+        }
+    }
+
+    public function update($vars) {
+        try {
+            $vars['modified'] = date('Y-m-d H:i:s');
+            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $db->update(self::$tablename, $vars, 'id=' . $vars['id']);
         } catch (PDOException $ex) {
             die($ex->getMessage());
         }

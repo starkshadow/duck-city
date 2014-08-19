@@ -9,29 +9,16 @@ if (!(isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['
     exit();
 }
 
-require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
 
 $model = new User();
 
 //vérifier si l'utilisateur existe en DB
-if ($model->exists($_SESSION['user']['id'])) {
+if ($model->uexists($_SESSION['user']['id'])) {
     //récupérer les données utilisateur
     $user = $model->getone($_SESSION['user']['id']);
     if (isset($user) && !empty($user)) {
-        $_SESSION['viewvars']['user'] = array(
-            'id' => $user['id'],
-            'pseudo' => $user['pseudo'],
-            'email' => $user['email'],
-            'firstname' => $user['firstname'],
-            'lastname' => $user['lastname'],
-            'logo' => $user['logo'],
-            'number' => (int) $user['number'],
-            'street' => $user['street'],
-            'postcode' => (int) $user['postcode'],
-            'city' => $user['city'],
-            'country' => $user['country'],
-            'created' => $user['created'],
-        );
+        $_SESSION['viewvars']['user'] = $user;
         header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/profil.php');
         exit();
     } else {

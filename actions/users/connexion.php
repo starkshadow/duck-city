@@ -1,11 +1,11 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionsconf.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionconf.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
 
 if (isset($_POST) && !empty($_POST)) {
     $model = new User();
 
-    if ($model->exists('', $_POST['email'], sha1($_POST['password']))) {
+    if ($model->uexists('', $_POST['email'], sha1($_POST['password']))) {
         $user = $model->getone('', $_POST['email']);
         
         $_SESSION['user'] = array(

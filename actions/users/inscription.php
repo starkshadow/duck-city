@@ -22,7 +22,7 @@ if (isset($_POST) && !empty($_POST)) {
 
 
     //validation
-    $validation = $model->validate($user);
+    $validation = $model->validate($user, 'create');
     if ($validation === true) {
         //retirer champ confirmpassword pour DB
         unset($user['confirmpassword']);

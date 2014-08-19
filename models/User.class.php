@@ -49,7 +49,7 @@ class User extends Model {
      * @param type $password
      * @return boolean
      */
-    public function exists($id = '', $email = '', $password = '') {
+    public function uexists($id = '', $email = '', $password = '') {
         if ((isset($id) && !empty($id)) || (isset($email) && !empty($email)) || (isset($password) && !empty($password))) {
             $where = '';
             $and = '';
@@ -96,17 +96,50 @@ class User extends Model {
     }
 
     /**
-     * valide le champ email
+     * valide le champ email pour la création
      * @param type $email
      * @return string|boolean
      */
-    public function checkemail($email) {
+    public function checkemail_create($email) {
         if (isset($email) && !empty($email)) {
             if (filter_var($email, FILTER_VALIDATE_EMAIL) !== false) {
-                if (!$this->exists('', $email)) {
+                if (!$this->uexists('', $email)) {
                     return null;
                 } else {
                     return 'Le champ de l\'email d&eacute;jagrave; utilis&eacute;';
+                }
+            } else {
+                return 'Le champ de l\'email est invalide';
+            }
+        } else {
+            return 'Le champ de l\'email est vide';
+        }
+    }
+
+    /**
+     * valide le champ email pour l'update
+     * @param type $vars
+     * @return string|boolean
+     */
+    public function checkemail_update($vars) {
+        if (isset($vars['email']) && !empty($vars['email'])) {
+            if (filter_var($vars['email'], FILTER_VALIDATE_EMAIL) !== false) {
+                try {
+                    $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+                    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                    $where = 'email = "' . $vars['email'] . '" AND id != ' . $vars['id'];
+
+                    $result = $db->select(self::$tablename, $where);
+
+                    //si l'email n'est pas déjà utilisé par un autre compte
+                    if (isset($result) && $result) {
+                        return 'Le champ de l\'email d&eacute;jagrave; utilis&eacute;';
+                    } else {
+                        return null;
+                    }
+                } catch (PDOException $ex) {
+                    die($ex->getMessage());
                 }
             } else {
                 return 'Le champ de l\'email est invalide';

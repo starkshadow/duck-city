@@ -1,26 +1,34 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>
-<?php $nav_en_cours = 'page-inscription'; ?>
+<?php $nav_en_cours = 'page-user-update'; ?>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
 
-
-<div class="inscription-zone1">
+<div class="profil-zone1">
     <img src="<?php echo WEBROOT . 'images/bg-contact.jpg'; ?>">
     <div class="title-page">
-        <h2 class="h2-title-page">Inscription</h2>
+        <h2 class="h2-title-page">Mon Profil</h2>
     </div>
 </div>
 
-<div class="inscription-zone2">
+<div class="profil-zone2">
     <div class="container">
-        <p class="texte-intro">Bienvenue dans la nouvelle communauté de Duck City</p>
+        <!--<img src="<?php echo WEBROOT . 'images/profil1.jpg'; ?>">-->
+        <p class="texte-intro"><?php echo $vars['user']['pseudo']; ?></p>
     </div>
 </div>
 
-<div class="inscription-zone3">
-    <div class="container">
-        <form method="POST" action="<?php echo WEBROOT . 'actions/users/inscription.php'; ?>">
-            <ul>
-                <h4>Inscription</h4>
+<div class="profil-zone3">
+    <div class="container" id="profil-div">
+        <div>
+            <ul id="invisible" class="nav-menu" >
+                <li><a <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>
+                <li><a <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>
+                <li><a <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>
+                <li><a <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
+            </ul>
+        </div>
+        <h4>Modifier mon compte</h4>
+        <form method="POST" action="<?php echo WEBROOT . 'actions/users/update.php'; ?>">
+            <ul>                
                 <li>
                     <ul>
                         <li class="inscription-errors">
@@ -35,22 +43,6 @@
                             <input type="text" id="" class="" name="email" size="30" placeholder="daffy-duck@gmail.com" value="<?php if (isset($vars['post_data']['email'])) echo $vars['post_data']['email']; ?>">
                             <?php if (isset($vars['errors']['email']) && !empty($vars['errors']['email'])): ?>
                                 <span><?php echo $vars['errors']['email']; ?></span>
-                            <?php endif; ?>                            
-                        </li>
-                        <li class="inscription-errors">
-                            <label>Mot de passe : *</label>
-
-                            <input type="password" id="" class="" name="password" size="30" placeholder=" * * * * * ">
-                            <span>(entre 5 et 8 caractères alphanumériques, minimum un chiffre)</span>
-                            <?php if (isset($vars['errors']['password']) && !empty($vars['errors']['password'])): ?>
-                                <span><?php echo $vars['errors']['password']; ?></span>
-                            <?php endif; ?>
-                        </li>
-                        <li class="inscription-errors">
-                            <label>Verification mot de passe : *</label>
-                            <input type="password" id="" class="" name="confirmpassword" size="30" placeholder=" * * * * * ">
-                            <?php if (isset($vars['errors']['confirmpassword']) && !empty($vars['errors']['confirmpassword'])): ?>
-                                <span><?php echo $vars['errors']['confirmpassword']; ?></span>
                             <?php endif; ?>                            
                         </li>
                     </ul>
@@ -107,7 +99,7 @@
                     <ul>
                         <li>
                             <label></label>
-                            <input type="submit" id="" class="" name="send" value="Créer un compte">
+                            <input type="submit" id="" class="" name="send" value="Enregistrer les modifications" />
                         </li>
                     </ul>
                 </li>
@@ -115,6 +107,7 @@
         </form>
     </div>
 </div>
+
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . WEBROOT . 'footer.php'; ?>
 

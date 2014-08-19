@@ -24,7 +24,7 @@ endif;
 
 
 <div class="container index-zone2">
-    <div class="sixteen columns text-intro">
+    <div class="sixteen columns texte-intro">
         <h2  class="h2-title-zone">DUCK CITY C'EST QUOI ?</h2>
         <img class="logo-duck"src="images/logo-duck1.png">
         <p>Vous avez certainement déjà remarquer ses voitures avec un canard en plastique accrocher 

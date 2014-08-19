@@ -1,41 +1,18 @@
-/*
-Plugin: jQuery Parallax
-Version 1.1.3
-Author: Ian Lunn
-Twitter: @IanLunn
-Author URL: http://www.ianlunn.co.uk/
-Plugin URL: http://www.ianlunn.co.uk/plugins/jquery-parallax/
-
-License: http://creativecommons.org/licenses/by-sa/3.0/ (Attribution Share Alike). Please attribute work to Ian Lunn simply by leaving these comments in the source code or if you'd prefer, place a link on your website to http://www.ianlunn.co.uk/.
-*/
-
 @charset "utf-8";
 /* CSS Document */
-
-
-
-
-
 
 body{
 	margin: 0;
 	padding: 0;
 }
+
 header{
 	background: url(../images/bg40.png) repeat;
 }
-
 p{
-	margin: 0 0 20px 0;	
 	color:#343833;
 }
 
-p, ul,a{
-	font-family: sans-serif;
-	font-size-adjust:0.488;
-	font-weight:200;
-	font-style:normal;
-}
 a{
 	text-decoration: none;
 }
@@ -43,9 +20,7 @@ a{
 img{
 	border: 0;
 }
-/*h1,h2,h3,h4,h5,h6,p, ul,li,a,input, label,input[placeholder]{
-	font-family:'la_unicaregular', Verdana, serif;
-}*/
+
 h1{
 	
 	font-size-adjust:0.40;
@@ -96,13 +71,7 @@ h2{
 .h3-nom-duck a{
 	font-family: 'aleoregular', Verdana, serif;
 }
-.texte-intro{
-	font-family: 'la_unicaregular', Verdana, serif;
-	font-size: 24px;
-	text-transform: uppercase;
-	text-align: center;
-	font-weight: 900;
-}
+
 .btn{
 	color:#343833;
 	text-transform: uppercase;
@@ -120,17 +89,6 @@ h2{
 	-webkit-transition:0.5s;
 }
 
-
-
-.float-left{
-	float: left;	
-	margin: 0 0 0 20px;
-}
-
-.float-right{
-	float: right;
-	margin: 0 20px 0 0;
-}
 
 .center{
 	font-size: 2.5em;
@@ -159,197 +117,196 @@ h2{
 }
 
 
-/*****************************************
-*************** H E A D E R **************
-*****************************************/
-
-/******** N A V I G A T I O N ***********/
+	/****************** M E N U ******************/
+	/************* D E   T O U T E  **************/
+	/************* L E S  P A G E S  *************/
 
 
-nav{
-	width: 100%;
-	list-style: none;
-	position: fixed;
-	z-index: 10000;
-	height: 60px;
-	background: white;
+	nav{
+		width: 100%;
+		list-style: none;
+		position: fixed;
+		z-index: 10000;
+		height: 60px;
+		background: white;
+	}
+	nav #nav {
+		width: 960px;
+		margin: auto;
+	}
+	nav #nav #nav-logo{
+		width: 15%;
+		float: left;
+		line-height: 60px;
+	}
+	nav #nav #nav-logo a{
+		font-family: 'la_unicaregular', Verdana, serif;
+		font-weight: 900;
+		border: 4px solid;
+		color: #383433;
+		text-decoration: none;
+		padding: 10px;
+		letter-spacing: 2px;
+	}
+
+	div#menu-deroulant {
+		float: right;
+	}
+	#menu-deroulant ul.menu {
+		height: 60px;
+		width: 630px;
+		float: right;
+	}
+	#menu-deroulant ul{
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+		line-height: 60px;
+	}
+
+	#menu-deroulant ul li a{
+		text-transform: uppercase;
+		line-height: 60px;
+		padding: 10px;
+		margin: 0px 2px;
+		border: 4px solid white;
+		font-weight: 900;
+		color: #383433;
+		text-decoration: none;
+		cursor: pointer;
+		-webkit-transition:all 0.5s;
+		font-family: 'la_unicaregular', Verdana, serif;
+		font-size: 14px;
+	}
+	#menu-deroulant ul li ul li a:hover{
+		border: 4px solid #383433;
+		-webkit-transition:all 0.5s;
+	}
+
+	#menu-deroulant ul li a.menu-deroulant {
+		display: none;
+	}
+
+	#menu-deroulant ul li ul.nav-menu li {
+		float: left;
+	}
+	#menu-deroulant ul li ul.nav-menu li ul{
+		float: left;
+		background: white;
+	}
+	#menu-deroulant ul li ul.nav-menu li.connexion ul {
+		position: absolute;
+		display: none;
+	}
+	#menu-deroulant ul li ul.nav-menu li.connexion:hover ul{
+		display: block;
+	}
+	#menu-deroulant ul li ul.nav-menu li ul li{
+		float: none;
+	}
+	#en-cours{
+		background: #343833;
+		color:white !important;
+	}
+
+
+	/***************** Z O N E 1 *****************/
+	/************* D E   T O U T E  **************/
+	/************* L E S  P A G E S  *************/
+
+
+
+	.gallery-zone1,
+	.customisation-zone1,
+	.ma-collection-zone1,
+	.panier-zone1,
+	.contact-zone1,
+	.inscription-zone1,
+	.connexion-zone1,
+	.profil-zone1,
+	.fiche-zone1
+	 {
+		width: 100%;
+	}
+	.gallery-zone1 img,
+	.customisation-zone1 img,
+	.ma-collection-zone1 img,
+	.contact-zone1 img,
+	.panier-zone1 img,
+	.inscription-zone1 img,
+	.connexion-zone1 img,
+	.profil-zone1 img,
+	.fiche-zone1 img
+	 {
+		width: 100%;
+		top: 0px;
+		padding-top: 60px;
+	}
+
+	.title-page{
+		width: 100%;
+		position: absolute;
+		top: 150px;
+	}
+	.title-page h2{
+		margin: auto;
+		display: table;
+	}
+
+	/***************** Z O N E 2 *****************/
+	/************* D E   T O U T E  **************/
+	/************* L E S  P A G E S  *************/
+
+	.gallery-zone2 .container,
+	.gallery-zone4 .container,
+	.customisation-zone2 .container,
+	.ma-collection-zone2 .container,
+	.panier-zone2 .container,
+	.contact-zone2 .container,
+	.inscription-zone2 .container,
+	.connexion-zone2 .container,
+	.profil-zone2 .container,
+	.fiche-zone2 .container{
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	.gallery-zone2 .container .texte-intro,
+	.gallery-zone4 .container .texte-intro,
+	.customisation-zone2 .container .texte-intro,
+	.ma-collection-zone2 .container .texte-intro,
+	.panier-zone2 .container .texte-intro,
+	.contact-zone2 .container .texte-intro,
+	.inscription-zone2 .container .texte-intro,
+	.connexion-zone2 .container .texte-intro,
+	.fiche-zone2 .container .texte-intro {
+		font-family: 'la_unicaregular',Verdana,arial,sans-serif;
+		font-size: 24px;
+		text-transform: uppercase;
+		text-align: center;
+	}  
+
+	/***************** Z O N E 3 *****************/
+	/************* D E   T O U T E  **************/
+	/************* L E S  P A G E S  *************/
+
+
+
+	.gallery-zone3,
+	.customisation-zone3,
+	.ma-collection-zone3,
+	.panier-zone3,
+	.contact-zone3,
+	.inscription-zone3,
+	.connexion-zone3,
+	.profil-zone3,
+	.fiche-zone3
+	 {
+	 	background: url(../images/bg40.png) repeat;
+		padding-top: 40px;
+		padding-bottom: 40px;
 }
-nav #nav {
-	width: 960px;
-	margin: auto;
-}
-nav #nav #nav-logo{
-	width: 15%;
-	float: left;
-	line-height: 60px;
-}
-nav #nav #nav-logo a{
-	font-family: 'la_unicaregular', Verdana, serif;
-	font-weight: 900;
-	border: 4px solid;
-	color: #383433;
-	text-decoration: none;
-	padding: 10px;
-	letter-spacing: 2px;
 
-}
-
-div#menu-deroulant {
-float: right;
-
-}
-#menu-deroulant ul.menu {
-height: 60px;
-width: 630px;
-float: right;
-
-}
-#menu-deroulant ul{
-list-style: none;
-padding: 0px;
-margin: 0px;
-line-height: 60px;
-
-
-}
-
-#menu-deroulant ul li a{
-	text-transform: uppercase;
-	line-height: 60px;
-	padding: 10px;
-	margin: 0px 2px;
-	border: 4px solid white;
-	font-weight: 900;
-	color: #383433;
-	text-decoration: none;
-	cursor: pointer;
-	-webkit-transition:all 0.5s;
-	font-family: 'la_unicaregular', Verdana, serif;
-	font-size: 14px;
-}
-#menu-deroulant ul li ul li a:hover{
-	border: 4px solid #383433;
-	-webkit-transition:all 0.5s;
-}
-
-
-#menu-deroulant ul li a.menu-deroulant {
-display: none;
-}
-
-#menu-deroulant ul li ul.nav-menu li {
-float: left;
-}
-#menu-deroulant ul li ul.nav-menu li ul{
-	float: left;
-	background: white;
-}
-
-/*#menu-deroulant ul li ul.nav-menu li.shop ul,*/
-#menu-deroulant ul li ul.nav-menu li.connexion ul {
-position: absolute;
-display: none;
-}
-/*#menu-deroulant ul li ul.nav-menu li.shop:hover ul,*/
-#menu-deroulant ul li ul.nav-menu li.connexion:hover ul{
-display: block;
-}
-#menu-deroulant ul li ul.nav-menu li ul li{
-	float: none;
-}
-
-
-
-
-
-
-/*nav #nav #menu-deroulant{
-	float: left;
-}
-nav #nav #menu-deroulant ul li a.menu-deroulant{
-	display: none;
-
-
-}
-nav #nav #menu-deroulant ul li ul#nav-menu{
-	width: 85%;
-	height: 60px;
-	float: left;
-}
-nav #nav #menu-deroulant ul li ul#nav-menu ul li a{
-	text-transform: uppercase;
-	line-height: 60px;
-	padding: 10px;
-	margin: 0px 20px;
-	border: 4px solid white;
-	font-weight: 900;
-	color: #383433;
-	text-decoration: none;
-	cursor: pointer;
-	-webkit-transition:all 0.5s;
-
-}
-nav #nav #menu-deroulant ul li ul#nav-menu ul li a:hover{
-	border: 4px solid #383433;
-	-webkit-transition:all 0.5s;
-}
-
-nav #nav #menu-deroulant ul li ul#nav-menu ul{
-	list-style: none;
-	margin: 0px;
-	line-height: 60px;
-	float: right;
-	padding: 0px;
-}
-
-nav #nav #menu-deroulant ul li ul#nav-menu ul li{
-	float: left;
-}
-nav #nav #menu-deroulant ul li ul#nav-menu ul li.shop ul{
-	display: none;
-}
-
-nav #nav #menu-deroulant ul li ul#nav-menu ul li.shop:hover ul {
- display:block;
-}
-
-nav #nav #menu-deroulant ul li ul#nav-menu  li.shop ul {
- position:absolute;
-}
-
-nav #nav #menu-deroulant ul li ul#nav-menu ul li.connexion{
-	padding-left: 0px;
-}
-
-nav #nav #menu-deroulant ul li ul#nav-menu ul li ul{
-	background: white;
-	float: none;
-}
-nav #nav #menu-deroulant ul li ul#nav-menu ul li ul li{
-	float: none;
-}
-li#menu1 {
-width: 212px;
-}
-
-nav #nav #menu-deroulant ul li ul#nav-menu ul li ul li #deconnection{
-	text-decoration:line-through;
-}
-nav #nav #menu-deroulant ul li ul#nav-menu ul li ul li #profil{
-	text-decoration:line-through;
-}
-nav #nav #menu-deroulant ul li ul#nav-menu ul li ul li #panier{
-	text-decoration:line-through;
-}
-*/
-#en-cours{
-	background: #343833;
-	color:white !important;
-
-}
-
-
-
+	}
 
 
 
@@ -424,7 +381,7 @@ nav #nav #menu-deroulant ul li ul#nav-menu ul li ul li #panier{
 .index-zone2{
 	padding: 60px 0px;
 }
-.index-zone2 .text-intro{
+.index-zone2 .texte-intro{
 	padding-bottom: 50px;
 }
 .index-zone2 h2{
@@ -451,22 +408,16 @@ nav #nav #menu-deroulant ul li ul#nav-menu ul li ul li #panier{
 .index-zone2 .logo-duck{
 	width: 100px;
 	height: 100px;
-
 	margin: 0 auto;
 	margin-top: 40px;
 	margin-bottom: 40px;
-
 	-webkit-transition:all 0.3s;
-
 }
 .index-zone2 .one-half a{
 	display: table;
 	margin: auto;
 }
 
-/*****************************************
-**************** INDEX *****************
-*****************************************/
 
 /************* Z O N E 3 ****************/
 
@@ -535,15 +486,13 @@ text-decoration: line-through;
 	padding-top: 70px;
 }
 
-
-
 .index-zone4 .dure-promo {
 	background: url(../images/rond-dure.png) no-repeat;
 	width: 150px;
 	height: 150px;
 	position: absolute;
 	bottom: 0px;
-left: 60px;
+	left: 60px;
 }
 .index-zone4 .dure-promo p{
 	color:white;
@@ -558,7 +507,6 @@ left: 60px;
 .index-zone4 .dure-promo p:nth-child(2){
 	font-size: 20px;
 	margin-bottom: 5px;
-
 }
 .index-zone4 .promo-newsletter {
 	margin-top: 60px;
@@ -586,16 +534,8 @@ display: table;
 	padding: 60px 0px;
 	position: relative;
 }
-/*.index-zone5 .container h2{
-	text-transform: uppercase;
-	font-size: 30px;
-	font-weight: 900;
-	text-align: center;
-}*/
-
 .scroll-img1 {
   position: relative;
-  
   width: 960px;
   height: 425px;
   overflow: hidden;
@@ -613,7 +553,6 @@ display: table;
  .scroll-img1 img{
  	width: 300px;
  }
-
 #slide1.scroll-img1 ul {
   width: 1500px;
   padding-left: 7px;
@@ -645,8 +584,8 @@ display: table;
   padding: 200px 10px;
   cursor: pointer;
   width: 28px;
-height: 46px;
-display: block;
+  height: 46px;
+  display: block;
 }
 .index-zone5 .container p{
 	font-weight: 900;
@@ -666,88 +605,16 @@ display: block;
 /************ FIN SLIDE ****************/
 
 
-/*****************************************
-**************** S H O P *****************
-*****************************************/
-
-/************* Z O N E 1 ****************/
-
-
-.shop-zone1{
-	width: 100%;
-	position: relative;
-
-}
-
-.shop-zone1 img{
-	width: 100%;
-}
-.title-page{
-	
-width: 100%;
-position: absolute;
-top: 150px;
-
-}
-.title-page h2{
-	margin: auto;
-	display: table;
-}
-
-
-
-
-/************* Z O N E 2 ****************/
-.shop-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-}
-
-.shop-zone2 h2 a.btn{
-	font-size: 30px; 
-	display: block;
-	line-height: 100px;
-	border: 10px solid #343833;
-}
-
-
 
 
 /*****************************************
 ************* G A L L E R Y **************
 *****************************************/
 
-/************* Z O N E 1 ****************/
-
-.gallery-zone1{
-	width: 100%;
-	position: relative;
-
-}
-
-.gallery-zone1 img{
-	width: 100%;
-}
-
-/************* Z O N E 2 ****************/
-
-.gallery-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-}
 
 
 /************* Z O N E 3 ****************/
 
-.gallery-zone3{
-	background: url(../images/bg40.png) repeat;
-		padding-top: 60px;
-	padding-bottom: 60px;
-}
-.gallery-zone3 .container{
-
-
-}
 .gallery-zone3 .container .gallery-duck{
 	padding-bottom: 50px;
 }
@@ -790,29 +657,13 @@ top: 150px;
 	text-align: center;
 }
 
-/************* Z O N E 4 ****************/
 
-.gallery-zone4 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-}
-
-
-.gallery-zone4 .container p{
-	font-size: 24px;
-	text-transform: uppercase;
-	text-align: center;
-	font-weight: 900;
-	margin-bottom: 0px;
-
-	
-}
 
 /************* Z O N E 5 ****************/
 
 .gallery-zone5{
 	background: url(../images/bg40.png) repeat;
-		padding-top: 60px;
+	padding-top: 60px;
 	padding-bottom: 60px;
 }
 .gallery-zone5 .container{
@@ -836,26 +687,6 @@ top: 150px;
 ********** F I C H E    D U C K **********
 *****************************************/
 
-/************* Z O N E 1 ****************/
-
-.fiche-zone1{
-	width: 100%;
-	position: relative;
-
-}
-
-.fiche-zone1 img{
-	width: 100%;
-}
-
-/************* Z O N E 2 ****************/
-
-.fiche-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-}
-
-
 /************* Z O N E 3 ****************/
 
 .fiche-zone3 {
@@ -865,12 +696,6 @@ top: 150px;
 	padding-top: 60px;
 	padding-bottom: 60px;
 }
-/*.fiche-zone3 .container h2{
-	font-weight: 900;
-	text-transform: uppercase;
-	font-size: 24px;
-}*/
-
 .fiche-zone3 .container h4{
 	font-size: 20px;
 	color:#343833;
@@ -881,87 +706,50 @@ top: 150px;
 }
 
 
-
-
-
-
-
 /*****************************************
 ************* C O N T A C T **************
 *****************************************/
 
-/************* Z O N E 1 ****************/
-
-.contact-zone1{
-	width: 100%;
-	position: relative;
-
-}
-
-.contact-zone1 img{
-	width: 100%;
-}
-
-
-
-
-
-
-/************* Z O N E 2 ****************/
-
-.contact-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-}
 
 
 /************* Z O N E 3 ****************/
 
-.contact-zone3 {
-	padding-top: 60px;
-	padding-bottom: 60px;
-	background: url(../images/bg40.png) repeat;
-}
-
 .contact-zone3 p{
 	font-size: 20px;
-	font-weight: 900;
-
+	font-family: 'aleobold',Verdana,arial,sans-serif;
 }
 
 .contact-zone3 form ul{
 	list-style: none;
 	padding: 0px;
 }
-
 .contact-zone3 form ul li{
- padding:10px 0px;
+ 	padding:10px 0px;
 
 }
 
 .contact-zone3 form ul li label {
- padding-bottom: 5px;
- display:block;
- font-size: 20px;
- font-weight: 700;
- color:#343833;
+	 padding-bottom: 5px;
+	 display:block;
+	 font-size: 20px;
+	 
+	 color:#343833;
+	 font-family: 'aleobold',Verdana,arial,sans-serif;
  }
-
 .contact-zone3 form ul li input, 
 .contact-zone3 form ul li textarea{
- padding:10px;
- border:4px solid #343833;
- background: rgba(52, 56, 51, 0);
- width: 430px;
- 
+	 padding:10px;
+	 border:4px solid #343833;
+	 background: rgba(52, 56, 51, 0);
+	 width: 430px;
  }
 
  .contact-zone3 form ul li input[type=submit]{
- width:200px;
-  font-size: 20px;
- font-weight: 900;
- cursor:pointer;
-  color:#343833;
+	 width:200px;
+	 font-size: 20px;
+	 font-weight: 900;
+	 cursor:pointer;
+	 color:#343833;
  }
 
  .contact-zone3 form ul li input[type=submit]:hover{
@@ -976,47 +764,11 @@ top: 150px;
  	font-weight: 900;
   }
 
-
-
-
-
-
-
 /*****************************************
 ******* M A    C O L L E C T I O N *******
 *****************************************/
 
-/************* Z O N E 1 ****************/
-
-
-.ma-collection-zone1{
-	width: 100%;
-	position: relative;
-
-}
-
-.ma-collection-zone1 img{
-	width: 100%;
-}
-/************* Z O N E 2 ****************/
-
-.ma-collection-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-}
-
-
-
-
 /************* Z O N E 3 ****************/
-
-.ma-collection-zone3{
-	background: url(../images/bg40.png) repeat;
-}
-.ma-collection-zone3 .container{
-	padding-top:60px;
-	padding-bottom: 60px;
-}
 
 .ma-collection-zone3 a{
 	color:#343833;
@@ -1041,43 +793,12 @@ top: 150px;
 	margin-left: 20px;
 }
 
-
-
-
-
 /*****************************************
 ******* C U S T O M I S A T I O N ********
 *****************************************/
 
-/************* Z O N E 1 ****************/
-
-
-.customisation-zone1{
-	width: 100%;
-	position: relative;
-
-}
-
-.customisation-zone1 img{
-	width: 100%;
-}
-
-
-/************* Z O N E 2 ****************/
-.customisation-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-}
-
-
-
-
 /************* Z O N E 3 ****************/
-.customisation-zone3{
-	background: url(../images/bg40.png) repeat;
-		padding-top: 60px;
-	padding-bottom: 60px;
-}
+
 .customisation-zone3 .container .etape{
 	border: 4px solid #343833;
 	width: 289px !important;
@@ -1207,10 +928,6 @@ top: 150px;
 	background: url(../images/customisation/image-presentation/class-face.png);
 }
 
-
-
-
-
 .customisation-zone3 .container .etape .etape1-couleur a.btn-etape,
 .customisation-zone3 .container .etape .etape2-accessoire a.btn-etape,
 .customisation-zone3 .container .etape .etape3-costume a.btn-etape{
@@ -1219,8 +936,6 @@ top: 150px;
 	border: 3px solid black;
 	font-weight: 700;
 }
-
-
 
 
 /*************** SLIDE couleur  ******************/
@@ -1395,34 +1110,9 @@ width: 15px;
 ************** P A N I E R ***************
 *****************************************/
 
-/************* Z O N E 1 ****************/
-
-
-.panier-zone1{
-	width: 100%;
-	position: relative;
-
-}
-
-.panier-zone1 img{
-	width: 100%;
-}
-
-
-/************* Z O N E 2 ****************/
-.panier-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-}
-
-
-
 
 /************* Z O N E 3 ****************/
 .panier-zone3{
-	background: url(../images/bg40.png) repeat;
-		padding-top: 60px;
-	padding-bottom: 60px;
 	display: flex;
 }
 .panier-zone3 h2{
@@ -1559,27 +1249,6 @@ padding-top: 40px;
 	/*****************************************
 	*********** C O N N E X I O N ************
 	*****************************************/
-
-	.connexion-zone1{
-		width: 100%;
-		position: relative;
-
-	}
-
-	.connexion-zone1 img{
-		width: 100%;
-	}
-
-	.connexion-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-	}
-
-	.connexion-zone3{
-		background: url(../images/bg40.png) repeat;
-		padding-top: 60px;
-		padding-bottom: 60px;
-	}
 	.connexion-zone3  form {
 		border: 4px solid #343833;
 		margin: 20px;
@@ -1639,26 +1308,6 @@ padding-top: 40px;
 	********* I N S C R I P T I O N ***********
 	*****************************************/
 
-	.inscription-zone1{
-		width: 100%;
-		position: relative;
-
-	}
-
-	.inscription-zone1 img{
-		width: 100%;
-	}
-
-	.inscription-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-	}
-
-	.inscription-zone3{
-		background: url(../images/bg40.png) repeat;
-		padding-top: 60px;
-		padding-bottom: 60px;
-	}
 	.inscription-zone3  form {
 		border: 4px solid #343833;
 		margin: 20px;
@@ -1680,65 +1329,49 @@ padding-top: 40px;
 		width: 237px !important;
 	}
 	.inscription-zone3 form ul li{
-	 padding:10px 0px;
+	 	padding:10px 0px;
 
 	}
 
 	.inscription-zone3 form ul li label {
-	 font-size: 20px;
-	 color:#343833;
-	 display: block;
+		 font-size: 20px;
+		 color:#343833;
+		 display: block;
 	 }
 
 	.inscription-zone3 form ul li input{
-	 padding:10px;
-	 border:4px solid #343833;
-	 background: rgba(52, 56, 51, 0);
-	 width: 300px;
+		 padding:10px;
+		 border:4px solid #343833;
+		 background: rgba(52, 56, 51, 0);
+		 width: 300px;
 	 
 	 }
 
 	 .inscription-zone3 form ul li input[type=submit]{
-	 width:200px;
-	  font-size: 20px;
-	 font-weight: 900;
-	 cursor:pointer;
-	  color:#343833;
+		 width:200px;
+		  font-size: 20px;
+		 font-weight: 900;
+		 cursor:pointer;
+		  color:#343833;
 	 }
-
 	 .inscription-zone3 form ul li input[type=submit]:hover{
 	 	color:white;
 	 	background: #343833;
 	 }
-
-
 	 .inscription-errors span {
 		color: rgb(182, 44, 44);
 		font-family: 'aleoregular',Verdana,arial,sans-serif;
 		font-size: 14px;
 		display: block;
-
 	}
-
-
-	  /*****************************************
+	 /*****************************************
 	*************** P R O F I L ****************
 	*****************************************/
 
-	.profil-zone1{
-		width: 100%;
-		position: relative;
 
-	}
-
-	.profil-zone1 img{
-		width: 100%;
-	}
 
 	.profil-zone2 .container{
-	margin-top: 60px;
-	margin-bottom: 60px;
-	position: relative;
+		position: relative;
 	}
 	.profil-zone2 img{
 		border-radius: 150px;
@@ -1746,25 +1379,13 @@ padding-top: 40px;
 		top: -85px;
 		border: 4px solid #343833;
 	}
-	.profil-zone3{
-		background: url(../images/bg40.png) repeat;
-
-	}
-	.profil-zone3 .container{
-		padding-top: 60px;
-		padding-bottom: 60px;
-	}
-
-
-
-
 
 
 /****** FOOTER  ******/
 
 footer{
 	width: 100%;
-	padding: 60px 0px;
+	padding: 40px 0px;
 }
 footer .container{
 	display: table;
@@ -1796,11 +1417,6 @@ input.newsletter[type="submit"]:hover{
 	color:#383433;
 }
 
-
-
-
-
-
 footer .container .one-third.column{
 	float: left;
 
@@ -1812,16 +1428,13 @@ footer .container .one-third.column p{
 	border-bottom: 4px solid #383433;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
-		font-family: 'la_unicaregular', Verdana, serif;
-
-
+	font-family: 'la_unicaregular', Verdana, serif;
 }
 footer .container .reseaux-sociaux ul{
 	float: left;
 	list-style: none;
 	padding-left: 1px;
 	margin-top: 0px;
-
 }
 footer .container .reseaux-sociaux ul li{
 	float: left;
@@ -1867,7 +1480,6 @@ footer .container .reseaux-sociaux ul li a.footer-pinterest:hover{
 
 footer .container .paypal div{
 	margin-top: 30px;
-
 	margin-left: 7px;
 	background: url(../images/paypal.png);
 	width: 281px;
@@ -1880,7 +1492,7 @@ footer .container .paypal div{
 
 
 /*  
-    ======================================================
+   ======================================================
    ====================================================== 
    ======================================================
    ====================================================== 
@@ -1914,6 +1526,10 @@ footer .container .paypal div{
 
 @media only screen and (min-width : 768px) and (max-width : 959px) {
 
+	nav #nav{
+		width: auto !important;
+	}
+
 
 
 	/************* H E A R D E R  **************/
@@ -1925,8 +1541,13 @@ footer .container .paypal div{
 	.gallery-zone1,
 	.customisation-zone1,
 	.ma-collection-zone1,
+	.panier-zone1,
 	.contact-zone1,
-	.panier-zone1 {
+	.inscription-zone1,
+	.connexion-zone1,
+	.profil-zone1,
+	.fiche-zone1
+	 {
 		width: 100%;
 
 	}
@@ -1934,7 +1555,12 @@ footer .container .paypal div{
 	.customisation-zone1 img,
 	.ma-collection-zone1 img,
 	.contact-zone1 img,
-	.panier-zone1 img {
+	.panier-zone1 img,
+	.inscription-zone1 img,
+	.connexion-zone1 img,
+	.profil-zone1 img,
+	.fiche-zone1 img
+	 {
 		width: 100%;
 
 	}
@@ -1976,10 +1602,7 @@ footer .container .paypal div{
 		margin-left: 20px;
 	}
 
-	#menu-deroulant{
-		width: auto !important;
-		/*float: right !important;*/
-	}
+
 	#menu-deroulant ul{
 		line-height: 50px;
 	}
@@ -2053,8 +1676,6 @@ footer .container .paypal div{
 
 	/************** S L I D E  **************/
 
-
-
 	.scroll-img1,
 	.scroll-img1 ul{
 		height: 345px;
@@ -2093,7 +1714,6 @@ footer .container .paypal div{
 	************ C O N T A C T ***************
 	*****************************************/
 	
-
 	.contact-zone3 form ul li input,.contact-zone3 form ul li textarea[placeholder]{
 		width: 334px;
 	}
@@ -2125,8 +1745,6 @@ footer .container .paypal div{
 		width: 170px;
 	}
 	
-
-
 	/*****************************************
 	************** P A N I E R ***************
 	*****************************************/
@@ -2134,8 +1752,6 @@ footer .container .paypal div{
 	.panier-zone3 .container{
 		padding: 0px 10px;
 	}
-
-
 	.panier-zone3 .column-product,
 	.panier-zone3 .column-quantity, 
 	.panier-zone3 .column-price, 
@@ -2171,8 +1787,6 @@ footer .container .paypal div{
 		margin: 0px 41px;
 	}
 
-
-
 	/*****************************************
 	************** F O O T E R ***************
 	*****************************************/
@@ -2201,81 +1815,48 @@ footer .container .paypal div{
 		padding: 4px;
 	}
 	footer .container .paypal div{
-	margin-top: 10px;
-	margin-left: 36px;
-	background: url(../images/paypal-ipad.png);
-	width: 161px;
-	height: 71px;
-}
-
-	/*
-
-	nav #nav #menu-deroulant {
-		display: inline-block;
-		float: right;
+		margin-top: 10px;
+		margin-left: 36px;
+		background: url(../images/paypal-ipad.png);
+		width: 161px;
+		height: 71px;
 	}
-	nav #nav #menu-deroulant a{
-		line-height: 60px;
-		font-weight: 900;
-		text-transform: uppercase;
-		color: #343833;
-		padding: 10px;
-		margin: 0px 20px;
-		border: 4px solid white;
-		-webkit-transition:all 0.5s;
-	}
-
-	nav #nav #menu-deroulant a:hover{
-		border: 4px solid #383433;
-		-webkit-transition:all 0.5s;
-	}
-
-	nav #nav #nav-menu{
-		float: right;
-	}
-	nav #nav #nav-menu ul{
-		background: white;
-		line-height: 50px;
-	}
-	nav #nav #nav-menu ul li{
-		float: none;
-		border-top: 2px solid #343833;
-		padding-left: 10px;
-	}
-	nav #nav #nav-menu ul li a{
-		margin: 0px;
-		line-height: 50px;
-	}
-	nav #nav #nav-menu ul li ul li{
-		border: none;
-	}
-	nav #nav #nav-menu ul li ul li a{
-		margin-left: 20px;
-	}
-	nav #nav #nav-menu ul li ul{
-		display: block !important;
-		background: none;
-	}
-	nav #nav #nav-menu ul li.connexion{
-		display: none;
-	}
-	nav #nav #nav-menu li.shop ul{
-		position: relative;
-	}
-	
-	nav #nav #nav-menu ul li a img{
-		display: none;
-	}
-	*/
-
 }
 
 /*  
-    ======================================================
+   ======================================================
    ====================================================== 
-  ============ Mobile (portrait and landscape) ==========
- ====================================================== 
-======================================================
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ================  M  O  B  I  L  E  ==================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ============ Mobile (portrait and landscape) =========
+   ====================================================== 
+   ======================================================
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
+   ======================================================
+   ====================================================== 
 */
 
 
@@ -2292,6 +1873,9 @@ footer .container .paypal div{
 	*****************************************/
 
 	/************* H E A D E R **************/
+	nav #nav{
+		width: auto !important;
+	}
 	nav #nav #nav-logo {
 		width: 88px;
 	}
@@ -2310,11 +1894,7 @@ footer .container .paypal div{
 		margin-left: 20px;
 	}
 
-	#menu-deroulant{
-		float: left !important;
-		width: auto !important;
-		/*float: right !important;*/
-	}
+
 	#menu-deroulant ul{
 		line-height: 50px;
 	}
@@ -2338,7 +1918,7 @@ footer .container .paypal div{
 		line-height: 50px;
 	}
 
-	/*#menu-deroulant ul li ul.nav-menu li.shop ul,*/ #menu-deroulant ul li ul.nav-menu li.connexion ul {
+	#menu-deroulant ul li ul.nav-menu li.connexion ul {
 		display: block;
 		position: relative;
 	}
@@ -2355,21 +1935,16 @@ footer .container .paypal div{
 	/********* B A C K G R O U N D **********/
 
 	#bg-header{
-	
 		width: 300px;
 		height: 670px;
-
 	}
 	#bg-header h1 {
-	
 		top: 40%;
 		left: 0%;
-
 	}
 	#bg-header .bg{
 		background: url(../images/bg1-mobile.png) 50% 0 no-repeat fixed;
 		width: 300px;
-
 	}
 	#bg-header .bg2{
 		background: url(../images/bg2-mobile.png) 50% 0 no-repeat fixed;
@@ -2388,8 +1963,6 @@ footer .container .paypal div{
 
 	/************** S L I D E  **************/
 
-
-
 	.scroll-img1,
 	.scroll-img1 ul{
 		height: 400px;
@@ -2402,19 +1975,59 @@ footer .container .paypal div{
 		width: 300px;
 	}
 
-	/************* H E A R D E R  **************/
+	/************* H E A D E R  **************/
 	/************* D E   T O U T E  **************/
 	/************* L E S  P A G E S  **************/
 
 
+	.gallery-zone1 img, 
+	.customisation-zone1 img, 
+	.ma-collection-zone1 img, 
+	.contact-zone1 img, 
+	.panier-zone1 img, 
+	.inscription-zone1 img, 
+	.connexion-zone1 img, 
+	.profil-zone1 img, 
+	.fiche-zone1 img {
+		width: 100%;
+		top: 0px;
+		position: initial;
+		padding-top: 60px;
+}
 
 	.title-page {
-		top: 95px;
+		top: 80px;
 	}
 	.h2-title-page {
 		padding: 10px;
 		border: 5px solid white;
 		font-size: 24px;
+	}
+
+	.gallery-zone2 .container, 
+	.gallery-zone4 .container, 
+	.customisation-zone2 .container, 
+	.ma-collection-zone2 .container, 
+	.panier-zone2 .container, 
+	.contact-zone2 .container, 
+	.inscription-zone2 .container, 
+	.connexion-zone2 .container, 
+	.profil-zone2 .container, 
+	.fiche-zone2 .container {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.gallery-zone2 .container .texte-intro, 
+	.gallery-zone4 .container .texte-intro, 
+	.customisation-zone2 .container .texte-intro, 
+	.ma-collection-zone2 .container .texte-intro, 
+	.panier-zone2 .container .texte-intro, 
+	.contact-zone2 .container .texte-intro, 
+	.inscription-zone2 .container .texte-intro, 
+	.connexion-zone2 .container .texte-intro, 
+	.fiche-zone2 .container .texte-intro{
+		font-size: 18px;
+		line-height: 1.7;
 	}
 
 	/*********** G A L E R I E  **************/
@@ -2423,9 +2036,7 @@ footer .container .paypal div{
 		width: 300px;
 	}
 
-
 	/****** C U S T O M I S A T I O N  ********/
-
 	.box-duck-customiser img {
 		width: 300px;
 	}
@@ -2433,7 +2044,6 @@ footer .container .paypal div{
 		width: 300px;
 		height: 370px;
 	}
-
 
 	/****** C O N T A C T ********/
 
@@ -2445,20 +2055,15 @@ footer .container .paypal div{
 		width: 300px;
 	}
 
-
-	
-
 	/************* F O O T E R  **************/
 	input.newsletter[type="submit"] {
 		width: 86px;
 	}
-
 	.newsletter, .reseaux-sociaux{
 		margin-bottom: 20px;
 	}
-
 	footer{
 		padding: 30px 0px;
 	}
-	}
+}
 

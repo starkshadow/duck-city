@@ -5,10 +5,10 @@
 				<p>Recevez nos meilleurs offres</p>
 				<form action="" method="get">
             		<label>
-                		<input class="newsletter email"type="email" name="courriel" value="Entre ton email"/>
+                		<input class="newsletter-footer email-footer"type="email" name="courriel" value="Entre ton email"/>
             		</label>
         			<label>
-            			<input class="newsletter"type="submit" value="Envoyer" />
+            			<input class="newsletter-footer"type="submit" value="Envoyer" />
             		</label>
         		</form>
 			</div>

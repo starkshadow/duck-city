@@ -94,7 +94,9 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
                                     <li><a <?php if ($nav_en_cours == 'page-personnalisation') echo ' id="en-cours"'; ?>href="<?php echo WEBROOT . 'personnalisation.php'; ?>">Personnalisation</a></li>                                                
                                     <li><a <?php if ($nav_en_cours == 'page-contact') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'contact.php'; ?>">Contact</a></li>
                                     <li class="trait-separation">|</li>
-
+                                    <li class="image-profil">
+                                        <img src="" alt="photo de profil">
+                                    </li>
                                     <li class="connexion">
                                         <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true): ?>                                                    
                                             <a><?php echo 'Bonjour ' . $_SESSION['user']['pseudo']; ?></a>

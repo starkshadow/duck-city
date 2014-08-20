@@ -211,6 +211,13 @@ h2{
 	}
 
 
+	#menu-deroulant ul li ul.nav-menu li.image-profil img {
+		width: 45px;
+		height: 45px;
+		margin: 7px 0px 8px 7px;
+	}
+
+
 	/***************** Z O N E 1 *****************/
 	/************* D E   T O U T E  **************/
 	/************* L E S  P A G E S  *************/
@@ -1126,6 +1133,26 @@ width: 15px;
 
 }
 
+/****   B T N   ***/
+.customisation-zone3 .btn-personnalisation{
+	width: 100%;
+	padding-top: 30px;
+}
+.customisation-zone3 .btn-personnalisation a:nth-child(1){
+	float: left;
+}
+.customisation-zone3 .btn-personnalisation p{
+	display: inline-block;
+	width: 400px;
+	text-align: center;
+	font-family: 'aleoregular', Verdana, arial, sans-serif;
+	font-size: 20px;
+	margin: 0px;
+}
+.customisation-zone3 .btn-personnalisation a:nth-child(2){
+	float: right;
+}
+
 
 
 /*****************************************
@@ -1803,7 +1830,9 @@ footer .container .paypal div{
 	#invisible li ul li a {
 		margin-left: 40px;
 	}
-
+	#menu-deroulant ul li ul.nav-menu li.image-profil img{
+		display: none;
+	}
 	/************* Z O N E 2  ***************/
 	.index-zone2 p{
 		margin: 0px 10px;
@@ -1914,17 +1943,14 @@ footer .container .paypal div{
 	}
 
 	.box-duck-customiser {
-		/* position: relative; */
-		height: 350px;
 		width: 297px;
-		padding-top: 0px;
-		margin: none;
-		/* float: left; */
+		height: 288px;
+		margin: 0px 40px;
 		display: inline-block;
 	}
 	.box-duck-customiser img{
-		width: 287px;
 		width: 170px;
+		padding: 50px;
 	}
 	
 	/*****************************************

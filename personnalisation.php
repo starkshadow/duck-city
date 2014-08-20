@@ -124,14 +124,20 @@
 					
 			</div>
 
-				<div class="box-duck-customiser">
-					<img src="images/customisation/duck-vierge-profil.png">
-					<img src="images/customisation/accessoire-corne-profil.png">
-					<img src="images/customisation/costume-vacancier-profil.png">
-				</div>
-			
+			<div class="box-duck-customiser">
+				<img src="images/customisation/duck-vierge-profil.png">
+				<img src="images/customisation/accessoire-corne-profil.png">
+				<img src="images/customisation/costume-vacancier-profil.png">
+			</div>
+			<div class="btn-personnalisation">
+				<a href="" class="btn"> Enregistrer ma création</a>
+				<p>Prix du duck : 19,99€</p>
+				<a href="" class="btn">Acheter ma création</a>
+			</div>
 
 		</div>
+
+		
 	</div>
 
 

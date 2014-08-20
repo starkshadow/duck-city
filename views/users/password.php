@@ -22,16 +22,6 @@
 
 <div class="profil-password-zone3">
     <div class="container">
-        <!--        <div class="btn-modif">
-                    <ul id="invisible" class="nav-menu" >
-                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>
-                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>
-                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>
-                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-avatar') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>">Avatar</a></li>
-                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
-                    </ul>
-                </div>-->
-
         <h2  class="h2-title-zone">Changer mon mot de passe</h2>
         <form method="POST" action="<?php echo WEBROOT . 'actions/users/password.php'; ?>">            
             <ul class="inscription-errors">

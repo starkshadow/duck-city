@@ -95,14 +95,15 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
                                     <li><a <?php if ($nav_en_cours == 'page-contact') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'contact.php'; ?>">Contact</a></li>
                                     <li class="trait-separation">|</li>
                                     <li class="image-profil">
-                                        <img src="" alt="photo de profil">
+                                        <a href="<?php echo WEBROOT . 'actions/users/profil.php'; ?>">
+                                            <?php if (isset($_SESSION['user']['avatar_thumb']) && !empty($_SESSION['user']['avatar_thumb']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar_thumb'])): ?>
+                                                <img alt="Avatar photo de profil" src="<?php echo $_SESSION['user']['avatar_thumb']; ?>" />
+                                            <?php endif; ?>
+                                        </a>
                                     </li>
                                     <li class="connexion">
                                         <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true): ?>                                                    
                                             <a href="<?php echo WEBROOT . 'actions/users/profil.php'; ?>">
-                                                <?php if (isset($_SESSION['user']['avatar_thumb']) && !empty($_SESSION['user']['avatar_thumb']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar_thumb'])): ?>
-                                                    <img alt="Avatar" src="<?php echo $_SESSION['user']['avatar_thumb']; ?>" />
-                                                <?php endif; ?>
                                                 <?php echo 'Bonjour ' . $_SESSION['user']['pseudo']; ?>
                                             </a>
                                             <ul>                                                            

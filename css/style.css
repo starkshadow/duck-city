@@ -1593,8 +1593,8 @@ padding-top: 40px;
 	 .custom-file-input::-webkit-file-upload-button {
   		display: none;
 	}
-	.custom-file-input::after{
-		content: url();
+	.custom-file-input::before{
+		content: url(../images/telecharger-image.png);
 	}
 	.custom-file-input::before {
 		content: 'Selectionner un fichier';

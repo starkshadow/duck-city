@@ -32,19 +32,21 @@
                 <li class="inscription-errors">
                     <label>Pseudo : *</label>
                     <input type="text" id="" class="" name="pseudo" size="30" placeholder="_Daffy89" value="<?php if (isset($vars['post_data']['pseudo'])) echo $vars['post_data']['pseudo']; ?>">
-                    <?php if (isset($vars['errors']['pseudo']) && !empty($vars['errors']['pseudo'])): ?>
-                        <span><?php echo $vars['errors']['pseudo']; ?></span>
-                    <?php endif; ?>                            
+                                              
                 </li>
                 <div class="clean"></div>
+                    <?php if (isset($vars['errors']['pseudo']) && !empty($vars['errors']['pseudo'])): ?>
+                        <span><?php echo $vars['errors']['pseudo']; ?></span>
+                    <?php endif; ?>  
                 <li class="inscription-errors">
                     <label>Email : *</label>
                     <input type="text" id="" class="" name="email" size="30" placeholder="daffy-duck@gmail.com" value="<?php if (isset($vars['post_data']['email'])) echo $vars['post_data']['email']; ?>">
-                    <?php if (isset($vars['errors']['email']) && !empty($vars['errors']['email'])): ?>
-                        <span><?php echo $vars['errors']['email']; ?></span>
-                    <?php endif; ?>                            
+                                             
                 </li>
                 <div class="clean"></div>
+                    <?php if (isset($vars['errors']['email']) && !empty($vars['errors']['email'])): ?>
+                        <span><?php echo $vars['errors']['email']; ?></span>
+                    <?php endif; ?>   
                 <li class="inscription-errors">
                     <label>Nom : </label>
                     <input type="text" id="" class="" name="firstname" size="30" placeholder="Duck" value="<?php if (isset($vars['post_data']['firstname'])) echo $vars['post_data']['firstname']; ?>">
@@ -59,38 +61,42 @@
                     <label>Adresse : *</label>
                     <input type="text" id="" class="numero" name="number" size="30" placeholder="4" value="<?php if (isset($vars['post_data']['number'])) echo $vars['post_data']['number']; ?>">
                     <input type="text" id="" class="rue" name="street" size="30" placeholder="Rue du Canard" value="<?php if (isset($vars['post_data']['street'])) echo $vars['post_data']['street']; ?>">
+                                                   
+                </li>
+                <div class="clean"></div>
                     <?php if (isset($vars['errors']['number']) && !empty($vars['errors']['number'])): ?>
                         <span><?php echo $vars['errors']['number']; ?></span>
                     <?php endif; ?>
                     <?php if (isset($vars['errors']['street']) && !empty($vars['errors']['street'])): ?>
                         <span><?php echo $vars['errors']['street']; ?></span>
-                    <?php endif; ?>                                
-                </li>
-                <div class="clean"></div>
+                    <?php endif; ?> 
                 <li class="inscription-errors">
                     <label>Code postal : *</label>
                     <input type="text" id="" class="" name="postcode" size="30" placeholder="5000" value="<?php if (isset($vars['post_data']['postcode'])) echo $vars['post_data']['postcode']; ?>">
-                    <?php if (isset($vars['errors']['postcode']) && !empty($vars['errors']['postcode'])): ?>
-                        <span><?php echo $vars['errors']['postcode']; ?></span>
-                    <?php endif; ?>                            
+                                               
                 </li>
                 <div class="clean"></div>
+                    <?php if (isset($vars['errors']['postcode']) && !empty($vars['errors']['postcode'])): ?>
+                        <span><?php echo $vars['errors']['postcode']; ?></span>
+                    <?php endif; ?> 
                 <li class="inscription-errors">
                     <label>Ville : *</label>
                     <input type="text" id="" class="" name="city" size="30" placeholder="Duckcity" value="<?php if (isset($vars['post_data']['city'])) echo $vars['post_data']['city']; ?>">
-                    <?php if (isset($vars['errors']['city']) && !empty($vars['errors']['city'])): ?>
-                        <span><?php echo $vars['errors']['city']; ?></span>
-                    <?php endif; ?>                            
+                                              
                 </li>
                 <div class="clean"></div>
+                    <?php if (isset($vars['errors']['city']) && !empty($vars['errors']['city'])): ?>
+                        <span><?php echo $vars['errors']['city']; ?></span>
+                    <?php endif; ?>  
                 <li class="inscription-errors">
                     <label>Pays : *</label>
                     <input type="text" id="" class="" name="country" size="30" placeholder="Duckland" value="<?php if (isset($vars['post_data']['country'])) echo $vars['post_data']['country']; ?>">
-                    <?php if (isset($vars['errors']['country']) && !empty($vars['errors']['country'])): ?>
-                        <span><?php echo $vars['errors']['country']; ?></span>
-                    <?php endif; ?>                            
+                                               
                 </li>
                 <div class="clean"></div>
+                    <?php if (isset($vars['errors']['country']) && !empty($vars['errors']['country'])): ?>
+                        <span><?php echo $vars['errors']['country']; ?></span>
+                    <?php endif; ?> 
                 <li class="btn-submit">
                     <label></label>
                     <input type="submit" id="" class="btn" name="send" value="Enregistrer les modifications" />

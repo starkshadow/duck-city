@@ -302,6 +302,7 @@ h2{
 	.connexion-zone3,
 	.profil-zone3,
 	.profil-update-zone3,
+	.profil-password-zone3,
 	.fiche-zone3
 	 {
 	 	background: url(../images/bg40.png) repeat;
@@ -1452,21 +1453,31 @@ padding-top: 40px;
 
 	/********** P R O F I L **********/
 	/********* U P   D A T E *********/
-	.profil-update-zone3 .container{
+	/************** E T **************/
+	/********* P A S S W O R D *******/
+
+	.profil-update-zone3 .container,
+	.profil-password-zone3 .container{
 		padding-top: 50px;
 	}
-	.profil-update-zone3 .container ul.inscription-errors{
-		
+	.profil-update-zone3 .container ul.inscription-errors,
+	.profil-password-zone3 .container ul.inscription-errors{		
 		padding-left: 0px;
 		width: 400px;
 		margin:auto;
-		padding-top: 50px;
 		padding-bottom: 30px;
 		
 	}
+	.profil-update-zone3 .container ul.inscription-errors	{
+		padding-top: 50px;
+	}
+	.profil-password-zone3 .container ul.inscription-errors{
+		padding-top: 30px;
+	}
 	
 
-	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors{
+	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors,
+	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors{
 		font-size: 30px;
 		letter-spacing: 3px;
 		line-height: 1.5;
@@ -1479,7 +1490,9 @@ padding-top: 40px;
 	
 
 	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors label,
-	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors input  {
+	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors input,
+	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors label,
+	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors input   {
 		float: left;
 		width: 200px;
 		font-family: 'aleoregular',helvetica, arial, sans-serif;
@@ -1487,7 +1500,8 @@ padding-top: 40px;
 		margin-bottom: 0px;
 
 	}
-	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors input  {
+	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors input,
+	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors input  {
 		border: 4px solid #343833;
 		background: rgba(255, 255, 255, 0.41);
 		padding: 5px;
@@ -1498,13 +1512,13 @@ padding-top: 40px;
 
 
 	}
-	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors .btn-submit{
-
-	}
-	.profil-update-zone3 .container ul.inscription-errors li.btn-submit{
+	
+	.profil-update-zone3 .container ul.inscription-errors li.btn-submit,
+	.profil-password-zone3 .container ul.inscription-errors li.btn-submit{
 		list-style: none;
 	}
-	.profil-update-zone3 .container ul.inscription-errors li.btn-submit input.btn {
+	.profil-update-zone3 .container ul.inscription-errors li.btn-submit input.btn,
+	.profil-password-zone3 .container ul.inscription-errors li.btn-submit input.btn {
 		margin: auto;
 		display: block;
 		background: transparent;
@@ -1514,11 +1528,18 @@ padding-top: 40px;
 		cursor: pointer;
 
 	}
-	.profil-update-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover{
+	.profil-update-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover,
+	.profil-password-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover{
 		background: #343833;
 	}
-	 .profil-update-zone3 .btn-modif{
+	 .profil-update-zone3 .btn-modif,
+	 .profil-password-zone3 .btn-modif{
 	 	margin-top: 0px;
+	 }
+
+	 .profil-password-zone3 form ul span{
+	 	font-size: 16px;
+	 	padding-bottom: 20px;
 	 }
 
 
@@ -2273,12 +2294,21 @@ footer .container .paypal div{
 	ul.speudo-email-utilisateur li{
 		font-size: 20px;
 	}
-	.profil-update-zone3 .container ul.inscription-errors{
+	.profil-update-zone3 .container ul.inscription-errors,
+	.profil-password-zone3 .container ul.inscription-errors{
 		width: 300px;
 	}
+
+	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors label, 
+	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors input, 
+	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors label, 
+	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors input{
+		font-size: 13px;
+	}
+
 	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors input.numero {
-width: 20px !important;
-}
+		width: 20px !important;
+	}
 
 
 	/************* F O O T E R  **************/

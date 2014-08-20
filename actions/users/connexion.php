@@ -22,31 +22,11 @@ if (isset($_POST) && !empty($_POST)) {
     if ($model->uexists('', $_POST['email'], sha1($_POST['password']))) {
         $user = $model->getone('', $_POST['email']);
 
-        $_SESSION['user'] = array(
-            'id' => (int) $user['id'],
-            'pseudo' => $user['pseudo'],
-            'email' => $user['email'],
-            'isadmin' => (int) $user['isadmin'],
-            'logged' => true,
-        );
+        $_SESSION['user'] = $user;
+        $_SESSION['user']['logged'] = true;
 
         //données à envoyer à la vue profil pour afficher remplir le formulaire d'update
-        $_SESSION['viewvars']['user'] = array(
-            'id' => (int) $user['id'],
-            'pseudo' => $user['pseudo'],
-            'email' => $user['email'],
-            'firstname' => $user['firstname'],
-            'lastname' => $user['lastname'],
-            'logo' => $user['logo'],
-            'number' => $user['number'],
-            'street' => $user['street'],
-            'postcode' => (int) $user['postcode'],
-            'city' => $user['city'],
-            'country' => $user['country'],
-            'isadmin' => $user['isadmin'],
-            'created' => $user['created'],
-            'modified' => $user['modified'],
-        );
+        $_SESSION['viewvars']['user'] = $user;
         $_SESSION['prompt'] = array(
             'class' => 'success',
             'msg' => 'Connect&eacute;',

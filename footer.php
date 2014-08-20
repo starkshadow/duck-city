@@ -2,7 +2,7 @@
 	<footer>
 		<div class="container">
 			<div class="one-third column newsletter">
-				<p>Recevez nos meilleurs offres</p>
+				<p>Recevez nos offres</p>
 				<form action="" method="get">
             		<label>
                 		<input class="newsletter-footer email-footer"type="email" name="courriel" value="Entre ton email"/>

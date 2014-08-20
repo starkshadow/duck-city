@@ -30,11 +30,11 @@
         .container .fifteen.columns                 { width: 880px; display: inline-block;}
         .container .sixteen.columns                 { width: 940px; display: inline-block;}
 
-        .container .one-half.column                { width: 458px; display: inline-block;}
+        .container .one-half.column                { width: 457px; display: inline-block;}
 
-        .container .one-third.column                { width: 297px; display: inline-block;}
+        .container .one-third.column                { width: 300px; display: inline-block;}
         .container .two-thirds.column               { width: 620px; display: inline-block;}
-        .container .one-four.column                 { width: 217px; display: inline-block;}
+        .container .one-four.column                 { width: 216px; display: inline-block;}
         .container .thirds-four.column              { width: 699px; display: inline-block;}
 
         

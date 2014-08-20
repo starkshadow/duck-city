@@ -146,34 +146,4 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
 
 
 
-        <!--<nav>
-                <div id="nav">
-                        <div id="nav-logo">
-                                <a href="index.php">DUCK CITY</a>
-                        </div>
-                        <div id="menu-deroulant"><img src=""><a>Menu <img src="images/fleche-connection.png"></a></div>
-                        <div id="nav-menu">
-                        <ul>
-                                <li class="shop">
-                                        <a <?php //if ($nav_en_cours == 'page-shop') {echo ' id="en-cours"';}                                ?>>Shop</a>
-                                        <ul class="">
-                                                <li><a href="gallery.php">Galerie</a></li>
-                                                <li><a href="customisation.php">Customisation</a></li>
-                                        </ul>
-                                </li>
-                                <li ><a <?php //if ($nav_en_cours == 'page-collection') {echo ' id="en-cours"';}                                ?> href="ma-collection.php">Ma collection</a></li>
-                                <li><a <?php //if ($nav_en_cours == 'page-contact') {echo ' id="en-cours"';}                                ?> href="contact.php">Contact</a></li>
-                                <li class="connexion">|</li>
-                                <li class="menu" id="menu1" onclick="afficheMenu(this)"><a>Connexion <img src="images/fleche-connection.png"></a>
-                                        <ul id="sousmenu1" style="display:none">
-                                                <li class="sousmenu"><a id="connection" href="">Se connecter</a></li>
-                                                <li class="sousmenu"><a href="">S'inscrire</a></li>
-                                                <li class="sousmenu"><a id="deconnection" href="">Se déconnecter</a></li>
-                                                <li class="sousmenu"><a id="panier" href="panier.php">Mon panier</a></li>
-                                                <li class="sousmenu"><a id="profil" href="">Mon profil</a></li>
-                                        </ul>
-                                </li>
-                        </ul>
-                        </div>
-                </div>
-        </nav>-->
+        

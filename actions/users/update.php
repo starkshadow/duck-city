@@ -36,7 +36,7 @@ if (isset($_POST) && !empty($_POST)) {
         if ($model->update($user)) {
             $_SESSION['prompt'] = array(
                 'class' => 'success',
-                'msg' => 'Profil mis à jour !',
+                'msg' => 'Votre profil a été mis à jour !',
             );
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/users/profil.php');
             exit();

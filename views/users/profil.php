@@ -11,20 +11,23 @@
 
 <div class="profil-zone2">
     <div class="container">
+
         <img src="<?php echo WEBROOT . 'images/profil1.jpg'; ?>">
+
+
+         <!-- <ul id="invisible" class="menu-profil" >
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>
+                <li><img src="<?php echo WEBROOT . 'images/profil1.jpg'; ?>"></li>
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
+            </ul>-->
     </div>
 </div>
 
 <div class="profil-zone3">
     <div class="container">
-        <div class="btn-modif">
-            <ul id="invisible" class="nav-menu" >
-                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>
-                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>
-                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>
-                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
-            </ul>
-        </div>
+        
         <ul class="speudo-email-utilisateur">
             <li class="" id="" name="" ><?php echo $vars['user']['pseudo']; ?></li>
             <li class="" id="" name="" ><?php echo $vars['user']['email']; ?></li>
@@ -61,6 +64,15 @@
             <div class="clean"></div>
 
         </ul>
+
+        <div class="btn-modif">
+            <ul class="menu-profil" >
+                <!--<li><a class="btn" <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>-->
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
+            </ul>
+        </div>
 
         <p><?php echo 'Logo : ' . $vars['user']['logo']; ?></p>
     </div>

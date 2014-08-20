@@ -40,6 +40,9 @@ if (isset($_POST) && !empty($_POST)) {
         header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/profil.php');
         exit();
     } else {
+        //bypass le système de refresh forcé de la vue
+        $_SESSION['nav']['refreshed'] = true;
+        
         $_SESSION['viewvars']['post_data'] = $_POST;
         $_SESSION['viewvars']['errors'] = $validation;
         $_SESSION['prompt'] = array(

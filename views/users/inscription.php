@@ -47,7 +47,7 @@
                             <?php endif; ?>
                         </li>
                         <li class="inscription-errors">
-                            <label>Verification mot de passe : *</label>
+                            <label>Confirmation mot de passe : *</label>
                             <input type="password" id="" class="" name="confirmpassword" size="30" placeholder=" * * * * * ">
                             <?php if (isset($vars['errors']['confirmpassword']) && !empty($vars['errors']['confirmpassword'])): ?>
                                 <span><?php echo $vars['errors']['confirmpassword']; ?></span>

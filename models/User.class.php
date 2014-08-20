@@ -150,6 +150,27 @@ class User extends Model {
     }
 
     /**
+     * valide le champ d'ancien email pour l'update du mot de passe
+     * @param type $vars
+     * @return string|boolean
+     */
+    public function checkoldpassword($vars) {
+        if (isset($vars['oldpassword']) && !empty($vars['oldpassword'])) {
+            if (preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z]{5,8}$/', $vars['oldpassword'])) {
+                if ($this->uexists($vars['id'], '', sha1($vars['oldpassword']))) {
+                    return null;
+                } else {
+                    return 'Mot de passe incorrect';
+                }
+            } else {
+                return 'Le mot de passe est invalide';
+            }
+        } else {
+            return 'Le champ du mot de passe actuel est vide';
+        }
+    }
+
+    /**
      * valide le champ password
      * @param type $password
      * @return string|boolean
@@ -171,7 +192,6 @@ class User extends Model {
             } else {
                 return 'Le mot de passe est invalide';
             }
-
             return null;
         } else {
             return 'Le champ du mot de passe est vide';

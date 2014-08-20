@@ -2,13 +2,13 @@
 <?php
 
 //debug session
+//var_dump('SESSION');
 //var_dump($_SESSION);
 
 //si historique de navigation n'existe pas en session => le créer
 if (!isset($_SESSION['nav']) || empty($_SESSION['nav'])):
     $_SESSION['nav'] = array(
         'last_page' => '',
-        'prev' => false, // si on atterit sur la page en cliquant le bouton 'précédent' du web browser
         'refreshed' => false, //définit si la page a subi un refresh et est passée par l'action correspondante        
     );
 //s'il s'agit d'un refresh de la vue => rediriger vers l'action de la page
@@ -17,8 +17,6 @@ elseif (isset($_SESSION['nav']['last_page']) && $_SESSION['nav']['last_page'] ==
     $_SESSION['nav']['last_page'] = $_SERVER['PHP_SELF'];
     //création de l'url de l'action correspondante en remplaçant le dossier 'views' par 'actions' dans l'url
     $redirect = str_replace('views', 'actions', $_SERVER['PHP_SELF']);
-    //préciser en session que la page doit subir un refresh
-    $_SESSION['nav']['refreshed'] = true;
     //redirect
     header('Location: http://' . $_SERVER['SERVER_NAME'] . $redirect);
 else:

@@ -17,26 +17,24 @@ if (isset($_POST) && !empty($_POST)) {
     $model = new User();
     $user = array(
         'id' => $_SESSION['user']['id'],
-        'pseudo' => $_POST['pseudo'],
-        'email' => array('id' => $_SESSION['user']['id'], 'email' => $_POST['email']),
-        'firstname' => $_POST['firstname'],
-        'lastname' => $_POST['lastname'],
-        'number' => $_POST['number'],
-        'street' => $_POST['street'],
-        'postcode' => $_POST['postcode'],
-        'city' => $_POST['city'],
-        'country' => $_POST['country'],
+        'password' => $_POST['password'],
+        'oldpassword' => array('id' => $_SESSION['user']['id'], 'oldpassword' => $_POST['oldpassword']),
+        'confirmpassword' => array('password' => $_POST['password'], 'confirm' => $_POST['confirmpassword']),
     );
 
     //validation
     $validation = $model->validate($user, 'update');
     if ($validation === true) {
+        $user = array(
+            'id' => $_SESSION['user']['id'],
+            'password' => sha1($_POST['password']),
+        );
         $user['email'] = $_POST['email'];
         //update en DB
         if ($model->update($user)) {
             $_SESSION['prompt'] = array(
                 'class' => 'success',
-                'msg' => 'Votre profil a été mis à jour !',
+                'msg' => 'Mot de passe modifié !',
             );
             header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/users/profil.php');
             exit();
@@ -46,11 +44,11 @@ if (isset($_POST) && !empty($_POST)) {
                 'class' => 'error',
                 'msg' => 'Erreur lors de l\'enregistrement. R&eacute;essayez svp',
             );
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/update.php');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/password.php');
             exit();
         }
     } else {
-        //bypass le système de forcer le refresh
+        //bypass le système de refresh forcé de la vue
         $_SESSION['nav']['refreshed'] = true;
         
         $_SESSION['viewvars']['post_data'] = $_POST;
@@ -59,7 +57,7 @@ if (isset($_POST) && !empty($_POST)) {
             'class' => 'error',
             'msg' => 'Des erreurs ont &eacute;t&eacute; trouv&eacute;es dans votre formulaire',
         );
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/update.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/password.php');
         exit();
     }
 }
@@ -72,7 +70,7 @@ else {
         if (isset($user) && !empty($user)) {
             $_SESSION['viewvars']['user']['pseudo'] = $user['pseudo'];
             $_SESSION['viewvars']['post_data'] = $user;
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/update.php');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/password.php');
             exit();
         } else {
             $_SESSION['prompt'] = array(

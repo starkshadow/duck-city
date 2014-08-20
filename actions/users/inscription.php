@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -42,8 +43,13 @@ if (isset($_POST) && !empty($_POST)) {
                 'class' => 'error',
                 'msg' => 'Erreur lors de l\'inscription. R&eacute;essayez svp',
             );
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/inscription.php');
+            exit();
         }
     } else {
+        //bypass le système de refresh forcé de la vue
+        $_SESSION['nav']['refreshed'] = true;        
+        
         $_SESSION['viewvars']['post_data'] = $_POST;
         $_SESSION['viewvars']['errors'] = $validation;
         $_SESSION['prompt'] = array(

@@ -99,7 +99,12 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
                                     </li>
                                     <li class="connexion">
                                         <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true): ?>                                                    
-                                            <a><?php echo 'Bonjour ' . $_SESSION['user']['pseudo']; ?></a>
+                                            <a href="<?php echo WEBROOT . 'actions/users/profil.php'; ?>">
+                                                <?php if (isset($_SESSION['user']['avatar_thumb']) && !empty($_SESSION['user']['avatar_thumb']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar_thumb'])): ?>
+                                                    <img alt="Avatar" src="<?php echo $_SESSION['user']['avatar_thumb']; ?>" />
+                                                <?php endif; ?>
+                                                <?php echo 'Bonjour ' . $_SESSION['user']['pseudo']; ?>
+                                            </a>
                                             <ul>                                                            
                                                 <li><a id="panier" href="<?php echo WEBROOT . 'views/products/panier.php'; ?>">Mon panier</a></li>
                                                 <li><a id="profil" href="<?php echo WEBROOT . 'actions/users/profil.php'; ?>">Mon profil</a></li>
@@ -148,4 +153,3 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
 
 
 
-        

@@ -1,13 +1,27 @@
 <?php
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionconf.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
 
+$model = new User();
+
+//vérification que l'utilisateur n'est pas déjà connecté
+if (isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true && $model->uexists($_SESSION['user']['id'])) {
+    //si oui ==> redirection sur sa page de profil
+    $_SESSION['prompt'] = array(
+        'class' => 'error',
+        'msg' => 'Vous &ecirc;tes d&eacute;j&agrave; connect&eacute; !',
+    );
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/users/profil.php');
+    exit();
+}
+
 if (isset($_POST) && !empty($_POST)) {
-    $model = new User();
+
 
     if ($model->uexists('', $_POST['email'], sha1($_POST['password']))) {
         $user = $model->getone('', $_POST['email']);
-        
+
         $_SESSION['user'] = array(
             'id' => (int) $user['id'],
             'pseudo' => $user['pseudo'],
@@ -42,7 +56,7 @@ if (isset($_POST) && !empty($_POST)) {
     } else {
         //bypass le système de refresh forcé de la vue
         $_SESSION['nav']['refreshed'] = true;
-        
+
         $_SESSION['viewvars']['post_data'] = $_POST;
         $_SESSION['viewvars']['errors'] = $validation;
         $_SESSION['prompt'] = array(

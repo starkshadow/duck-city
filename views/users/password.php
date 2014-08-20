@@ -12,20 +12,25 @@
 
 <div class="profil-zone2">
     <div class="container">
-        <img src="<?php echo WEBROOT . 'images/profil1.jpg'; ?>">
+        <p>
+            <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
+                <img alt="Avatar ici" src="<?php echo $_SESSION['user']['avatar']; ?>" />
+            <?php endif; ?>
+        </p>
     </div>
 </div>
 
 <div class="profil-password-zone3">
     <div class="container">
-        <!--<div class="btn-modif">
-            <ul id="invisible" class="nav-menu" >
-                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>
-                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>
-                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>
-                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
-            </ul>
-        </div>-->
+        <!--        <div class="btn-modif">
+                    <ul id="invisible" class="nav-menu" >
+                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>
+                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>
+                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>
+                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-avatar') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>">Avatar</a></li>
+                        <li><a class="btn" <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
+                    </ul>
+                </div>-->
 
         <h2  class="h2-title-zone">Changer mon mot de passe</h2>
         <form method="POST" action="<?php echo WEBROOT . 'actions/users/password.php'; ?>">            
@@ -37,30 +42,30 @@
                     <input type="password" id="" class="" name="oldpassword" size="30" placeholder=" * * * * * ">
                 </li>
                 <div class="clean"></div>
-                    <?php if (isset($vars['errors']['oldpassword']) && !empty($vars['errors']['oldpassword'])): ?>
-                        <span><?php echo $vars['errors']['oldpassword']; ?></span>
-                    <?php endif; ?>
+                <?php if (isset($vars['errors']['oldpassword']) && !empty($vars['errors']['oldpassword'])): ?>
+                    <span><?php echo $vars['errors']['oldpassword']; ?></span>
+                <?php endif; ?>
                 <div class="clean"></div>
                 <li class="inscription-errors">
                     <label>Nouveau mot de passe : *</label>
                     <input type="password" id="" class="" name="password" size="30" placeholder=" * * * * * ">
-                    
+
                 </li>
                 <div class="clean"></div>
-                    <?php if (isset($vars['errors']['password']) && !empty($vars['errors']['password'])): ?>
-                        <span><?php echo $vars['errors']['password']; ?></span>
-                    <?php endif; ?>
+                <?php if (isset($vars['errors']['password']) && !empty($vars['errors']['password'])): ?>
+                    <span><?php echo $vars['errors']['password']; ?></span>
+                <?php endif; ?>
                 <div class="clean"></div>
                 <li class="inscription-errors">
                     <label>Confirmation mot de passe : *</label>
                     <input type="password" id="" class="" name="confirmpassword" size="30" placeholder=" * * * * * ">
-                                              
+
                 </li>    
                 <div class="clean"></div>
-                    <?php if (isset($vars['errors']['confirmpassword']) && !empty($vars['errors']['confirmpassword'])): ?>
-                        <span><?php echo $vars['errors']['confirmpassword']; ?></span>
-                    <?php endif; ?>  
-                
+                <?php if (isset($vars['errors']['confirmpassword']) && !empty($vars['errors']['confirmpassword'])): ?>
+                    <span><?php echo $vars['errors']['confirmpassword']; ?></span>
+                <?php endif; ?>  
+
                 <li class="btn-submit">
                     <label></label>
                     <input type="submit" id="" class="btn" name="send" value="Enregistrer les modifications" />
@@ -73,6 +78,7 @@
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>
                 <!--<li><a class="btn" <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>-->
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-avatar') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>">Avatar</a></li>
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
             </ul>
         </div>

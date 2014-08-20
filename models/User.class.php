@@ -5,6 +5,11 @@
  *
  * @author fanny
  */
+//si session pas ouverte => forcer (utilistaion dans callback afterupdate)
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require_once 'Model.class.php';
@@ -286,6 +291,18 @@ class User extends Model {
             return null;
         } else {
             return 'Le champ du pays est vide';
+        }
+    }
+
+    /**
+     * fonction appelée après un update d'utilisateur en DB
+     * @param type $vars
+     */
+    public function afterupdate($vars) {
+        //si utilisateur mis à jour = utilisateur en cours
+        if (isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']) && $_SESSION['user']['id'] === $vars['id']) {
+            //mise à jour des données de l'utilisateur en session1
+            $_SESSION['user'] = array_merge($_SESSION['user'], $vars);
         }
     }
 

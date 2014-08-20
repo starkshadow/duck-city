@@ -11,24 +11,29 @@
 
 <div class="profil-zone2">
     <div class="container">
-        <img src="<?php echo WEBROOT . 'images/profil1.jpg'; ?>">
+        <p>
+            <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
+                <img alt="Avatar ici" src="<?php echo $_SESSION['user']['avatar']; ?>" />
+            <?php endif; ?>
+        </p>
     </div>
 </div>
 
 <div class="profil-update-zone3">
     <div class="container">
-       <!-- <div class="btn-modif">
-            <ul id="invisible" class="nav-menu" >
+        <!-- <div class="btn-modif">
+             <ul id="invisible" class="nav-menu" >
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-avatar') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>">Avatar</a></li>         
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
-            </ul>
-        </div>-->
+             </ul>
+         </div>-->
 
         <h2  class="h2-title-zone">Modifier mon profil</h2>
-        <form method="POST" action="<?php echo WEBROOT . 'actions/users/update.php'; ?>">
-            <ul class="inscription-errors">                
+        <form method="POST" action="<?php echo WEBROOT . 'actions/users/update.php'; ?>" enctype="multipart/form-data">
+            <ul class="inscription-errors">
                 <li class="inscription-errors">
                     <label>Pseudo : *</label>
                     <input type="text" id="" class="" name="pseudo" size="30" placeholder="_Daffy89" value="<?php if (isset($vars['post_data']['pseudo'])) echo $vars['post_data']['pseudo']; ?>">
@@ -110,6 +115,7 @@
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-profil') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/profil.php' ?>">Mon profil</a></li>
                 <!--<li><a class="btn" <?php if ($nav_en_cours == 'page-user-update') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/update.php' ?>">Paramètres</a></li>-->
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-password') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/password.php' ?>">Mot de passe</a></li>
+                <li><a class="btn" <?php if ($nav_en_cours == 'page-user-avatar') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>">Avatar</a></li>
                 <li><a class="btn" <?php if ($nav_en_cours == 'page-user-delete') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/delete.php' ?>">Supprimer mon compte</a></li>
             </ul>
         </div>

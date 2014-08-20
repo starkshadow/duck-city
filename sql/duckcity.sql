@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2014 at 11:37 AM
+-- Generation Time: Aug 20, 2014 at 05:09 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -201,7 +201,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` text NOT NULL,
   `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
-  `logo` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `avatar_thumb` varchar(255) DEFAULT NULL,
   `number` int(11) DEFAULT NULL,
   `street` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
@@ -212,18 +213,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `pseudo`, `email`, `password`, `firstname`, `lastname`, `logo`, `number`, `street`, `city`, `postcode`, `country`, `isadmin`, `created`, `modified`) VALUES
-(2, NULL, 'toto@bidon.com', 'eqffkdfdshfqshfsjksdhfjs&é&escs121ç', 'toto', 'idon', NULL, 4, NULL, NULL, NULL, NULL, -1, '2014-08-17 14:00:31', '2014-08-17 14:00:31'),
-(9, 'Fanny', 'cayzeele1@hotmail.fr', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'fanny', 'cayzeele', NULL, 4, 'rue joliot curie', 'comines', 59560, 'france', 1, '2014-08-17 15:30:55', '2014-08-17 15:30:55'),
-(21, 'Pit', 'mystic_mistean@msn.com', '6a7ec80c83773755d46811cb30e38ffbdf306c62', 'hanssens', 'peter', NULL, 43, 'Sint-Jansstraat', 'Wervik', 8940, 'Belgique', -1, '2014-08-18 03:24:51', '2014-08-18 03:24:51'),
-(22, 'Daffy', 'daffyduck@gmail.com', '8306c9723de075cb830d2af05957291fe1787acb', 'duck', 'daffy', NULL, 4, 'rud cannard', 'Duckcity', 654654, 'Duckland', -1, '2014-08-18 04:21:14', '2014-08-18 04:21:14'),
-(23, 'fsdfd', 'efarfefe456@msn.com', '8306c9723de075cb830d2af05957291fe1787acb', 'blbabl', 'daffy', NULL, 43, 'rud cannard', 'Duckcity', 8940, 'Duckland', -1, '2014-08-18 05:32:48', '2014-08-18 05:32:48');
+INSERT INTO `users` (`id`, `pseudo`, `email`, `password`, `firstname`, `lastname`, `avatar`, `avatar_thumb`, `number`, `street`, `city`, `postcode`, `country`, `isadmin`, `created`, `modified`) VALUES
+(2, NULL, 'toto@bidon.com', 'eqffkdfdshfqshfsjksdhfjs&é&escs121ç', 'toto', 'idon', NULL, NULL, 4, NULL, NULL, NULL, NULL, -1, '2014-08-17 14:00:31', '2014-08-17 14:00:31'),
+(9, 'Fanny', 'cayzeele1@hotmail.fr', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'fanny', 'cayzeele', NULL, NULL, 4, 'rue joliot curie', 'comines', 59560, 'france', 1, '2014-08-17 15:30:55', '2014-08-17 15:30:55'),
+(21, 'Pit', 'mystic_mistean@msn.com', '6a7ec80c83773755d46811cb30e38ffbdf306c62', 'hanssens', 'peter', NULL, NULL, 43, 'Sint-Jansstraat', 'Wervik', 8940, 'Belgique', -1, '2014-08-18 03:24:51', '2014-08-18 03:24:51'),
+(22, '__Daffy89', NULL, '5f4e2019da6c56f66f7116b4a9d7757126600152', 'duck', 'daffy', '/duck-city/data/users/22/avatar.jpg', '/duck-city/data/users/22/avatar_thumb.jpg', 4, 'rud cannard', 'Duckcity', 654654, 'Duckland', -1, '2014-08-18 04:21:14', '2014-08-20 17:01:33'),
+(23, 'fsdfd', 'efarfefe456@msn.com', '8306c9723de075cb830d2af05957291fe1787acb', 'blbabl', 'daffy', NULL, NULL, 43, 'rud cannard', 'Duckcity', 8940, 'Duckland', -1, '2014-08-18 05:32:48', '2014-08-18 05:32:48'),
+(24, 'dqkljsdlkjf', 'lqskjdf@dljqskjf.com', '8306c9723de075cb830d2af05957291fe1787acb', '', '', NULL, NULL, 89, 'ezoijfsko', 'fklfklsdlj', 8452, 'djfsdfsjk', -1, '2014-08-18 11:50:06', '2014-08-18 11:50:06');
 
 -- --------------------------------------------------------
 

@@ -1,17 +1,16 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionconf.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
+$model = new User();
 
-//vérification que l'utilisateur est connecté et donc a accès a la page de profil
-if (!(isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true)) {
+//vérification que l'utilisateur est connecté et que son compte existe
+if (!(isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true) && $model->uexists($_SESSION['user']['id'])) {
     //redirection vers la homepage si l'utilisateur n'est pas connecté
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
     exit();
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
-
-$model = new User();
 
 //vérifier si l'utilisateur existe en DB
 if ($model->uexists($_SESSION['user']['id'])) {

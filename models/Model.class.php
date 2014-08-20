@@ -87,9 +87,16 @@ class Model {
     public function update($vars) {
         try {
             $vars['modified'] = date('Y-m-d H:i:s');
+            $data = $vars;
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $db->update(self::$tablename, $vars, 'id=' . $vars['id']);
+            $status = $db->update(self::$tablename, $vars, 'id=' . $vars['id']);
+
+            //appel callback afterupdate si existe
+            if ($status && method_exists($this, 'afterupdate')) {
+                $this->afterupdate($data);
+            }
+            return $status;
         } catch (PDOException $ex) {
             die($ex->getMessage());
         }

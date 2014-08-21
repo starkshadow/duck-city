@@ -9,7 +9,7 @@
 	+ affichage historique commandes
 
 - Ma collection:
-	+ créer canard
+	+ crÃ©er canard
 	+ affichage (pagination)
 	+ update
 	+ delete
@@ -19,14 +19,14 @@
 
 // OPTIONNEL //
 - Gestion erreur 404
-- Créer compte user : Email de confirmation
+- Crï¿½er compte user : Email de confirmation
 - Shop Admin :
 	+ affichage (pagination)
 	+ delete
 	+ add
 	+ update
 	
-- Historique -- Mes commandes : exporter détails d'une de mes commandes sous format fichier
+- Historique/Factures -- Mes commandes : exporter dï¿½tails d'une de mes commandes sous format fichier
 	
 - Users Admin :
 	+ display (pagination)

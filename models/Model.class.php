@@ -17,7 +17,13 @@ require 'class.db.php';
 
 class Model {
 
+    //nom de la table correspondante en DB
     public static $tablename;
+    //Relations de la classe
+    public $belongsTo;
+    public $hasOne;
+    public $hasMany;
+    public $hasAndBelongsToMany;
 
     /**
      * Valide les champs pour une opération sur la table
@@ -48,12 +54,88 @@ class Model {
      * Récupérer toute la table
      * @return type
      */
-    public function getall() {
+    public function getall($order = '', $limit = '') {
         try {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $result = $db->select(self::$tablename);
+            if (!empty($order)) {
+                if (!empty($limit))
+                    $result = $db->select(self::$tablename, '', self::$tablename . '.' . $order);
+                else
+                    $result = $db->select(self::$tablename, '', self::$tablename . '.' . $order, $limit);
+            }else {
+                $result = $db->select(self::$tablename, '', self::$tablename . '.created desc');
+            }
+
+            if (isset($result) && !empty($result)) {
+                foreach ($result as $line) {
+                    if (isset($this->belongsTo) && !empty($this->belongsTo)) {
+                        foreach ($this->belongsTo as $key => $value) {
+                            $where = $value['tablename'] . '.id' . ' = ' . $line[$value['foreignkey']];
+                            $select = $db->select($value['tablename'], $where);
+                            if (isset($select) && !empty($select) && is_array($select)) {
+                                $line[$key] = $select[0];
+                            }
+                        }
+                    }
+                    if (isset($this->hasOne) && !empty($this->hasOne)) {
+                        foreach ($this->hasOne as $key => $value) {
+                            $where = $value['tablename'] . '.' . $value['foreignkey'] . ' = ' . $line['id'];
+                            $select = $db->select($value['tablename'], $where);
+                            if (isset($select) && !empty($select) && is_array($select)) {
+                                $line[$key] = $select[0];
+                            }
+                        }
+                    }
+                    if (isset($this->hasMany) && !empty($this->hasMany)) {
+                        foreach ($this->hasMany as $key => $value) {
+                            $where = $value['tablename'] . '.' . $value['foreignkey'] . ' = ' . $line['id'];
+                            $line[$key] = $db->select($value['tablename'], $where);
+                        }
+                    }
+                }
+            }
+            return $result;
+        } catch (PDOException $ex) {
+            die($ex->getMessage());
+        }
+    }
+
+    public function getone($id) {
+        try {
+            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $result = $db->select(self::$tablename, self::$tablename . '.id = ' . $id);
+
+            if (isset($result) && !empty($result)) {
+                $result = $result[0];
+                if (isset($this->belongsTo) && !empty($this->belongsTo)) {
+                    foreach ($this->belongsTo as $key => $value) {
+                        $where = $value['tablename'] . '.id' . ' = ' . $result[$value['foreignkey']];
+                        $select = $db->select($value['tablename'], $where);
+                        if (isset($select) && !empty($select) && is_array($select)) {
+                            $result[$key] = $select[0];
+                        }
+                    }
+                }
+                if (isset($this->hasOne) && !empty($this->hasOne)) {
+                    foreach ($this->hasOne as $key => $value) {
+                        $where = $value['tablename'] . '.' . $value['foreignkey'] . ' = ' . $result['id'];
+                        $select = $db->select($value['tablename'], $where);
+                        if (isset($select) && !empty($select) && is_array($select)) {
+                            $result[$key] = $select[0];
+                        }
+                    }
+                }
+                if (isset($this->hasMany) && !empty($this->hasMany)) {
+                    foreach ($this->hasMany as $key => $value) {
+                        $where = $value['tablename'] . '.' . $value['foreignkey'] . ' = ' . $result['id'];
+                        $result[$key] = $db->select($value['tablename'], $where);
+                    }
+                }
+            }
             return $result;
         } catch (PDOException $ex) {
             die($ex->getMessage());
@@ -71,7 +153,34 @@ class Model {
 
             $result = $db->query('SELECT * FROM ' . self::$tablename . ' ORDER BY created DESC LIMIT 1');
 
-            return $result->fetch(PDO::FETCH_ASSOC);
+            if (isset($result) && !empty($result)) {
+                $result = $result->fetch(PDO::FETCH_ASSOC);
+                if (isset($this->belongsTo) && !empty($this->belongsTo)) {
+                    foreach ($this->belongsTo as $key => $value) {
+                        $where = $value['tablename'] . '.id' . ' = ' . $result[$value['foreignkey']];
+                        $select = $db->select($value['tablename'], $where);
+                        if (isset($select) && !empty($select) && is_array($select)) {
+                            $result[$key] = $select[0];
+                        }
+                    }
+                }
+                if (isset($this->hasOne) && !empty($this->hasOne)) {
+                    foreach ($this->hasOne as $key => $value) {
+                        $where = $value['tablename'] . '.' . $value['foreignkey'] . ' = ' . $result['id'];
+                        $select = $db->select($value['tablename'], $where);
+                        if (isset($select) && !empty($select) && is_array($select)) {
+                            $result[$key] = $select[0];
+                        }
+                    }
+                }
+                if (isset($this->hasMany) && !empty($this->hasMany)) {
+                    foreach ($this->hasMany as $key => $value) {
+                        $where = $value['tablename'] . '.' . $value['foreignkey'] . ' = ' . $result['id'];
+                        $result[$key] = $db->select($value['tablename'], $where);
+                    }
+                }
+            }
+            return $result;
         } catch (PDOException $ex) {
             die($ex->getMessage());
         }
@@ -122,7 +231,7 @@ class Model {
      * @return type
      */
     public function delete($id) {
-        try {            
+        try {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $status = $db->delete(self::$tablename, 'id=' . $id);
@@ -132,6 +241,4 @@ class Model {
         }
     }
 
-    
-    
 }

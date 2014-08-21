@@ -19,6 +19,24 @@ class User extends Model {
 
     public function __construct() {
         self::$tablename = 'users';
+
+        $this->hasMany = array(
+            'Product' => array(
+                'tablename' => 'products',
+                'foreignkey' => 'user_id',
+                'dependent' => true,
+            ),
+            'BoughtProduct' => array(
+                'tablename' => 'boughtproducts',
+                'foreignkey' => 'user_id',
+                'dependent' => true,
+            ),
+            'SelectedProduct' => array(
+                'tablename' => 'selectedproducts',
+                'foreignkey' => 'user_id',
+                'dependent' => true,
+            ),
+        );
     }
 
     /**
@@ -44,7 +62,6 @@ class User extends Model {
         } catch (PDOException $ex) {
             die($ex->getMessage());
         }
-//        public function select($table, $where = "", $bind = "", $fields = "*")
     }
 
     /**

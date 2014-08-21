@@ -11,11 +11,26 @@
 
 <div class="profil-zone2">
     <div class="container">
-        <p>
-            <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
-                <img alt="Avatar ici" src="<?php echo $_SESSION['user']['avatar']; ?>" />
+        <div class="avatar">
+            <?php if (isset($vars['users']) && !empty($vars['users']) && is_array($vars['users'])): ?>
+            <?php foreach ($vars['users'] as $key => $user): ?>
+            <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $user['imgprofil'])): ?>
+                <?php $img = $user['imgprofil'];?>
+            <?php else: ?>
+            <?php $img = DEFAULTAVATARIMG;?>
             <?php endif; ?>
-        </p>
+                <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>">
+                    <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
+                        <img alt="Avatar ici" src="<?php echo $_SESSION['user']['avatar']; ?>" />
+                    <?php endif; ?>
+                </a>
+                <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>" class="btn-avatar"> Changer votre avatar</a>
+            <?php endforeach; ?>
+            <?php else: ?>
+            <div class="error">Aucun canard dans la boutique pour l'instant</div>
+            <?php endif; ?> 
+            
+        </div>
     </div>
 </div>
 

@@ -12,11 +12,16 @@
 
 <div class="profil-zone2">
     <div class="container">
-        <p>
-            <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
-                <img alt="Avatar ici" src="<?php echo $_SESSION['user']['avatar']; ?>" />
-            <?php endif; ?>
-        </p>
+       <div class="avatar">
+                <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>">
+                    <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
+                        <img alt="Avatar ici" src="<?php echo $_SESSION['user']['avatar']; ?>" />
+                    <?php endif; ?>
+                </a>
+                <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>" class="btn-avatar"> Changer votre avatar</a>
+
+            
+        </div>
     </div>
 </div>
 

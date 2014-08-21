@@ -8,8 +8,8 @@ if (isset($_SESSION['viewvars']) && !empty($_SESSION['viewvars'])):
 endif;
 ?>
 
-<?php $nav_en_cours = ''; ?>
-<?php require "header.php"; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
 
 
 <!--<div id="bg-header">
@@ -92,7 +92,36 @@ endif;
 <div class="index-zone5">
     <div class="container">
         <h2  class="h2-title-zone">Les meilleures ventes</h2>
+
         <div id="slide1" class="scroll-img1">
+
+            <ul>
+
+                <?php if (isset($vars['products']) && !empty($vars['products']) && is_array($vars['products'])): ?>
+                    <?php foreach ($vars['products'] as $key => $product): ?>
+                <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $product['imgprofil'])): ?>
+                    <?php $img = $product['imgprofil'];?>
+                <?php else: ?>
+                <?php $img = DEFAULTDUCKIMG;?>
+                <?php endif; ?>
+        
+            
+                    <li>
+                        <a href="<?php echo WEBROOT . 'actions/products/details.php' ?>"><img src="<?php echo $img; ?>" alt="Image Canard"/></a>
+                        <a href="<?php echo WEBROOT . 'actions/products/details.php' ?>"><p><?php echo $product['price'] . '&euro;'; ?></p></a>
+                    </li>
+
+
+                <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="error">Aucun canard dans la boutique pour l'instant</div>
+                <?php endif; ?> 
+            </ul>
+        </div>
+
+
+
+        <!--<div id="slide1" class="scroll-img1">
             <ul>
                 <li>
                     <a href="fiche-duck.php"><img src="images/shop-galerie/duck-army-p.png"></a>
@@ -124,7 +153,7 @@ endif;
                     <p>12,99€</p>
                     <a class="btn" href="fiche-duck.php"><p>En savoir plus</p></a>
                 </li>
-                <!--<li>
+                <li>
                         <a href="fiche-duck.php"><img src="images/shop-galerie/duck-paparazzi-p.png"></a>
                         <p>12,99€</p>
                         <a class="btn" href="fiche-duck.php"><p>En savoir plus</p></a>
@@ -153,11 +182,11 @@ endif;
                         <a href="fiche-duck.php"><img src="images/shop-galerie/duck-royal-guard-p.png"></a>
                         <p>12,99€</p>
                         <a class="btn" href="fiche-duck.php"><p>En savoir plus</p></a>
-                </li>-->
+                </li>
 
             </ul>
 
-        </div>
+        </div>-->
 
         <div id="slide1-btn" class="text-center">
             <div class="btn-slide" id="slide1-backward"><a><img src="images/fleche-gauche-slider.png"></a></div>

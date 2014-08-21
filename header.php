@@ -4,7 +4,7 @@
  */
 define('WEBROOT', '/duck-city/');
 define('DEFAULTAVATARIMG', '/duck-city/images/default_avatar.jpg');
-define('DEFAULTDUCKIMG', '/duck-city/images/default_duck.jpg');
+define('DEFAULTDUCKIMG', '/duck-city/images/default_duck.png');
 ?>
 
 <?php

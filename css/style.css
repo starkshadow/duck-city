@@ -214,9 +214,15 @@ h2{
 	#menu-deroulant ul li ul.nav-menu li.image-profil img {
 		width: 45px;
 		height: 45px;
-		margin: 7px 0px 8px 7px;
+		
 		border-radius: 45px;
 		border: 1px solid #343833;
+	}
+	#menu-deroulant ul li ul.nav-menu li.image-profil a{
+		border: none;
+		display: block;
+		height: 47px;
+		padding: 6px 0px 6px 6px;
 	}
 
 
@@ -312,6 +318,7 @@ h2{
 	.profil-zone3,
 	.profil-update-zone3,
 	.profil-password-zone3,
+	.profil-avatar-zone3,
 	.fiche-zone3
 	 {
 	 	background: url(../images/bg40.png) repeat;
@@ -1430,7 +1437,8 @@ padding-top: 40px;
 		display: -webkit-box;
 		margin: auto;
 		border: 4px solid #343833;
-
+		width: 250px;
+		height: 250px;
 	}
 	
 
@@ -1486,11 +1494,13 @@ padding-top: 40px;
 	/********* P A S S W O R D *******/
 
 	.profil-update-zone3 .container,
-	.profil-password-zone3 .container{
+	.profil-password-zone3 .container,
+	.profil-avatar-zone3 .container{
 		padding-top: 50px;
 	}
 	.profil-update-zone3 .container ul.inscription-errors,
-	.profil-password-zone3 .container ul.inscription-errors{		
+	.profil-password-zone3 .container ul.inscription-errors,
+	.profil-avatar-zone3 .container ul.inscription-errors{		
 		padding-left: 0px;
 		width: 400px;
 		margin:auto;
@@ -1506,7 +1516,7 @@ padding-top: 40px;
 	
 
 	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors,
-	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors{
+	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors	{
 		font-size: 30px;
 		letter-spacing: 3px;
 		line-height: 1.5;
@@ -1521,7 +1531,7 @@ padding-top: 40px;
 	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors label,
 	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors input,
 	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors label,
-	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors input   {
+	.profil-password-zone3 .container ul.inscription-errors li.inscription-errors input{
 		float: left;
 		width: 200px;
 		font-family: 'aleoregular',helvetica, arial, sans-serif;
@@ -1543,34 +1553,85 @@ padding-top: 40px;
 	}
 	
 	.profil-update-zone3 .container ul.inscription-errors li.btn-submit,
-	.profil-password-zone3 .container ul.inscription-errors li.btn-submit{
+	.profil-password-zone3 .container ul.inscription-errors li.btn-submit,
+	.profil-avatar-zone3 .container ul.inscription-errors li.btn-submit{
 		list-style: none;
 	}
 	.profil-update-zone3 .container ul.inscription-errors li.btn-submit input.btn,
-	.profil-password-zone3 .container ul.inscription-errors li.btn-submit input.btn {
+	.profil-password-zone3 .container ul.inscription-errors li.btn-submit input.btn,
+	.profil-avatar-zone3 .container ul.inscription-errors li.btn-submit input.btn {
 		margin: auto;
 		display: block;
 		background: transparent;
-		margin-top: 30px;
+		margin-top: 20px;
 		width: 300px;
-		font-size: 14px;
+		font-size: 16px;
 		cursor: pointer;
 
 	}
 	.profil-update-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover,
-	.profil-password-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover{
+	.profil-password-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover,
+	.profil-avatar-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover{
 		background: #343833;
 	}
 	 .profil-update-zone3 .btn-modif,
-	 .profil-password-zone3 .btn-modif{
+	 .profil-password-zone3 .btn-modif,
+	 .profil-avatar-zone3 .btn-modif{
 	 	margin-top: 0px;
 	 }
 
 	 .profil-update-zone3 form ul span,
-	 .profil-password-zone3 form ul span{
+	 .profil-password-zone3 form ul span,
+	 .profil-avatar-zone3 form ul span{
 	 	font-size: 16px;
 	 	padding-bottom: 20px;
 	 }
+
+
+
+	 /******* A V A T A R ********/
+
+	 .custom-file-input::-webkit-file-upload-button {
+  		display: none;
+	}
+	
+	.custom-file-input::before {
+		content: 'Selectionner un fichier';
+		display: inline-block;
+		border: 4px solid #343833;
+		padding: 10px;
+		cursor: pointer;
+		font-size: 16px;
+		width: 272px;
+		text-align: center;
+		color:#343833;
+		text-transform: uppercase;
+		font-family: 'aleobold', Verdana, arial, sans-serif;
+	}
+	.custom-file-input:hover::before {
+	  background: #343833;
+	  color: white
+	}
+	.profil-avatar-zone3 .container ul.inscription-errors li.inscription-errors{
+		list-style: none;
+	}
+	.profil-avatar-zone3 .container ul.inscription-errors li.inscription-errors label{
+		font-size: 18px;
+		font-family: 'aleoregular', Verdana, arial, sans-serif;
+		text-align: center;
+		padding: 20px;
+		display: block;
+
+	}
+	.profil-avatar-zone3 .container ul.inscription-errors li.inscription-errors input.custom-file-input{
+		border: none;
+		width: 300px;
+	}
+
+	.profil-avatar-zone3 .container ul.inscription-errors{		
+		width: 300px;
+	}
+	
 
 
 /****** FOOTER  ******/

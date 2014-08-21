@@ -114,7 +114,7 @@
 
 	<div class="gallery-zone4">
 		<div class="container">
-			<p class="texte-intro">Tu n'as pas trouver le canard qui te correspond ? </p>
+			<p class="texte-intro">Tu n'as pas trouvé le canard qui te correspond ?  </p>
 		</div>
 	</div>
 
@@ -122,7 +122,7 @@
 
 	<div class="gallery-zone5">
 		<div class="container">
-			<p>Ce n'est pas grave vient créer ton canard unique en lui ajoutant des accesoires</p>
+			<p>Ce n'est pas grave ! Viens créer ton canard unique en lui ajoutant des accessoires !</p>
 			<a href="personnalisation.php" class="btn">Créer ton canard</a>
 		</div>
 	</div>

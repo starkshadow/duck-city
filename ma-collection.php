@@ -17,7 +17,7 @@
 
 	<div class="ma-collection-zone2">
 		<div class="container">
-			<p class="texte-intro">Hello, (speudo du connecté). Comment vas-tu aujourd'hui? </p>
+			<p class="texte-intro">Hello (pseudo du connecté), comment vas-tu aujourd'hui? </p>
 		</div>
 	</div>
 
@@ -31,7 +31,7 @@
 					<img src="images/shop-galerie/duck-cowboy-p.png">
 				</div>
 				<div class="btn-ma-collection">
-					<a class="btn" href="">Tout mes achats</a>
+					<a class="btn" href="">Tous mes achats</a>
 				</div>
 			</div>
 			<div class="one-half column">

@@ -13,8 +13,8 @@
     <div class="container">
 
         <p>
-            <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $vars['user']['avatar'])): ?>
-                <img alt="Avatar ici" src="<?php echo $vars['user']['avatar']; ?>" />
+            <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
+                <img alt="Avatar ici" src="<?php echo $_SESSION['user']['avatar']; ?>" />
             <?php endif; ?>
         </p>
     </div>

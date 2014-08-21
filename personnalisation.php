@@ -22,7 +22,7 @@
 	<div class="customisation-zone3">
 		<div class="container">
 			<div class="one-third column etape">
-				<h3>Choisie une couleur de peau pour ton duck</h3>
+				<h3>Choisis une couleur de peau pour ton duck</h3>
 
 					<div id="slide2" class="scroll-img2">
 						<ul>
@@ -59,7 +59,7 @@
 			</div>
 
 			<div class="one-third column etape">
-				<h3>Choisie un ou des accesoires pour ton duck</h3>
+				<h3>Choisis un ou plusieurs accessoires pour ton duck</h3>
 					<div id="slide3" class="scroll-img3">
 						<ul>
 							<li class="etape2-accessoire">
@@ -96,7 +96,7 @@
 
 
 			<div class="one-third column etape">
-				<h3>Choisie un costume pour ton duck</h3>
+				<h3>Choisis un costume pour ton duck</h3>
 					<div id="slide4" class="scroll-img4">
 						<ul>
 							<li class="etape3-costume">

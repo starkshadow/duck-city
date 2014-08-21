@@ -19,14 +19,15 @@
     </div>
 </div>
 
-<div class="profil-update-zone3">
+<div class="profil-avatar-zone3">
     <div class="container">
         <h2  class="h2-title-zone">Changer mon image d'avatar</h2>
         <form method="POST" action="<?php echo WEBROOT . 'actions/users/avatar.php'; ?>" enctype="multipart/form-data">
             <ul class="inscription-errors">
                 <li class="inscription-errors">
                     <label>Envoyer un fichier </label>
-                    <input type="file" size="70" name="avatar" value="" accept="image/*" />                    
+                    <span>(de préférence une image carrée)</span>
+                    <input type="file" size="70" name="avatar" value="" accept="image/*" class="custom-file-input"/>                    
                     <?php if (isset($vars['errors']['avatar']) && !empty($vars['errors']['avatar'])): ?>
                         <span><?php echo $vars['errors']['avatar']; ?></span>
                     <?php endif; ?>                            

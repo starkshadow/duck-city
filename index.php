@@ -25,19 +25,20 @@ endif;
 
 <div class="container index-zone2">
     <div class="sixteen columns texte-intro">
-        <h2  class="h2-title-zone">DUCK CITY C'EST QUOI ?</h2>
+        <h2  class="h2-title-zone">DUCK CITY, C'EST QUOI ?</h2>
         <img class="logo-duck"src="images/logo-duck1.png">
-        <p>Vous avez certainement déjà remarquer ses voitures avec un canard en plastique accrocher 
-            à l'arriére. Il n'existe pas vraiment d'explication à cette mode qui nous viens du Japon :</br> le  TOW HOOK CHARM. <p>
+        <p>Vous avez certainement déjà remarqué ces voitures avec un canard en plastique accroché 
+            à l'arrière. Il n'existe pas vraiment d'explication à cette mode qui nous vient du Japon ; 
+            </br> le  TOW HOOK CHARM. <p>
 
-            Grâce à Duck City vous allez pouvoir trouver le canard qui vous correspond. Soit à travers une galerie de canards 
-            ou soit en customisant un canard avec des accesoires.</p>
+            Grâce à Duck City, vous allez pouvoir trouver le canard qui vous correspond : 
+            soit à travers une galerie de canards, soit en customisant un canard avec des accessoires.</p>
     </div>
     <div class="one-half column">
-        <a  class="btn"href="gallery.php">Accéder à la galerie</a>
+        <a  class="btn"href="shop.php">Accéder à la galerie</a>
     </div>
     <div class="one-half column">
-        <a  class="btn"href="customisation.php">Customiser un canard</a>
+        <a  class="btn"href="personnalisation.php">Customiser un canard</a>
     </div>
 
 
@@ -90,7 +91,7 @@ endif;
 
 <div class="index-zone5">
     <div class="container">
-        <h2  class="h2-title-zone">Les meilleurs ventes</h2>
+        <h2  class="h2-title-zone">Les meilleures ventes</h2>
         <div id="slide1" class="scroll-img1">
             <ul>
                 <li>

@@ -31,7 +31,7 @@
 					<img src="images/shop-galerie/duck-cowboy-p.png">
 				</div>
 				<div class="btn-ma-collection">
-					<a class="btn" href="">Tous mes achats</a>
+					<a class="btn" href="achat.php">Tous mes achats</a>
 				</div>
 			</div>
 			<div class="one-half column">

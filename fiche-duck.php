@@ -23,9 +23,8 @@
 			<div class="one-half column">
 				<h2  class="h2-title-zone">Duck army</h2>
 				<img src="images/shop-galerie/duck-army-p.png"/>
-				
-
 			</div>
+
 			<div class="one-half column"> 
 				<h4>Déscription:</h4>
 				<p>Minions ipsum chasy para tú uuuhhh. Me want bananaaa! me want 
@@ -43,6 +42,20 @@
 				<h4>Prix:</h4>
 				<p>12,99€</p>
 				<a href="" class="btn">Ajouter au panier</a>
+			</div>
+
+        	<h2  class="h2-title-zone suggestion">Suggestion de duck</h2>
+			<div class="one-third column suggestion-duck">
+					<h3 class="h3-nom-duck"><a class="btn" href="fiche-duck.php">Duck Disco</a></h3>
+					<a href="fiche-duck.php"><img src="images/shop-galerie/duck-disco-p.png"></a>
+			</div>
+			<div class="one-third column suggestion-duck">
+					<h3 class="h3-nom-duck"><a class="btn" href="">Duck princesse</a></h3>
+					<a href=""><img src="images/shop-galerie/duck-princesse-p.png"></a>
+			</div>
+			<div class="one-third column suggestion-duck">
+					<h3 class="h3-nom-duck"><a class="btn" href="">Duck cowboy</a></h3>
+					<a href=""><img src="images/shop-galerie/duck-cowboy-p.png"></a>
 			</div>
 		</div>
 

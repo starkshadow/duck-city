@@ -240,7 +240,8 @@ h2{
 	.inscription-zone1,
 	.connexion-zone1,
 	.profil-zone1,
-	.fiche-zone1
+	.fiche-zone1,
+	.achat-zone1
 	 {
 		width: 100%;
 	}
@@ -252,7 +253,8 @@ h2{
 	.inscription-zone1 img,
 	.connexion-zone1 img,
 	.profil-zone1 img,
-	.fiche-zone1 img
+	.fiche-zone1 img,
+	.achat-zone1 img
 	 {
 		width: 100%;
 		top: 0px;
@@ -282,7 +284,8 @@ h2{
 	.inscription-zone2 .container,
 	.connexion-zone2 .container,
 	.profil-zone2 .container,
-	.fiche-zone2 .container{
+	.fiche-zone2 .container,
+	.achat-zone2 .container{
 		margin-top: 40px;
 		margin-bottom: 40px;
 	}
@@ -294,7 +297,8 @@ h2{
 	.contact-zone2 .container .texte-intro,
 	.inscription-zone2 .container .texte-intro,
 	.connexion-zone2 .container .texte-intro,
-	.fiche-zone2 .container .texte-intro {
+	.fiche-zone2 .container .texte-intro,
+	.achat-zone2 .container .texte-intro {
 		font-family: 'la_unicaregular',Verdana,arial,sans-serif;
 		font-size: 24px;
 		text-transform: uppercase;
@@ -319,7 +323,8 @@ h2{
 	.profil-update-zone3,
 	.profil-password-zone3,
 	.profil-avatar-zone3,
-	.fiche-zone3
+	.fiche-zone3,
+	.achat-zone3
 	 {
 	 	background: url(../images/bg40.png) repeat;
 		padding-top: 40px;
@@ -742,6 +747,30 @@ input.newsletter[type="submit"]:hover{
 .fiche-zone3 .container p{
 	font-family: 'aleoregular', Verdana, arial, sans-serif
 }
+ .fiche-zone3 .container .suggestion img{
+ 	width: 100%;
+ }
+
+h2.suggestion{
+	padding-top: 50px;
+}
+.fiche-zone3 .container .suggestion-duck h3{
+	padding: 0px;
+}
+
+ .fiche-zone3 .container .suggestion-duck h3 a {
+width: 100%;
+display: block;
+border: none;
+padding: 10px 0px;
+border-bottom: 4px solid #343833;
+border-top: 4px solid #343833;
+font-family: 'la_unicaregular', Verdana, serif;
+}
+.fiche-zone3 .container .suggestion-duck img{
+	width: 100%;
+}
+
 
 
 /*****************************************
@@ -1632,6 +1661,70 @@ padding-top: 40px;
 		width: 300px;
 	}
 	
+
+	/*****************************************
+	*************** A C H A T  ***************
+	*****************************************/
+
+
+
+	/************* Z O N E 3 ****************/
+
+	.achat-zone3 .container .achat-duck{
+		padding-bottom: 20px;
+	}
+
+	.achat-zone3 .container .achat-duck img{
+		width: 100%;
+	}
+	.achat-zone3 .container .achat-duck h3{
+		padding: 0px;
+	}
+	.achat-zone3 .container .achat-duck  h3 a{
+		width: 100%;
+		display: block;
+		border: none;
+		padding: 10px 0px;
+		border-bottom: 4px solid #343833;
+		border-top: 4px solid #343833;
+		font-family: 'la_unicaregular', Verdana, serif;
+	}
+
+	.achat-zone3 .container .achat-duck h3 a:hover{
+		background: #343833;
+		color: white;
+		-webkit-transition:all 0.5s;	
+	}
+
+	.achat-zone3 .container .achat-duck p{
+		text-align: center;
+		color:#343833;
+		text-decoration: none;
+		font-size: 24px;
+		font-weight: 900;
+		font-family: 'la_unicaregular', Verdana, serif;
+	}
+
+	.achat-zone3 .container .lien-customisation p{
+		font-size: 24px;
+		font-weight: 900;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+
+
+	/****** 4 0 4 ********/
+
+	#bg-404 {
+		background: url(../images/test-404.jpg) no-repeat top center;
+		width: 100%;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
 
 
 /****** FOOTER  ******/

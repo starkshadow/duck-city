@@ -33,46 +33,80 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
         <link rel="icon" type="image/png" href="<?php echo WEBROOT . 'images/favicon.png'; ?>" />
         <link href="<?php echo WEBROOT . 'css/style.css'; ?>" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="<?php echo WEBROOT . 'css/grid.css'; ?>">
-            <link rel="stylesheet" href="<?php echo WEBROOT . 'css/font.css'; ?>" type="text/css" charset="utf-8" />
-            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-            <script type="text/javascript" src="<?php echo WEBROOT . 'scripts/jquery.parallax-1.1.3.js'; ?>"></script>
-            <script type="text/javascript" src="<?php echo WEBROOT . 'scripts/jquery.localscroll-1.2.7-min.js'; ?>"></script>
-            <script type="text/javascript" src="<?php echo WEBROOT . 'scripts/jquery.scrollTo-1.4.2-min.js'; ?>"></script>
-            <script src="<?php echo WEBROOT . 'scripts/jquery.scrollbox.js'; ?>"></script>
-            <!-- Menu déroulant 
-            <script type="text/javascript" src="scripts/afficheMenu.js"></script>-->
-            <script>
-                function vaEtVient() {
-                    if (document.getElementById('invisible').style.display == 'none') {
-                        document.getElementById('invisible').style.display = 'block';
-                    }
-                    else {
-                        document.getElementById('invisible').style.display = 'none';
-                    }
+        <link rel="stylesheet" href="<?php echo WEBROOT . 'css/font.css'; ?>" type="text/css" charset="utf-8" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo WEBROOT . 'scripts/jquery.parallax-1.1.3.js'; ?>"></script>
+        <script type="text/javascript" src="<?php echo WEBROOT . 'scripts/jquery.localscroll-1.2.7-min.js'; ?>"></script>
+        <script type="text/javascript" src="<?php echo WEBROOT . 'scripts/jquery.scrollTo-1.4.2-min.js'; ?>"></script>
+        <script src="<?php echo WEBROOT . 'scripts/jquery.scrollbox.js'; ?>"></script>
+        <!-- Menu déroulant 
+        <script type="text/javascript" src="scripts/afficheMenu.js"></script>-->
+        <script>
+            function vaEtVient() {
+                if (document.getElementById('invisible').style.display == 'none') {
+                    document.getElementById('invisible').style.display = 'block';
                 }
-            </script>
-            <!-- script pour les réactions communes à toutes les pages !-->
-            <script src="<?php echo WEBROOT . '/scripts/common.js'; ?>"></script>
+                else {
+                    document.getElementById('invisible').style.display = 'none';
+                }
+            }
+        </script>
+        <!-- script pour les réactions communes à toutes les pages !-->
+        <script src="<?php echo WEBROOT . '/scripts/common.js'; ?>"></script>
 
 
-            <!--script pour le temp de monté de effet parralax-->
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#nav').localScroll(800);
-                    //.parallax(xPosition, speedFactor, outerHeight) options:
-                    //xPosition - Horizontal position of the element
-                    //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
-                    //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
-                    //$('#intro').parallax("50%", 0.1);
-                    //$('#second').parallax("50%", 0.1);
-                    $('.bg').parallax("50%", 0.4);
-                    $('.bg2').parallax("50%", 0.2);
-                    $('.bg3').parallax("50%", 0.8);
+        <!--script pour le temp de monté de effet parralax-->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#nav').localScroll(800);
+                //.parallax(xPosition, speedFactor, outerHeight) options:
+                //xPosition - Horizontal position of the element
+                //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+                //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+                //$('#intro').parallax("50%", 0.1);
+                //$('#second').parallax("50%", 0.1);
+                $('.bg').parallax("50%", 0.4);
+                $('.bg2').parallax("50%", 0.2);
+                $('.bg3').parallax("50%", 0.8);
 
-                });
-            </script>
-            <!--boutton partage facebook-->
-            <!--<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>-->
+            });
+        </script>
+        <!--boutton partage facebook-->
+        <!--<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>-->
+
+        <!--script pour trouver la hauteur de la fenetre-->
+        <script type="text/javascript">
+        function fitHeights() {
+            windowHeight = jQuery(window).height();
+            windowHeight = jQuery(window).height();
+            jQuery('.window-resize-margin-top-nr').css({"margin-top":windowHeight+'px'});
+
+            jQuery('.window-resize-top-nr').css({"top":windowHeight+'px'});
+            jQuery('.window-resize-min-height-nr').css({"min-height":windowHeight+'px'});
+            jQuery('.window-resize-height-nr').css({"height":windowHeight+'px'});
+            jQuery('.window-resize-line-height-nr').css({"line-height":windowHeight+'px'});
+            if(windowHeight < 800) windowHeight = 800;
+            jQuery('.window-resize-margin-top').css({"margin-top":windowHeight+'px'});
+            jQuery('.window-resize-top').css({"top":windowHeight+'px'});
+            jQuery('.window-resize-min-height').css({"min-height":windowHeight+'px'});
+            jQuery('.window-resize-height').css({"height":windowHeight+'px'});
+            jQuery('.window-resize-line-height').css({"line-height":windowHeight+'px'});
+        }
+       function fitWidths() {
+            windowWidth = jQuery(window).width();
+            jQuery('.window-resize-width').css({"width":windowWidth+'px'});
+        }
+        jQuery(function(){
+
+            fitHeights();
+            fitWidths();
+            jQuery(window).resize(function(){fitHeights();fitWidths();});
+        });
+        
+        </script>
+
+
+
 
     </head>
 

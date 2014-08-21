@@ -26,6 +26,7 @@
             <ul class="inscription-errors">
                 <li class="inscription-errors">
                     <label>Envoyer un fichier </label>
+                    <span>(de préférence une image carrée)</span>
                     <input type="file" size="70" name="avatar" value="" accept="image/*" class="custom-file-input"/>                    
                     <?php if (isset($vars['errors']['avatar']) && !empty($vars['errors']['avatar'])): ?>
                         <span><?php echo $vars['errors']['avatar']; ?></span>

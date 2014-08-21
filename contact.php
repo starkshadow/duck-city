@@ -15,14 +15,14 @@
 
 	<div class="contact-zone2">
 		<div class="container">
-			<p class="texte-intro">Une question, une suggestion ... Nous sommes à votre écoute</p>
+			<p class="texte-intro">Une question, une suggestion... Nous sommes à votre écoute</p>
 		</div>
 	</div>
 
 	<div class="contact-zone3">
 		<div class="container ">
 		<div class="one-half column">
-			<h2  class="h2-title-zone">Nous contactez</h2>
+			<h2  class="h2-title-zone">Nous contacter</h2>
 			<form>
 				<ul>
 					<li>

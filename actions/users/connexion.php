@@ -36,9 +36,7 @@ if (isset($_POST) && !empty($_POST)) {
     } else {
         //bypass le système de refresh forcé de la vue
         $_SESSION['nav']['refreshed'] = true;
-
         $_SESSION['viewvars']['post_data'] = $_POST;
-        $_SESSION['viewvars']['errors'] = $validation;
         $_SESSION['prompt'] = array(
             'class' => 'error',
             'msg' => 'Login ou mot de passe incorrect',

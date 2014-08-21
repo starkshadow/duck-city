@@ -20,7 +20,7 @@ class Model {
     public static $tablename;
 
     /**
-     * valide les champs
+     * Valide les champs pour une opération sur la table
      * @param type $vars
      * @param type $mode précise quel mode (update, create ...)
      * @return boolean
@@ -45,7 +45,7 @@ class Model {
     }
 
     /**
-     * récupérer toute la table
+     * Récupérer toute la table
      * @return type
      */
     public function getall() {
@@ -60,6 +60,10 @@ class Model {
         }
     }
 
+    /**
+     * Récupération de la dernière ligne créée dans la table
+     * @return type
+     */
     public function getlast() {
         try {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
@@ -73,6 +77,11 @@ class Model {
         }
     }
 
+    /**
+     * Ajout d'une nouvelle ligne dans la table
+     * @param type $vars
+     * @return type
+     */
     public function add($vars) {
         try {
             $vars['created'] = $vars['modified'] = date('Y-m-d H:i:s');
@@ -84,6 +93,11 @@ class Model {
         }
     }
 
+    /**
+     * Mise à jour d'une ligne de la table
+     * @param type $vars
+     * @return type
+     */
     public function update($vars) {
         try {
             $vars['modified'] = date('Y-m-d H:i:s');
@@ -102,4 +116,22 @@ class Model {
         }
     }
 
+    /**
+     * Suppression d'une ligne de la table
+     * @param type $vars
+     * @return type
+     */
+    public function delete($id) {
+        try {            
+            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $status = $db->delete(self::$tablename, 'id=' . $id);
+            return $status;
+        } catch (PDOException $ex) {
+            die($ex->getMessage());
+        }
+    }
+
+    
+    
 }

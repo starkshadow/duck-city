@@ -9,7 +9,7 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['us
     $_SESSION = array();
     $_SESSION['prompt'] = array(
         'class' => 'success',
-        'msg' => 'Vous &ecirc;tes D&eacute;connect&eacute;',
+        'msg' => 'Au revoir !',
     );
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
     exit();

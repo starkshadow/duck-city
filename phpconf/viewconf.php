@@ -3,7 +3,8 @@
 
 //debug session
 //var_dump('SESSION');
-//var_dump($_SESSION['user']);
+//var_dump($_SESSION);
+//die('END');
 //si historique de navigation n'existe pas en session => le créer
 if (!isset($_SESSION['nav']) || empty($_SESSION['nav'])):
     $_SESSION['nav'] = array(

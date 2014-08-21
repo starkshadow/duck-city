@@ -1,0 +1,34 @@
+- Shop : 
+	+ affichage (pagination)
+	+ ajout au panier (AJAX ?)
+	+ Panier : 
+		* affichage (pagination)
+		* vider
+		* supprimer item
+		* passer commande & envoi email de confirmation
+	+ affichage historique commandes
+
+- Ma collection:
+	+ créer canard
+	+ affichage (pagination)
+	+ update
+	+ delete
+	+ ajouter canard au panier	
+
+- Contact page & envoi email
+
+// OPTIONNEL //
+- Gestion erreur 404
+- Créer compte user : Email de confirmation
+- Shop Admin :
+	+ affichage (pagination)
+	+ delete
+	+ add
+	+ update
+	
+- Historique -- Mes commandes : exporter détails d'une de mes commandes sous format fichier
+	
+- Users Admin :
+	+ display (pagination)
+	+ delete & envoi email au user
+	+ update

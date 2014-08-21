@@ -9,6 +9,10 @@ $model = new Product();
 $products = $model->getall();
 //die(var_dump($products));
 
+if(isset($_POST) && !empty($_POST)){
+    
+}
+
 if (isset($products) && !empty($products)) {
     $_SESSION['viewvars']['products'] = $products;
     header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/products/shop.php');

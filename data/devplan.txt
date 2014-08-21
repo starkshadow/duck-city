@@ -1,19 +1,20 @@
 - Shop : 
-	+ affichage (pagination)
-	+ ajout au panier (AJAX ?)
+	+ affichage (pagination) ->19h15
+        + affichage détails canard -> 19h30
+	+ ajout au panier (AJAX ?) -> 21h
 	+ Panier : 
-		* affichage (pagination)
-		* vider
-		* supprimer item
-		* passer commande & envoi email de confirmation
-	+ affichage historique commandes
+		* affichage (pagination) -> 22h
+		* vider -> 22h30
+		* supprimer item -> 23h
+		* passer commande & envoi email de confirmation -> 24h
+	+ affichage historique commandes -> 0h30
 
-- Ma collection:
-	+ créer canard
-	+ affichage (pagination)
-	+ update
-	+ delete
-	+ ajouter canard au panier	
+- Ma collection ( = canards achetés & canards personels créés):
+	+ créer canard -> 03h
+	+ affichage (pagination) -> 03h30
+	+ update -> 4h30
+	+ delete -> 5h30
+	+ ajouter canard au panier -> 6h
 
 - Contact page & envoi email
 

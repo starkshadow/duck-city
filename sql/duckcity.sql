@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2014 at 05:09 PM
+-- Generation Time: Aug 21, 2014 at 06:10 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `accessories` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `accessories`
@@ -70,7 +70,28 @@ INSERT INTO `accessories` (`id`, `name`, `product_id`, `description`, `created`,
 (27, 'accessoire-lunettes-geek-face', 0, 'accessoire lunette de geek', '2014-08-17 13:37:16', '2014-08-17 13:30:45'),
 (28, 'accessoire-lunettes-geek-face', 0, 'accessoire lunette de geek', '2014-08-17 13:37:16', '2014-08-17 13:30:45'),
 (29, 'accessoire-corne-face', 0, 'accessoire corne du diable', '2014-08-17 13:37:16', '2014-08-17 13:30:45'),
-(30, 'accessoire-corne-profil', 0, 'accessoire corne du diable', '2014-08-17 13:37:16', '2014-08-17 13:30:45');
+(30, 'accessoire-corne-profil', 0, 'accessoire corne du diable', '2014-08-17 13:37:16', '2014-08-17 13:30:45'),
+(31, 'duck-base-face', 23, 'canard de base jaune', '2014-08-21 15:18:45', '2014-08-21 15:18:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `boughtproducts`
+--
+
+CREATE TABLE IF NOT EXISTS `boughtproducts` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `user_email` varchar(255) DEFAULT NULL,
+  `product_name` varchar(255) DEFAULT NULL,
+  `user_address` text,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `product_price` double DEFAULT NULL,
+  `product_quantity` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -86,7 +107,15 @@ CREATE TABLE IF NOT EXISTS `colors` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `colors`
+--
+
+INSERT INTO `colors` (`id`, `name`, `hexacode`, `product_id`, `created`, `modified`) VALUES
+(1, 'black', '#FFFF', 23, '2014-08-21 15:49:18', '2014-08-21 15:49:18'),
+(2, 'white', '#0000', 23, '2014-08-21 15:49:18', '2014-08-21 15:49:18');
 
 -- --------------------------------------------------------
 
@@ -117,58 +146,45 @@ CREATE TABLE IF NOT EXISTS `products` (
   `name` varchar(255) NOT NULL,
   `price` double DEFAULT NULL,
   `description` text,
-  `img` varchar(255) DEFAULT NULL,
+  `imgprofil` varchar(255) DEFAULT NULL,
+  `imgface` varchar(255) DEFAULT NULL,
   `user_id` bigint(20) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `description`, `img`, `user_id`, `created`, `modified`) VALUES
-(1, 'duck_army_f', 12.99, 'Le canard militaire est habillé d''un treillis militaire beige avec comme accessoire un casque. Ce canard militaire surveillera votre voiture de tous les dangers.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(2, 'duck_army_p', 12.99, 'Le canard militaire est habillé d''un treillis militaire beige avec comme accessoire un casque. Ce canard militaire surveillera votre voiture de tous les dangers.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(3, 'duck_cowboy_f', 12.99, 'Le canard cowboy est habillé d''une veste à frange marron, d''un bandana rouge et d''un chapeau le cowboy marron. Il tirera plus vite que son ombre sur les voleurs qui approcherons de votre voiture.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(4, 'duck_cowboy_p', 12.99, 'Le canard cowboy est habillé d''une veste à frange marron, d''un bandana rouge et d''un chapeau le cowboy marron. Il tirera plus vite que son ombre sur les voleurs qui approcherons de votre voiture.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(5, 'duck_indien_f', 12.99, 'Le canard Indien porte une grande coiffe en plumes ainsi que des vêtements rappelant les indiens. Le canard indien vous invoquera la pluie ou le beau temps à votre demande.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(6, 'duck_indien_p', 12.99, 'Le canard Indien porte une grande coiffe en plumes ainsi que des vêtements rappelant les indiens. Le canard indien vous invoquera la pluie ou le beau temps à votre demande.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(7, 'duck_dj_f', 12.99, 'Le canard DJ porte un gros casque de musique orange sur une coiffure afro et un costume rose fluo. Le canard DJ mettra l''ambiance à l''arrière de votre voiture.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(8, 'duck_dj_p', 12.99, 'Le canard DJ porte un gros casque de musique orange sur une coiffure afro et un costume rose fluo. Le canard DJ mettra l''ambiance à l''arrière de votre voiture.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(9, 'duck_disco_f', 12.99, 'Le canard disco a les cheveux et la peau noire et ses yeux sont légèrement maquillés. Sur ce canard on retrouve deux traits de couleur unie rose, et bleu cyan, et deux autres traits rouge et blanc à pois bleu.  ', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(10, 'duck_disco_p', 12.99, 'Le canard disco a les cheveux et la peau noire et ses yeux sont légèrement maquillés. Sur ce canard on retrouve deux traits de couleur unie rose, et bleu cyan, et deux autres traits rouge et blanc à pois bleu.  ', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(11, 'duck_diva_f', 12.99, 'Le canard punk est habillé d''une veste noire, et d''un collier à clou. Il a un tatouage de tête de mort sur l''aile et une très jolie crête noire. Le canard punk fera ressortir le coté rebel qui sommeil en vous.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(12, 'duck_diva_p', 12.99, 'Le canard punk est habillé d''une veste noire, et d''un collier à clou. Il a un tatouage de tête de mort sur l''aile et une très jolie crête noire. Le canard punk fera ressortir le coté rebel qui sommeil en vous.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(13, 'duck_rock_f', 12.99, 'Le canard rockeur est habillé d''une veste sans manches noire, et d''un collier à piques. Il a aussi un tatouage d''étoile et de fil barbelé sur l''aile. Il est coiffé d''une très jolie crête jaune de rockeur. Le canard rockeur, avec lui vous serez vainqueurs.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(14, 'duck_rock_p', 12.99, 'Le canard rockeur est habillé d''une veste sans manches noire, et d''un collier à piques. Il a aussi un tatouage d''étoile et de fil barbelé sur l''aile. Il est coiffé d''une très jolie crête jaune de rockeur. Le canard rockeur, avec lui vous serez vainqueurs.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(15, 'duck_paparazzi_f', 12.99, 'Le canard paparazzi est habillé d''un costume et d''un chapeau gris. Il est prêt à photographier avec son appareil au cou. Grâce au canard paparazzi, vous ne raterez plus aucune des stars qui passerons à coté de votre voiture.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(16, 'duck_paparazzi_p', 12.99, 'Le canard paparazzi est habillé d''un costume et d''un chapeau gris. Il est prêt à photographier avec son appareil au cou. Grâce au canard paparazzi, vous ne raterez plus aucune des stars qui passerons à coté de votre voiture.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(17, 'duck_princesse_f', 12.99, 'Le canard princesse est habillé d''une robe rose et blanche, et d''un collier de perle. Elle porte une couronne sur sa belle coiffure blonde. La princesse duck donnera un coté girly à votre pare-choc.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(18, 'duck_princesse_p', 12.99, 'Le canard princesse est habillé d''une robe rose et blanche, et d''un collier de perle. Elle porte une couronne sur sa belle coiffure blonde. La princesse duck donnera un coté girly à votre pare-choc.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(19, 'duck_queen_f', 12.99, 'Le canard reine d''Angleterre porte l''uniforme royal de la reine, cnullest-à-dire une étoile, une écharpe et sans oublier la couronne royale. Le canard Queen deviendra l''objet incontournable en Angleterre.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(20, 'duck_queen_p', 12.99, 'Le canard reine d''Angleterre porte l''uniforme royal de la reine, cnullest-à-dire une étoile, une écharpe et sans oublier la couronne royale. Le canard Queen deviendra l''objet incontournable en Angleterre.', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(21, 'duck_royal_guard_f', 12.99, 'Le canard de la garde royale porte le célèbre uniforme rouge ainsi que le chapeau à poil noir. Pour pouvoir protéger la reine d''Angleterre, il ne faut surtout pas oublier la garde royale. ', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
-(22, 'duck_royal_guard_p', 12.99, 'Le canard de la garde royale porte le célèbre uniforme rouge ainsi que le chapeau à poil noir. Pour pouvoir protéger la reine d''Angleterre, il ne faut surtout pas oublier la garde royale. ', NULL, NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45');
+INSERT INTO `products` (`id`, `name`, `price`, `description`, `imgprofil`, `imgface`, `user_id`, `created`, `modified`) VALUES
+(1, 'duck_army', 12.99, 'Le canard militaire est habillé d''un treillis militaire beige avec comme accessoire un casque. Ce canard militaire surveillera votre voiture de tous les dangers.', '/duck-city/data/products/1/duck_army_p.png', '/duck-city/data/products/1/duck_army_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(3, 'duck_cowboy', 12.99, 'Le canard cowboy est habillé d''une veste à frange marron, d''un bandana rouge et d''un chapeau le cowboy marron. Il tirera plus vite que son ombre sur les voleurs qui approcherons de votre voiture.', '/duck-city/data/products/3/duck_cowboy_p.png', '/duck-city/data/products/3/duck_cowboy_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(5, 'duck_indien', 12.99, 'Le canard Indien porte une grande coiffe en plumes ainsi que des vêtements rappelant les indiens. Le canard indien vous invoquera la pluie ou le beau temps à votre demande.', '/duck-city/data/products/5/duck_indien_p.png', '/duck-city/data/products/5/duck_indien_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(7, 'duck_dj', 12.99, 'Le canard DJ porte un gros casque de musique orange sur une coiffure afro et un costume rose fluo. Le canard DJ mettra l''ambiance à l''arrière de votre voiture.', '/duck-city/data/products/7/duck_dj_p.png', '/duck-city/data/products/7/duck_dj_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(9, 'duck_disco', 12.99, 'Le canard disco a les cheveux et la peau noire et ses yeux sont légèrement maquillés. Sur ce canard on retrouve deux traits de couleur unie rose, et bleu cyan, et deux autres traits rouge et blanc à pois bleu.  ', '/duck-city/data/products/9/duck_disco_p.png', '/duck-city/data/products/9/duck_disco_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(11, 'duck_diva', 12.99, 'Le canard punk est habillé d''une veste noire, et d''un collier à clou. Il a un tatouage de tête de mort sur l''aile et une très jolie crête noire. Le canard punk fera ressortir le coté rebel qui sommeil en vous.', '/duck-city/data/products/11/duck_diva_p.png', '/duck-city/data/products/11/duck_diva_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(13, 'duck_rock', 12.99, 'Le canard rockeur est habillé d''une veste sans manches noire, et d''un collier à piques. Il a aussi un tatouage d''étoile et de fil barbelé sur l''aile. Il est coiffé d''une très jolie crête jaune de rockeur. Le canard rockeur, avec lui vous serez vainqueurs.', '/duck-city/data/products/13/duck_rock_p.png', '/duck-city/data/products/13/duck_rock_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(15, 'duck_paparazzi', 12.99, 'Le canard paparazzi est habillé d''un costume et d''un chapeau gris. Il est prêt à photographier avec son appareil au cou. Grâce au canard paparazzi, vous ne raterez plus aucune des stars qui passerons à coté de votre voiture.', '/duck-city/data/products/15/duck_paparazzi_p.png', '/duck-city/data/products/15/duck_paparazzi_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(17, 'duck_princesse', 12.99, 'Le canard princesse est habillé d''une robe rose et blanche, et d''un collier de perle. Elle porte une couronne sur sa belle coiffure blonde. La princesse duck donnera un coté girly à votre pare-choc.', '/duck-city/data/products/17/duck_princesse_p.png', '/duck-city/data/products/17/duck_princesse_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(19, 'duck_queen', 12.99, 'Le canard reine d''Angleterre porte l''uniforme royal de la reine, cnullest-à-dire une étoile, une écharpe et sans oublier la couronne royale. Le canard Queen deviendra l''objet incontournable en Angleterre.', '/duck-city/data/products/19/duck_queen_p.png', '/duck-city/data/products/19/duck_queen_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(21, 'duck_royal_guard', 12.99, 'Le canard de la garde royale porte le célèbre uniforme rouge ainsi que le chapeau à poil noir. Pour pouvoir protéger la reine d''Angleterre, il ne faut surtout pas oublier la garde royale. ', '/duck-city/data/products/21/duck_royal_guard_p.png', '/duck-city/data/products/21/duck_royal_guard_p.png', NULL, '2014-08-17 13:36:30', '2014-08-17 13:30:45'),
+(23, 'duckdodgers', 12.99, 'Le canard militaire est habillé d''un treillis militaire beige avec comme accessoire un casque. Ce canard militaire surveillera votre voiture de tous les dangers.', '/duck-city/data/products/23/duckdodgers_p.png', '/duck-city/data/products/23/duckdodgers_p.png', 27, '2014-08-21 15:17:41', '2014-08-21 15:17:41');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `productsbought`
+-- Table structure for table `selectedproducts`
 --
 
-CREATE TABLE IF NOT EXISTS `productsbought` (
+CREATE TABLE IF NOT EXISTS `selectedproducts` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `product_id` bigint(20) NOT NULL,
   `user_id` bigint(20) NOT NULL,
-  `user_email` varchar(255) DEFAULT NULL,
-  `product_name` varchar(255) DEFAULT NULL,
-  `user_address` text,
+  `product_id` bigint(20) NOT NULL,
+  `quantity` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  `product_price` double DEFAULT NULL,
-  `product_quantity` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -213,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `users`
@@ -223,25 +239,11 @@ INSERT INTO `users` (`id`, `pseudo`, `email`, `password`, `firstname`, `lastname
 (2, NULL, 'toto@bidon.com', 'eqffkdfdshfqshfsjksdhfjs&é&escs121ç', 'toto', 'idon', NULL, NULL, 4, NULL, NULL, NULL, NULL, -1, '2014-08-17 14:00:31', '2014-08-17 14:00:31'),
 (9, 'Fanny', 'cayzeele1@hotmail.fr', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'fanny', 'cayzeele', NULL, NULL, 4, 'rue joliot curie', 'comines', 59560, 'france', 1, '2014-08-17 15:30:55', '2014-08-17 15:30:55'),
 (21, 'Pit', 'mystic_mistean@msn.com', '6a7ec80c83773755d46811cb30e38ffbdf306c62', 'hanssens', 'peter', NULL, NULL, 43, 'Sint-Jansstraat', 'Wervik', 8940, 'Belgique', -1, '2014-08-18 03:24:51', '2014-08-18 03:24:51'),
-(22, '__Daffy89', NULL, '5f4e2019da6c56f66f7116b4a9d7757126600152', 'duck', 'daffy', '/duck-city/data/users/22/avatar.jpg', '/duck-city/data/users/22/avatar_thumb.jpg', 4, 'rud cannard', 'Duckcity', 654654, 'Duckland', -1, '2014-08-18 04:21:14', '2014-08-20 17:01:33'),
+(22, '__Daffy66', 'daffy.duck@gmail.com', '5f4e2019da6c56f66f7116b4a9d7757126600152', 'duck', 'daffy', '/duck-city/data/users/22/avatar.jpg', '/duck-city/data/users/22/avatar_thumb.jpg', 4, 'rud cannard', 'Duckcity', 654654, 'Duckland', -1, '2014-08-18 04:21:14', '2014-08-20 17:01:33'),
 (23, 'fsdfd', 'efarfefe456@msn.com', '8306c9723de075cb830d2af05957291fe1787acb', 'blbabl', 'daffy', NULL, NULL, 43, 'rud cannard', 'Duckcity', 8940, 'Duckland', -1, '2014-08-18 05:32:48', '2014-08-18 05:32:48'),
-(24, 'dqkljsdlkjf', 'lqskjdf@dljqskjf.com', '8306c9723de075cb830d2af05957291fe1787acb', '', '', NULL, NULL, 89, 'ezoijfsko', 'fklfklsdlj', 8452, 'djfsdfsjk', -1, '2014-08-18 11:50:06', '2014-08-18 11:50:06');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `usersproducts`
---
-
-CREATE TABLE IF NOT EXISTS `usersproducts` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` bigint(20) NOT NULL,
-  `product_id` bigint(20) NOT NULL,
-  `quantity` int(11) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+(24, 'dqkljsdlkjf', 'lqskjdf@dljqskjf.com', '8306c9723de075cb830d2af05957291fe1787acb', '', '', NULL, NULL, 89, 'ezoijfsko', 'fklfklsdlj', 8452, 'djfsdfsjk', -1, '2014-08-18 11:50:06', '2014-08-18 11:50:06'),
+(27, '_test_', 'test2@bidon.com', '911ddc3b8f9a13b5499b6bc4638a2b4f3f68bf23', 'Toto', 'Test', '/duck-city/data/users/25/avatar.jpg', '/duck-city/data/users/25/avatar_thumb.jpg', 9, 'avaeni dlkqsfj', 'Blabal', 49857, 'BaleLand', -1, '2014-08-21 11:17:30', '2014-08-21 11:17:50'),
+(28, 'sdfqsdfsd', 'fqdfdsqs@fdklqjskl.com', '8306c9723de075cb830d2af05957291fe1787acb', 'sdgfd', 'dfsf', NULL, NULL, 56, 'qsdfqsdqs', 'qsdfsqfs', 9863, 'qzsdqsdqs', -1, '2014-08-21 18:03:34', '2014-08-21 18:03:34');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

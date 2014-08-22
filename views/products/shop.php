@@ -118,6 +118,7 @@
                             <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>">Page suivante</a></li>
                         <?php endif; ?>                
                     </ul>
+                <?php endif; ?>
             </div>
         </div>
     </div>

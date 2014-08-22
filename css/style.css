@@ -1406,6 +1406,9 @@ width: 15px;
 	float: left;
 
 }
+.panier-zone3 .title-tableau .column-product{
+	border-bottom:2px solid #343833;
+}
 .panier-zone3 .title-tableau .column-product p{
 	border-bottom:2px solid #343833;
 
@@ -1423,10 +1426,10 @@ width: 15px;
 .panier-zone3 .title-tableau .column-quantity h4,
 .panier-zone3 .title-tableau .column-price h4,
 .panier-zone3 .title-tableau .column-total h4{
-text-align: center;
-margin: 10px 0px 20px 0px;
-text-transform: uppercase;
-font-family: 'aleobold',Verdana, arial, sans-serif;
+	text-align: center;
+	margin: 10px 0px 20px 0px;
+	text-transform: uppercase;
+	font-family: 'aleobold',Verdana, arial, sans-serif;
 }
 .panier-zone3 .column-product,
 .panier-zone3 .column-quantity,

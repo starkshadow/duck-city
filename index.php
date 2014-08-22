@@ -2,8 +2,7 @@
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
-<?php var_dump($_SERVER['PHP_SELF']); ?>
-<?php var_dump($_SESSION); ?>
+
 
 <!--<div id="bg-header">
     <h1>DUCK CITY</h1>
@@ -28,10 +27,10 @@
             soit à travers une galerie de canards, soit en customisant un canard avec des accessoires.</p>
     </div>
     <div class="one-half column">
-        <a  class="btn"href="shop.php">Accéder à la galerie</a>
+        <a  class="btn"href="<?php echo WEBROOT . 'views/products/shop.php'; ?>">Accéder à la galerie</a>
     </div>
     <div class="one-half column">
-        <a  class="btn"href="personnalisation.php">Customiser un canard</a>
+        <a  class="btn" href="personnalisation.php">Customiser un canard</a>
     </div>
 
 

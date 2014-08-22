@@ -5,7 +5,7 @@
 
 
 <div class="connexion-zone1">
-    <img src="<?php echo WEBROOT . 'images/bg-contact.jpg'; ?>">
+    <img src="<?php echo WEBROOT . 'images/bg-connexion.jpg'; ?>">
     <div class="title-page">
         <h2 class="h2-title-page">Connexion</h2>
     </div>

@@ -4,7 +4,7 @@
 
 
 <div class="inscription-zone1">
-    <img src="<?php echo WEBROOT . 'images/bg-contact.jpg'; ?>">
+    <img src="<?php echo WEBROOT . 'images/bg-inscription.jpg'; ?>">
     <div class="title-page">
         <h2 class="h2-title-page">Inscription</h2>
     </div>

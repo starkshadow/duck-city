@@ -4,7 +4,7 @@
 
 
 <div class="profil-zone1">
-    <img src="<?php echo WEBROOT . 'images/bg-contact.jpg'; ?>">
+    <img src="<?php echo WEBROOT . 'images/bg-modif-password.jpg'; ?>">
     <div class="title-page">
         <h2 class="h2-title-page">Modifer mot de passe</h2>
     </div>

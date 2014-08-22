@@ -3,7 +3,7 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
 
 <div class="profil-zone1">
-    <img src="<?php echo WEBROOT . 'images/bg-contact.jpg'; ?>">
+    <img src="<?php echo WEBROOT . 'images/bg-avatar.jpg'; ?>">
     <div class="title-page">
         <h2 class="h2-title-page">Avatar</h2>
     </div>

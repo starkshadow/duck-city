@@ -15,7 +15,7 @@
 </script>
 
 <div class="profil-zone1">
-    <img src="<?php echo WEBROOT . 'images/bg-contact.jpg'; ?>">
+    <img src="<?php echo WEBROOT . 'images/bg-supprimer-compte.jpg'; ?>">
     <div class="title-page">
         <h2 class="h2-title-page">Supprimer mon compte</h2>
     </div>

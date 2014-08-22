@@ -7,8 +7,8 @@ $model = new Product();
 //récupérer les données utilisateur
 //init paramètres par défaut
 $params = array(
-    'order' => '',
-    'direction' => '',
+    'order' => 'modified',
+    'direction' => 'desc',
     'limit' => 15,
     'page' => 1,
 );
@@ -29,6 +29,7 @@ if (isset($_GET) && !empty($_GET)) {
     $_SESSION['viewvars']['GET'] = $_GET;
 }
 
+$_SESSION['viewvars']['current_sort'] = $params['order'] . '.' . $params['direction'];
 
 
 $products = $model->getall($params['order'], $params['direction'], $params['limit'], $params['page']);

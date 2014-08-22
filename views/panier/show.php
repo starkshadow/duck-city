@@ -6,12 +6,12 @@
 <script src="<?php echo WEBROOT . 'scripts/panier.js'; ?>"></script>
 
 
-
 <div class="panier-zone1">
     <img src="<?php echo WEBROOT . 'images/bg-panier.jpg'; ?>" alt="bg-panier"/>
     <div class="title-page">
         <h2 class="h2-title-page">Mon panier</h2>
     </div>
+</div>
 </div>
 
 

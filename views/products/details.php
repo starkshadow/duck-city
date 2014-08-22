@@ -4,57 +4,38 @@
 </header>
 
 
-
-
-<div class="gallery-zone1">
-    <img src="<?php echo WEBROOT . 'images/bg-shop.jpg'; ?>" />
-    <div class="title-page">
-        <h2 class="h2-title-page"><?php echo utf8_encode($vars['product']['name']); ?></h2>
+    <div class="gallery-zone1">
+        <img src="<?php echo WEBROOT . 'images/bg-details.jpg'; ?>" />
+        <div class="title-page">
+            <h2 class="h2-title-page"><?php echo utf8_encode($vars['product']['name']); ?></h2>
+        </div>
     </div>
-</div>
-
-</div>
-
-
-<!-- affichage description -->
-<div><?php echo utf8_encode($vars['product']['description']); ?></div>
-
-<!-- affichage nom accessoire -->
-<div><?php echo utf8_encode($vars['product']['Accessory']['name']); ?></div>
-
-
-
 
     <div class="fiche-zone2">
         <div class="container">
-            <p class="texte-intro"> Phrase marrant par rapport au theme du canard</p>
-            <?php print_r($vars['product']); ?>
+            <p class="texte-intro"> <?php echo utf8_encode($vars['product']['theme']); ?></p>
+            
         </div>
     </div>
 
     <div class="fiche-zone3">
         <div class="container">
             <div class="one-half column">
-                <h2  class="h2-title-zone">Duck army</h2>
-                <img src="images/shop-galerie/duck-army-p.png"/>
+                <h2  class="h2-title-zone"><?php echo utf8_encode($vars['product']['name']); ?></h2>
+                <img src="<?php echo ($vars['product']['imgprofil']); ?>"/>
             </div>
 
             <div class="one-half column"> 
                 <h4>Déscription:</h4>
-                <p>Minions ipsum chasy para tú uuuhhh. Me want bananaaa! me want 
-                    bananaaa! Gelatooo wiiiii hahaha. Poulet tikka masala tulaliloo 
-                    hana dul sae butt baboiii uuuhhh tú butt. Chasy gelatooo tank yuuu!
-                </p>
+                <p><?php echo utf8_encode($vars['product']['description']); ?></p>
                 <h4>Dimention:</h4>
                 <ul>
-                    <li>Hauteur : 10cm</li>
-                    <li>Largeur : 8cm</li>
-                    <li>Longeur : 11cm</li>
+                    <li>Hauteur : <?php echo utf8_encode($vars['product']['hauteur']) . ' '; ?>cm</li>
+                    <li>Largeur : <?php echo utf8_encode($vars['product']['largeur']). ' '; ?>cm</li>
+                    <li>Longueur : <?php echo utf8_encode($vars['product']['longueur']). ' '; ?>cm</li>
                 </ul>
-                <h4>Quantité:</h4>
-                <p>4 en Stock</p>
                 <h4>Prix:</h4>
-                <p>12,99€</p>
+                <p><?php echo utf8_encode($vars['product']['price']); ?>&euro;</p>
                 <a href="" class="btn">Ajouter au panier</a>
             </div>
 

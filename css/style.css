@@ -844,9 +844,17 @@ input.newsletter[type="submit"]:hover{
 	font-size: 20px;
 	color:#343833;
 	font-family: 'la_unicaregular', Verdana, serif;
+	margin-bottom: 10px;
 }
 .fiche-zone3 .container p{
-	font-family: 'aleoregular', Verdana, arial, sans-serif
+	font-family: 'aleoregular', Verdana, arial, sans-serif;
+	line-height: 1.6;
+}
+.fiche-zone3 .container ul li{
+	list-style: none;
+	font-family: 'aleoregular', Verdana, arial, sans-serif;
+	color:#343833;
+	line-height: 1.6;
 }
  .fiche-zone3 .container .suggestion img{
  	width: 100%;

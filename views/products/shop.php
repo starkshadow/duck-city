@@ -54,17 +54,17 @@
                     <li>
                         <span class=" div-tri-date <?php if (strpos($vars['current_sort'], 'created') !== false) echo 'sortonit' ?>">Nouveauté</span>
                         <ul>
-                            <li><a class="<?php if ($vars['current_sort'] == 'created.asc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=created&d=asc&l=15&p=1'; ?>">Nouveauté &#x25B2;</a></li>
-                            <li><a class="<?php if ($vars['current_sort'] == 'created.desc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=created&d=desc&l=15&p=1'; ?>">Nouveauté &#x25BC;</a></li>
+                            <li><a class="<?php if ($vars['current_sort'] == 'created.desc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=created&d=desc&l=15&p=1'; ?>">Nouveauté &#x25B2;</a></li>
+                            <li><a class="<?php if ($vars['current_sort'] == 'created.asc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=created&d=asc&l=15&p=1'; ?>">Nouveauté &#x25BC;</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <span class="div-tri-modification <?php if (strpos($vars['current_sort'], 'modified') !== false) echo 'sortonit' ?>">Dernière modification</span>
+                    <!--<li>
+                        <span class="div-tri-modification <?php //if (strpos($vars['current_sort'], 'modified') !== false) echo 'sortonit' ?>">Dernière modification</span>
                         <ul>
-                            <li><a class="<?php if ($vars['current_sort'] == 'modified.asc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=modified&d=asc&l=15&p=1'; ?>">Dernière modification &#x25B2;</a></li>
-                            <li><a class="<?php if ($vars['current_sort'] == 'modified.desc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=modified&d=desc&l=15&p=1'; ?>">Dernière modification &#x25BC;</a></li>
+                            <li><a class="<?php //if ($vars['current_sort'] == 'modified.asc') echo 'sortonit' ?>" href="<?php //echo WEBROOT . 'actions/products/shop.php?o=modified&d=asc&l=15&p=1'; ?>">Dernière modification &#x25B2;</a></li>
+                            <li><a class="<?php //if ($vars['current_sort'] == 'modified.desc') echo 'sortonit' ?>" href="<?php //echo WEBROOT . 'actions/products/shop.php?o=modified&d=desc&l=15&p=1'; ?>">Dernière modification &#x25BC;</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
 
@@ -81,9 +81,9 @@
                         <?php $img = DEFAULTDUCKIMG; ?>
                     <?php endif; ?>
                     <div class="one-four column gallery-duck">
-                        <h3 class="h3-nom-duck"><a class="btn" href="<?php echo WEBROOT . 'actions/products/details.php' ?>"><?php echo $product['name']; ?></a></h3>
-                        <a href="<?php echo WEBROOT . 'actions/products/details.php' ?>"><img src="<?php echo $img; ?>" alt="Image Canard"/></a>
-                        <a href="<?php echo WEBROOT . 'actions/products/details.php' ?>"><p><?php echo $product['price'] . '&euro;'; ?></p></a>
+                        <h3 class="h3-nom-duck"><a class="btn" href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><?php echo $product['name']; ?></a></h3>
+                        <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><img src="<?php echo $img; ?>" alt="Image Canard"/></a>
+                        <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><p><?php echo $product['price'] . '&euro;'; ?></p></a>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

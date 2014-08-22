@@ -25,33 +25,7 @@
     </div>
 </div>
 
-<div name="div-pagination">
-    <?php if (isset($vars['products_countpages']) && !empty($vars['products_countpages'])): ?>
-        <ul>
-            <?php //lien page précédente ?>
-            <?php if ($vars['current_page'] != 1): ?>
-                <?php $vars['GET']['p'] = $vars['current_page'] - 1; ?>
-                <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>"><</a></li>
-            <?php endif; ?>
-            <?php //liste liens pages ?>
-            <?php for ($i = 1; $i <= $vars['products_countpages']; $i++): ?>
-                <li>
-                    <?php if ($i == $vars['current_page']): ?>
-                        <span><?php echo $i; ?></span>
-                    <?php else: ?>
-                        <?php $vars['GET']['p'] = $i; ?>
-                        <a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>"><?php echo $i; ?></a>
-                    <?php endif; ?>
-                </li>
-            <?php endfor; ?>
-            <?php //lien page suivante ?>
-            <?php if ($vars['current_page'] != $vars['products_countpages']): ?>
-                <?php $vars['GET']['p'] = $vars['current_page'] + 1; ?>
-                <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>">></a></li>
-            <?php endif; ?>                
-        </ul>
-    <?php endif; ?>
-</div>
+
 
 <div class="gallery-zone3">    
     <div class="container">
@@ -70,9 +44,44 @@
             <?php endforeach; ?>
         <?php else: ?>
             <div class="error">Aucun canard dans la boutique pour l'instant</div>
-        <?php endif; ?>        
+        <?php endif; ?>   
+
+
+        <div name="div-pagination" class="div-pagination">
+    <?php if (isset($vars['products_countpages']) && !empty($vars['products_countpages'])): ?>
+        <ul>
+            <?php //lien page précédente ?>
+            <?php if ($vars['current_page'] != 1): ?>
+                <?php $vars['GET']['p'] = $vars['current_page'] - 1; ?>
+                <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>">Page précédente</a></li>
+            <?php endif; ?><li> <span>Page :</span></li>
+            <?php //liste liens pages ?>
+            <?php for ($i = 1; $i <= $vars['products_countpages']; $i++): ?>
+
+                <li>
+                    <?php if ($i == $vars['current_page']): ?>
+                        <span><?php echo $i; ?></span>
+                    <?php else: ?>
+                        <?php $vars['GET']['p'] = $i; ?>
+                        <a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>"><?php echo $i; ?></a>
+                    <?php endif; ?>
+                </li>
+            <?php endfor; ?>
+            <?php //lien page suivante ?>
+            <?php if ($vars['current_page'] != $vars['products_countpages']): ?>
+                <?php $vars['GET']['p'] = $vars['current_page'] + 1; ?>
+                <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>">Page suivante</a></li>
+            <?php endif; ?>                
+        </ul>
+    <?php endif; ?>
+</div>
+
+
+
+
     </div>
 </div>
+
 
 
 <div class="gallery-zone4">

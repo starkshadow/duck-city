@@ -732,6 +732,37 @@ input.newsletter[type="submit"]:hover{
 }
 
 
+/*********** P A G I N A T I O N   S H O P ***********/
+
+.div-pagination {
+	display: inline-block;
+}
+.div-pagination ul {
+	float: left;
+}
+.div-pagination ul li {
+	float: left;
+	list-style: none;
+	margin: 5px;	
+	font-family: 'aleoregular', Verdana, sans-serif;
+}
+.div-pagination ul li a{
+	color: #343833;
+	text-decoration: none;
+	padding: 5px 10px;
+	border: 4px solid #343833;
+}
+.div-pagination ul li span{
+	background: #343338;
+	color: white;
+	padding: 5px 10px;
+	border: 4px solid #343833;
+}
+.div-pagination ul li a:hover{
+	background: #343833;
+	color:white;
+}
+
 /*****************************************
 ********** F I C H E    D U C K **********
 *****************************************/

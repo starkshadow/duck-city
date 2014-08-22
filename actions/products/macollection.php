@@ -20,5 +20,10 @@ if (isset($boughtProducts) && !empty($boughtProducts)) {
     $_SESSION['viewvars']['boughtProducts'] = $boughtProducts;
 }
 
+$lastproduct = $boughtModel->getlast($_SESSION['user']['id']);
+if (isset($lastproduct) && !empty($lastproduct)) {
+    $_SESSION['viewvars']['lastproduct'] = $lastproduct;
+}
+
 header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/products/macollection.php');
 exit();

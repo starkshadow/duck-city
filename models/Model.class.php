@@ -215,12 +215,20 @@ class Model {
      * Récupération de la dernière ligne créée dans la table
      * @return type
      */
-    public function getlast() {
+    public function getlast($where = '') {
         try {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $result = $db->query('SELECT * FROM ' . self::$tablename . ' ORDER BY created DESC LIMIT 1');
+            $sql = 'SELECT * FROM ' . self::$tablename . ' ORDER BY created DESC LIMIT 1';
+
+            if (!empty($where)) {
+                $sql .= ' Where ' . $where . ' ';
+            }
+
+            $sql .= ' ORDER BY created DESC LIMIT 1';
+
+            $result = $db->query($sql);
 
             if (isset($result) && !empty($result)) {
                 $result = $result->fetch(PDO::FETCH_ASSOC);

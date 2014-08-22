@@ -59,7 +59,7 @@
             </div>
             <div class="nom-duck"><p>Duck Space</p></div>
             <div class="dure-promo">
-                <p>J-10</p>
+                <p id="Compte"></p>
                 <p>pour en profiter</p>
             </div>
         </div>
@@ -92,23 +92,21 @@
 
                 <?php if (isset($vars['products']) && !empty($vars['products']) && is_array($vars['products'])): ?>
                     <?php foreach ($vars['products'] as $key => $product): ?>
-                <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $product['imgprofil'])): ?>
-                    <?php $img = $product['imgprofil'];?>
-                <?php else: ?>
-                <?php $img = DEFAULTDUCKIMG;?>
-                <?php endif; ?>
-        
-            
-                    <li>
-                        <a href="<?php echo WEBROOT . 'actions/products/details.php' ?>"><img src="<?php echo $img; ?>" alt="Image Canard"/></a>
-                        <a href="<?php echo WEBROOT . 'actions/products/details.php' ?>"><p><?php echo $product['price'] . '&euro;'; ?></p></a>
-                    </li>
-
-
-                <?php endforeach; ?>
+                        <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $product['imgprofil'])): ?>
+                            <?php $img = $product['imgprofil']; ?>
+                        <?php else: ?>
+                            <?php $img = DEFAULTDUCKIMG; ?>
+                        <?php endif; ?>
+                            <li>
+                                <h3 class="h3-nom-duck"><a class="btn" href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><?php echo $product['name']; ?></a></h3>
+                                <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><img src="<?php echo $img; ?>" alt="Image Canard"/></a>
+                                <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><p><?php echo $product['price'] . '&euro;'; ?></p></a>  
+                            </li>
+                
+                    <?php endforeach; ?>
                 <?php else: ?>
                     <div class="error">Aucun canard dans la boutique pour l'instant</div>
-                <?php endif; ?> 
+                <?php endif; ?>   
             </ul>
         </div>
 
@@ -190,6 +188,46 @@
 
 
 
+ <!-- script pour le decompte des jours pour le duck du mois -->
+            <script type="text/JavaScript">
+                var Affiche=document.getElementById("Compte");
+
+                function Rebour() {
+
+                var date1 = new Date();
+
+                var date2 = new Date ("Sep 1 00:00:00 2014");
+
+                var sec = (date2 - date1) / 1000;
+
+                var n = 24 * 3600;
+
+                if (sec > 0) {
+
+                j = Math.floor (sec / n);
+
+                h = Math.floor ((sec - (j * n)) / 3600);
+
+                mn = Math.floor ((sec - ((j * n + h * 3600))) / 60);
+
+                sec = Math.floor (sec - ((j * n + h * 3600 + mn * 60)));
+
+                Affiche.innerHTML = "J - " + j ;
+
+                window.status = "Temps restant : " + j +" j "+ h +" h "+ mn +" min "+ sec + " s ";
+
+                }
+
+                tRebour=setTimeout ("Rebour();", 1000);
+
+                }
+
+                Rebour();
+
+            </script>
+
+
+<!-- script slider -->
 <script>
     $(function() {
         $('#slide1').scrollbox({

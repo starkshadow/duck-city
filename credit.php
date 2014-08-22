@@ -42,6 +42,8 @@
 			<li><a href="http://www.ogaming.tv/">ogaming.tv</a></li>
 			<li><a href="http://www.csswinner.com/">csswinner.com</a></li>
 			<li><a href="http://www.awwwards.com/">awwwards.com</a></li>
+			<li><a href="http://css-tricks.com/">css-tricks.com</a></li>
+			<li><a href="http://www.mysql.fr/products/workbench/">mysql workbench</a></li>
 		</ul>
 
 	</div>

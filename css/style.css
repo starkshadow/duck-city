@@ -1793,11 +1793,39 @@ padding-top: 40px;
 	.zone-credit {
 		padding-top: 80px;
 		text-align: center;
+		background: url(../images/bg40.png) repeat;
+		padding-bottom: 30px;
 	}
 
 	.zone-credit h3{
+		font-size: 22px;
+		font-family: 'aleobold', Verdana, arial, sans-serif;
+		border-bottom: 2px solid #343833;
+		display: inline-block;
+		padding-bottom: 10px;
+		color:#343833;
+	}	
 
+	.zone-credit ul{
+		padding-left: 0px;
 	}
+
+	
+	.zone-credit ul li{
+		line-height: 1.6;
+		list-style: none;
+		font-family: 'aleoregular', Verdana, arial, sans-serif;
+		color:#343833;
+	}
+	.zone-credit ul li a{
+		color: #343833;
+	}
+	.zone-credit ul li a:hover{
+		text-decoration: underline;
+		color: white;
+	}
+
+
 
 
 /****** FOOTER  ******/

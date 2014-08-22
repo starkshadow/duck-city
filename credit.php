@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>
+<!--<?php //require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>-->
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
 
 
@@ -8,16 +8,16 @@
 		<ul>
 			<h3>Crédits pour les images :</h3>
 			<li>
-				Duck zodiac de face :<a href="http://www.squeakyducks.com/product_p/rd_horoscope_bd.htm">Lien</a>
+				Duck zodiac de face : <a href="http://www.squeakyducks.com/product_p/rd_horoscope_bd.htm"> Lien </a>
 			</li>
 			<li>
-				Duck zodiac de profil :<a href="http://paulamcgregor-demo.zes.zeald.com/shop/Funky+Ducks/Zodiac+Ducks+1.html">Lien</a>
+				Duck zodiac de profil : <a href="http://paulamcgregor-demo.zes.zeald.com/shop/Funky+Ducks/Zodiac+Ducks+1.html">Lien</a>
 			</li>
 			<li>Pour les autres ducks du shop :
-				<a href="http://www.budducks.com/index.php?option=com_virtuemart&Itemid=191">Lien1</a>
-				<a href="http://www.justducks.co.uk/Luxury2.htm">Lien2</a>
-				<a href="http://budduck.com/collection/">Lien3</a>
-				<a href="http://objets-decorations.com/index.php?cPath=24_66&osCsid=ab2c6e6156a2d20873a45675d305045c">Lien4</a>
+				<a href="http://www.budducks.com/index.php?option=com_virtuemart&Itemid=191"> Lien1 </a>,
+				<a href="http://www.justducks.co.uk/Luxury2.htm"> Lien2 </a>,
+				<a href="http://budduck.com/collection/"> Lien3 </a>,
+				<a href="http://objets-decorations.com/index.php?cPath=24_66&osCsid=ab2c6e6156a2d20873a45675d305045c"> Lien4 </a>
 			</li>
 			<h3>Pour le code :</h3>
 			<li>

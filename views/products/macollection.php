@@ -7,18 +7,12 @@
 
 
 <div class="ma-collection-zone1">
-    <img src="images/bg-collection.jpg">
+    <img src="<?php echo WEBROOT . 'images/bg-collection.jpg'; ?>">
     <div class="title-page">
         <h2 class="h2-title-page">Ma collection</h2>
     </div>
 
 
-</div>
-
-<div class="ma-collection-zone2">
-    <div class="container">
-        <p class="texte-intro">Hello (pseudo du connecté), comment vas-tu aujourd'hui? </p>
-    </div>
 </div>
 
 <div class="ma-collection-zone3 ">
@@ -28,7 +22,7 @@
             <h3 class="h3-nom-duck"><a href="#">Le duck cowboy</a></h3>
 
             <div class="duck">
-                <img src="images/shop-galerie/duck-cowboy-p.png">
+                <img src="<?php echo WEBROOT . 'images/shop-galerie/duck-cowboy-p.png'; ?>">
             </div>
             <div class="btn-ma-collection">
                 <a class="btn" href="achat.php">Tous mes achats</a>
@@ -38,7 +32,7 @@
             <h2 class="h2-title-zone">Peut-être le futur canard de ta collection ?</h2>
             <h3 class="h3-nom-duck"><a href="#">Le duck royal guard</a></h3>
             <div class="duck">
-                <img src="images/shop-galerie/duck-royal-guard-p.png">
+                <img src="<?php echo WEBROOT . 'images/shop-galerie/duck-royal-guard-p.png'; ?> ">
             </div>
             <div class="btn-ma-collection">
                 <a class="btn" href="">Acheter</a>
@@ -51,7 +45,7 @@
 
             <h3 class="h3-nom-duck">Duck Geek</h3>
             <div class="duck">
-                <img src="images/Duck-geek-profil.png">
+                <img src="<?php echo WEBROOT . 'images/Duck-geek-profil.png'; ?>">
             </div>
             <div class="btn-ma-collection">
                 <a class="btn" href="">Acheter</a>
@@ -60,7 +54,7 @@
         <div class="one-third column">
             <h3 class="h3-nom-duck">Duck sécurity</h3>
             <div class="duck">
-                <img src="images/Duck-security-profil.png">
+                <img src="<?php echo WEBROOT . 'images/Duck-security-profil.png'; ?>">
             </div>
             <div class="btn-ma-collection">
                 <a class="btn" href="">Acheter</a>
@@ -69,7 +63,7 @@
         <div class="one-third column">
             <h3 class="h3-nom-duck">Duck vacancier diabolique</h3>
             <div class="duck">
-                <img src="images/Duck-vacancier-diabolique-profil.png">
+                <img src="<?php echo WEBROOT . 'images/Duck-vacancier-diabolique-profil.png'; ?>">
             </div>
             <div class="btn-ma-collection">
                 <a class="btn" href="">Acheter</a>
@@ -82,13 +76,7 @@
 
 
 
-
-
-
-
+<?php require $_SERVER['DOCUMENT_ROOT'] . WEBROOT . 'footer.php'; ?>
 
 </body>
-
-<?php
-require "footer.php";
-?>
+</html>

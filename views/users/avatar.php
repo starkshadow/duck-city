@@ -12,23 +12,21 @@
 <div class="profil-zone2">
     <div class="container">
         <div class="avatar">
-            <?php if (isset($vars['users']) && !empty($vars['users']) && is_array($vars['users'])): ?>
-            <?php foreach ($vars['users'] as $key => $user): ?>
-            <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $user['imgprofil'])): ?>
-                <?php $img = $user['imgprofil'];?>
+            <?php if (!empty($_SESSION['user']) && isset($_SESSION['user']['avatar']) && !empty($_SESSION['user']['avatar'])): ?>
+            
+            <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
+                <?php $img = $_SESSION['user']['avatar'];?>
             <?php else: ?>
             <?php $img = DEFAULTAVATARIMG;?>
             <?php endif; ?>
                 <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>">
-                    <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
-                        <img alt="Avatar ici" src="<?php echo $_SESSION['user']['avatar']; ?>" />
-                    <?php endif; ?>
+                    
+                        <img alt="Avatar ici" src="<?php echo $img; ?>" />
+                   
                 </a>
                 <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>" class="btn-avatar"> Changer votre avatar</a>
-            <?php endforeach; ?>
-            <?php else: ?>
-            <div class="error">Aucun canard dans la boutique pour l'instant</div>
-            <?php endif; ?> 
+            
+            
             
         </div>
     </div>

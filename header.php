@@ -173,7 +173,7 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
 
                         <ul class="menu-ul">
                             <li>
-                                <a href='javascript: vaEtVient()'  class="menu-deroulant">Menu <img src="<?php echo WEBROOT . 'images/fleche-connection.png'; ?>"></a>
+                                <a href='javascript: vaEtVient()'  class="menu-deroulant">Menu <img src="<?php echo WEBROOT . 'images/fleche-connection.png'; ?>" alt="fleche"/></a>
                                 <ul id="invisible" class="nav-menu" >
                                     <li><a <?php if ($nav_en_cours == 'page-shop') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/products/shop.php'; ?>">Shop</a></li>
                                     <li><a <?php if ($nav_en_cours == 'page-personnalisation') echo ' id="en-cours"'; ?>href="<?php echo WEBROOT . 'personnalisation.php'; ?>"><s>Personnalisation</s></a></li>                                                

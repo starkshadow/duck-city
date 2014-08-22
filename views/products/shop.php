@@ -12,7 +12,7 @@
 <script src="<?php echo WEBROOT . 'scripts/panier.js'; ?>"></script>
 
 <div class="gallery-zone1">
-    <img src="<?php echo WEBROOT . 'images/bg-shop.jpg'; ?>" />
+    <img src="<?php echo WEBROOT . 'images/bg-shop.jpg'; ?>" alt="bg-shop" />
     <div class="title-page">
         <h2 class="h2-title-page">shop</h2>
     </div>

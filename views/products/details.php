@@ -6,7 +6,7 @@
 <script src="<?php echo WEBROOT . 'scripts/panier.js'; ?>"></script>
 
 <div class="gallery-zone1">
-    <img src="<?php echo WEBROOT . 'images/bg-details.jpg'; ?>" />
+    <img src="<?php echo WEBROOT . 'images/bg-details.jpg'; ?>" alt="bg-details" />
     <div class="title-page">
         <h2 class="h2-title-page"><?php echo utf8_encode($vars['product']['name']); ?></h2>
     </div>
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="one-half column">
             <h2  class="h2-title-zone"><?php echo utf8_encode($vars['product']['name']); ?></h2>
-            <img src="<?php echo ($vars['product']['imgprofil']); ?>"/>
+            <img src="<?php echo ($vars['product']['imgprofil']); ?>" alt="images duck"/>
         </div>
 
         <div class="one-half column"> 
@@ -45,15 +45,15 @@
         <h2  class="h2-title-zone suggestion">Suggestion de duck</h2>
         <div class="one-third column suggestion-duck">
             <h3 class="h3-nom-duck"><a class="btn" href="fiche-duck.php">Duck Disco</a></h3>
-            <a href="fiche-duck.php"><img src="images/shop-galerie/duck-disco-p.png"></a>
+            <a href="fiche-duck.php"><img src="images/shop-galerie/duck-disco-p.png" alt="" /></a>
         </div>
         <div class="one-third column suggestion-duck">
             <h3 class="h3-nom-duck"><a class="btn" href="">Duck princesse</a></h3>
-            <a href=""><img src="images/shop-galerie/duck-princesse-p.png"></a>
+            <a href=""><img src="images/shop-galerie/duck-princesse-p.png" alt="" /></a>
         </div>
         <div class="one-third column suggestion-duck">
             <h3 class="h3-nom-duck"><a class="btn" href="">Duck cowboy</a></h3>
-            <a href=""><img src="images/shop-galerie/duck-cowboy-p.png"></a>
+            <a href=""><img src="images/shop-galerie/duck-cowboy-p.png" alt="" /></a>
         </div>
     </div>
 

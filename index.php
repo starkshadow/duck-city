@@ -18,8 +18,8 @@
 
 <div class="container index-zone2">
     <div class="sixteen columns texte-intro">
-        <h2  class="h2-title-zone">DUCK CITY, C'EST QUOI ?</h2>
-        <img class="logo-duck"src="images/logo-duck1.png">
+        <h2 class="h2-title-zone">DUCK CITY, C'EST QUOI ?</h2>
+        <img class="logo-duck" src="images/logo-duck1.png" />
         <p>Vous avez certainement déjà remarqué ces voitures avec un canard en plastique accroché 
             à l'arrière. Il n'existe pas vraiment d'explication à cette mode qui nous vient du Japon ; 
             </br> le  TOW HOOK CHARM. <p>
@@ -40,7 +40,7 @@
 
 </div>
 <div class="index-zone3">
-    <img src="images/arriere-voiture-duck.jpg">
+    <img src="images/arriere-voiture-duck.jpg" alt="arriere de voiture avec un duck" />
 
 </div>
 
@@ -48,7 +48,7 @@
     <div class="container">
         <h2  class="h2-title-zone">Le duck du mois d'août : Duck space </h2>
         <div class="one-half column">
-            <img src="<?php echo $vars['products']['imgface']; ?>">
+            <img src="<?php echo $vars['products']['imgface']; ?>" alt="duck space" />
             <a href="" class="btn">Acheter le duck space</a>
         </div>
         <div class="one-half column box-promo">
@@ -66,7 +66,7 @@
 
         <div class="promo-newsletter">
             <h2  class="h2-title-zone">Abonnez-vous à la newsletter</h2>
-            <p>Pour ne plus ratter aucune promo, abonnez-vous à notre newsletter</p>
+            <p>Pour ne plus rater aucune promo, abonnez-vous à notre newsletter</p>
 
             <div class="box-newsletter">
                 <label>
@@ -180,8 +180,8 @@
         </div>-->
 
         <div id="slide1-btn" class="text-center">
-            <div class="btn-slide" id="slide1-backward"><a><img src="images/fleche-gauche-slider.png"></a></div>
-            <div class="btn-slide" id="slide1-forward"> <a><img src="images/fleche-droite-slider.png"></a></div>
+            <div class="btn-slide" id="slide1-backward"><a><img src="images/fleche-gauche-slider.png" alt=" fleche" /></a></div>
+            <div class="btn-slide" id="slide1-forward"> <a><img src="images/fleche-droite-slider.png"  alt=" fleche" /></a></div>
         </div>
     </div>
 </div>

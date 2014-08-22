@@ -31,7 +31,7 @@
             <li><?php echo 'Créé le ' . date_format(date_create($vars['user']['created']), 'd/m/Y à G\hi'); ?></li>
         </ul>
 
-        <h2  class="h2-title-zone">Mes coordonées</h2>
+        <h2  class="h2-title-zone">Mes coordonnées</h2>
         <ul>
 
             <li class="" id="" name="" >

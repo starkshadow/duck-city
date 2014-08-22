@@ -1749,7 +1749,7 @@ padding-top: 40px;
 	/****** 4 0 4 ********/
 
 	#bg-404 {
-		background: url(../images/test-404.jpg) no-repeat top center;
+		background: url(../images/bg-404.jpg) no-repeat top center;
 		width: 100%;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -1757,6 +1757,16 @@ padding-top: 40px;
 		background-size: cover;
 	}
 
+
+	/*** C R E D I T *****/
+	.zone-credit {
+		padding-top: 80px;
+		text-align: center;
+	}
+
+	.zone-credit h3{
+
+	}
 
 
 /****** FOOTER  ******/

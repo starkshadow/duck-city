@@ -48,7 +48,7 @@
     <div class="container">
         <h2  class="h2-title-zone">Le duck du mois d'août : Duck space </h2>
         <div class="one-half column">
-            <img src="images/shop-galerie/duck-space-f.png">
+            <img src="<?php echo $vars['products']['imgface']; ?>">
             <a href="" class="btn">Acheter le duck space</a>
         </div>
         <div class="one-half column box-promo">

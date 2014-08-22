@@ -26,6 +26,28 @@ class Model {
     public $hasAndBelongsToMany;
 
     /**
+     * Vérifie si une ligne correspondant à l'id donné existe bien dans la table
+     * @param type $id
+     * @return boolean
+     */
+    public function exists($id) {
+        try {
+            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $result = $db->select(self::$tablename, self::$tablename . '.id = ' . $id, '', '', '', 'COUNT(*)');
+
+            if (isset($result) && !empty($result) && isset($result[0]) && !empty($result[0]) && isset($result[0]['COUNT(*)']) && (int) $result[0]['COUNT(*)']) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $ex) {
+            die($ex->getMessage());
+        }
+    }
+
+    /**
      * Valide les champs pour une opération sur la table
      * @param type $vars
      * @param type $mode précise quel mode (update, create ...)
@@ -138,6 +160,11 @@ class Model {
         }
     }
 
+    /**
+     * Récupérer une ligne de la table
+     * @param type $id
+     * @return type
+     */
     public function getone($id) {
         try {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');

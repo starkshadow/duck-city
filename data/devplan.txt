@@ -1,6 +1,4 @@
 - Shop : 
-	+ affichage (pagination) -> 15 min
-        + affichage détails canard -> 15 min
 	+ ajout au panier (AJAX ?) -> 
 	+ Panier : -> 3h
 		* affichage (pagination) -> 22h

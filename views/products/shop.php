@@ -9,6 +9,7 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
 </header>
 
+<script src="<?php echo WEBROOT . 'scripts/panier.js'; ?>"></script>
 
 <div class="gallery-zone1">
     <img src="<?php echo WEBROOT . 'images/bg-shop.jpg'; ?>" />
@@ -26,7 +27,13 @@
 </div>
 
 
+<div class="gallery-zone3">    
+    <div class="container">
 
+
+        <div name="div-sort" class="div-tri">
+            <h3>Tri par : </h3>
+            <ul class="div-tri-niveau1">
 
 
     <div class="gallery-zone3">    
@@ -69,59 +76,58 @@
             </div>
 
 
-
-
-
-
-            <?php if (isset($vars['products']) && !empty($vars['products']) && is_array($vars['products'])): ?>
-                <?php foreach ($vars['products'] as $key => $product): ?>
-                    <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $product['imgprofil'])): ?>
-                        <?php $img = $product['imgprofil']; ?>
-                    <?php else: ?>
-                        <?php $img = DEFAULTDUCKIMG; ?>
-                    <?php endif; ?>
-                    <div class="one-four column gallery-duck">
-                        <h3 class="h3-nom-duck"><a class="btn" href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><?php echo $product['name']; ?></a></h3>
-                        <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><img src="<?php echo $img; ?>" alt="Image Canard"/></a>
-                        <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><p><?php echo $product['price'] . '&euro;'; ?></p></a>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div class="error">Aucun canard dans la boutique pour l'instant</div>
-            <?php endif; ?>   
-
-
-            <div name="div-pagination" class="div-pagination">
-
-                <?php if (isset($vars['products_countpages']) && !empty($vars['products_countpages'])): ?>
-                    <ul>
-                        <?php //lien page précédente ?>
-                        <?php if ($vars['current_page'] != 1): ?>
-                            <?php $vars['GET']['p'] = $vars['current_page'] - 1; ?>
-                            <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>">Page précédente</a></li>
-                        <?php endif; ?><li> <span>Page :</span></li>
-                        <?php //liste liens pages ?>
-                        <?php for ($i = 1; $i <= $vars['products_countpages']; $i++): ?>
-
-                            <li>
-                                <?php if ($i == $vars['current_page']): ?>
-                                    <span><?php echo $i; ?></span>
-                                <?php else: ?>
-                                    <?php $vars['GET']['p'] = $i; ?>
-                                    <a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>"><?php echo $i; ?></a>
-                                <?php endif; ?>
-                            </li>
-                        <?php endfor; ?>
-                        <?php //lien page suivante ?>
-                        <?php if ($vars['current_page'] != $vars['products_countpages']): ?>
-                            <?php $vars['GET']['p'] = $vars['current_page'] + 1; ?>
-                            <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>">Page suivante</a></li>
-                        <?php endif; ?>                
-                    </ul>
+        <?php if (isset($vars['products']) && !empty($vars['products']) && is_array($vars['products'])): ?>
+            <?php foreach ($vars['products'] as $key => $product): ?>
+                <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $product['imgprofil'])): ?>
+                    <?php $img = $product['imgprofil']; ?>
+                <?php else: ?>
+                    <?php $img = DEFAULTDUCKIMG; ?>
                 <?php endif; ?>
-            </div>
+                <div class="one-four column gallery-duck">
+                    <h3 class="h3-nom-duck"><a class="btn" href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><?php echo $product['name']; ?></a></h3>
+                    <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><img src="<?php echo $img; ?>" alt="Image Canard"/></a>
+                    <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><p><?php echo $product['price'] . '&euro;'; ?></p></a>  
+                    <input placeholder="quantité" class="panier-add-quantity" type="number" />
+                    <input class="panier-add-id" type="hidden" value="<?php echo $product['id']; ?>" />                    
+                    <input url="<?php echo $_SERVER['SERVER_NAME'] . WEBROOT . 'actions/panier/add.php'; ?>" type="button" class="panier-add-button" value="Ajouter au Panier"/>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="error">Aucun canard dans la boutique pour l'instant</div>
+        <?php endif; ?>   
+
+
+        <div name="div-pagination" class="div-pagination">
+
+            <?php if (isset($vars['products_countpages']) && !empty($vars['products_countpages'])): ?>
+                <ul>
+                    <?php //lien page précédente ?>
+                    <?php if ($vars['current_page'] != 1): ?>
+                        <?php $vars['GET']['p'] = $vars['current_page'] - 1; ?>
+                        <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>">Page précédente</a></li>
+                    <?php endif; ?><li> <span>Page :</span></li>
+                    <?php //liste liens pages ?>
+                    <?php for ($i = 1; $i <= $vars['products_countpages']; $i++): ?>
+
+                        <li>
+                            <?php if ($i == $vars['current_page']): ?>
+                                <span><?php echo $i; ?></span>
+                            <?php else: ?>
+                                <?php $vars['GET']['p'] = $i; ?>
+                                <a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>"><?php echo $i; ?></a>
+                            <?php endif; ?>
+                        </li>
+                    <?php endfor; ?>
+                    <?php //lien page suivante ?>
+                    <?php if ($vars['current_page'] != $vars['products_countpages']): ?>
+                        <?php $vars['GET']['p'] = $vars['current_page'] + 1; ?>
+                        <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>">Page suivante</a></li>
+                    <?php endif; ?>                
+                </ul>
+            <?php endif; ?>
         </div>
     </div>
+</div>
 
 
 

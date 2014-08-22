@@ -29,7 +29,7 @@
         </table>
 
         <ul>
-            <li><a>Commander</a></li>
+            <li><a href="<?php echo WEBROOT . 'actions/panier/order.php' ?>">Commander</a></li>
             <li><a>Imprimer le Panier</a></li>
             <li>
                 <a id="empty-panier-btn" href="<?php echo WEBROOT . 'actions/panier/deleteBasket.php' ?>">Vider le Panier</a>

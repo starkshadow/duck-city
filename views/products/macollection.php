@@ -7,7 +7,7 @@
 
 
 <div class="ma-collection-zone1">
-    <img src="images/bg-collection.jpg">
+    <img src="<?php echo WEBROOT . 'images/bg-collection.jpg'; ?>">
     <div class="title-page">
         <h2 class="h2-title-page">Ma collection</h2>
     </div>
@@ -30,9 +30,7 @@
             <div class="duck">
                 <img src="images/shop-galerie/duck-cowboy-p.png">
             </div>
-            <div class="btn-ma-collection">
-                <a class="btn" href="achat.php">Tous mes achats</a>
-            </div>
+           
         </div>
         <div class="one-half column">
             <h2 class="h2-title-zone">Peut-être le futur canard de ta collection ?</h2>
@@ -46,35 +44,16 @@
         </div>
     </div>
     <div class="container">
-        <h2 class="h2-title-zone h2-creation">Tes créations</h2>
+        <h2 class="h2-title-zone h2-creation">Tes achats</h2>
         <div class="one-third column">
 
-            <h3 class="h3-nom-duck">Duck Geek</h3>
+            <h3 class="h3-nom-duck"></h3>
             <div class="duck">
-                <img src="images/Duck-geek-profil.png">
+                <img src="<?php echo $boughtProducts['Product']['imgprofil']; ?>">
             </div>
-            <div class="btn-ma-collection">
-                <a class="btn" href="">Acheter</a>
-            </div>
+            
         </div>
-        <div class="one-third column">
-            <h3 class="h3-nom-duck">Duck sécurity</h3>
-            <div class="duck">
-                <img src="images/Duck-security-profil.png">
-            </div>
-            <div class="btn-ma-collection">
-                <a class="btn" href="">Acheter</a>
-            </div>
-        </div>
-        <div class="one-third column">
-            <h3 class="h3-nom-duck">Duck vacancier diabolique</h3>
-            <div class="duck">
-                <img src="images/Duck-vacancier-diabolique-profil.png">
-            </div>
-            <div class="btn-ma-collection">
-                <a class="btn" href="">Acheter</a>
-            </div>
-        </div>
+        
     </div>
 
 </div>

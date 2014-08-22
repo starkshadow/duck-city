@@ -99,7 +99,7 @@
                     <?php endif; ?> 
                 <li class="btn-submit">
                     <label></label>
-                    <input type="submit" id="" class="btn" name="send" value="Enregistrer les modifications" />
+                    <input type="submit" id="" class="btn" name="send" value="Enregistrer" />
                 </li>
                 <div class="clean"></div>
             </ul>

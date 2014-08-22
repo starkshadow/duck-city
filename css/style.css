@@ -198,9 +198,11 @@ h2{
 	#menu-deroulant ul li ul.nav-menu li.connexion ul {
 		position: absolute;
 		display: none;
+		-webkit-transition:all 0.5s;
 	}
 	#menu-deroulant ul li ul.nav-menu li.connexion:hover ul{
 		display: block;
+		-webkit-transition:all 0.5s;
 	}
 	#menu-deroulant ul li ul.nav-menu li ul li{
 		float: none;
@@ -569,10 +571,12 @@ font-weight: 900;
 background: #383433;
 cursor: pointer;
 font-family:'aleoregular',Verdana,arial,sans-serif;
+-webkit-transition:all 0.5s;
 }
 input.newsletter[type="submit"]:hover{
 	background: white;
 	color:#383433;
+	-webkit-transition:all 0.5s;
 }
 
 
@@ -646,9 +650,11 @@ input.newsletter[type="submit"]:hover{
 	text-align: center;
 	font-size: 25px;
 	color: #383433;
+	-webkit-transition:all 0.5s;
 }
 .index-zone5 .container p:hover{
 	color:white;
+	-webkit-transition:all 0.5s;
 }
 .index-zone5 .container .btn{
 	display: table;
@@ -751,7 +757,9 @@ input.newsletter[type="submit"]:hover{
 	text-decoration: none;
 	padding: 5px 10px;
 	border: 4px solid #343833;
+	-webkit-transition:all 0.5s;
 }
+
 .div-pagination ul li span{
 	background: #343338;
 	color: white;
@@ -761,6 +769,7 @@ input.newsletter[type="submit"]:hover{
 .div-pagination ul li a:hover{
 	background: #343833;
 	color:white;
+	-webkit-transition:all 0.5s;
 }
 
 
@@ -799,6 +808,7 @@ input.newsletter[type="submit"]:hover{
 .div-tri ul.div-tri-niveau1 li {
 	float: left;
 	list-style: none;
+		-webkit-transition:all 0.5s;
 
 }
 .div-tri ul.div-tri-niveau1 li a{
@@ -819,20 +829,94 @@ input.newsletter[type="submit"]:hover{
 	display: none;
 	background: #343833;
 	padding: 5px 10px;
+		-webkit-transition:all 0.5s;
+
 }
 .div-tri ul.div-tri-niveau1 li ul li a{
 	color:white;
+		-webkit-transition:all 0.5s;
+
 }
 .div-tri ul.div-tri-niveau1 li:hover ul li{
 	display: block;
+	-webkit-transition:all 0.5s;
 }
 .div-tri ul.div-tri-niveau1 li ul li:hover{
 	background: white;
+	-webkit-transition:all 0.5s;
 	
 }
 .div-tri ul.div-tri-niveau1 li ul li:hover a{
 	color:#343833;
+	-webkit-transition:all 0.5s;
 }
+
+
+/****** BOUTON AJOUT PANIER *****/
+.panier-add-quantity {
+	border: 4px solid #343833;
+	padding: 5px 25px;
+	display: block;
+	margin: auto;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+
+input.panier-add-quantity[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    cursor:pointer;
+    display:block;
+    width:30px;
+    height: 24px;
+    color: #343833;
+    text-align:center;
+    position:relative;
+    background: #343833;
+    right: -25px;
+    -webkit-transition:all 0.5s;
+}
+
+input.panier-add-quantity[type=number]::-webkit-inner-spin-button:before,
+input.panier-add-quantity[type=number]::-webkit-inner-spin-button:after {
+    content: "^";
+    position:absolute;
+    right: 10px;
+    font-family:monospace;
+    line-height:1.5;
+    color: white;
+    font-weight: 700;
+
+}
+
+input.panier-add-quantity[type=number]::-webkit-inner-spin-button:before {
+    top:0px;
+}
+
+input.panier-add-quantity[type=number]::-webkit-inner-spin-button:before {
+    bottom:0px;
+    -webkit-transform: rotate(180deg);
+}
+input.panier-add-button {
+	background: transparent;
+	color: #343833;
+	padding: 10px 10px;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	-webkit-transition:all 0.5s;
+	text-transform: uppercase;
+	border: 4px solid #343833;
+	font-family: 'aleobold',Verdana, sans-serif, arial;
+}
+input.panier-add-button:hover{
+	background:#343833 ;
+	color:white ;
+	-webkit-transition:all 0.5s;
+}
+
+
 /*****************************************
 ********** F I C H E    D U C K **********
 *****************************************/
@@ -926,11 +1010,13 @@ font-family: 'la_unicaregular', Verdana, serif;
 	 font-weight: 900;
 	 cursor:pointer;
 	 color:#343833;
+	 -webkit-transition:all 0.5s;
  }
 
  .contact-zone3 form ul li input[type=submit]:hover{
  	color:white;
  	background: #343833;
+ 	-webkit-transition:all 0.5s;
  }
 
   .contact-zone3 form ul li input[placeholder],
@@ -1491,11 +1577,13 @@ padding-top: 40px;
 	 font-weight: 900;
 	 cursor:pointer;
 	  color:#343833;
+	  -webkit-transition:all 0.5s;
 	 }
 
 	 .connexion-zone3 form ul li input[type=submit]:hover{
 	 	color:white;
 	 	background: #343833;
+	 	-webkit-transition:all 0.5s;
 	 }
 
 
@@ -1548,10 +1636,12 @@ padding-top: 40px;
 		 font-weight: 900;
 		 cursor:pointer;
 		  color:#343833;
+		  -webkit-transition:all 0.5s;
 	 }
 	 .inscription-zone3 form ul li input[type=submit]:hover{
 	 	color:white;
 	 	background: #343833;
+	 	-webkit-transition:all 0.5s;
 	 }
 	 .inscription-errors span {
 		color: rgb(182, 44, 44);
@@ -1737,12 +1827,14 @@ padding-top: 40px;
 		width: 300px;
 		font-size: 16px;
 		cursor: pointer;
+		-webkit-transition:all 0.5s;
 
 	}
 	.profil-update-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover,
 	.profil-password-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover,
 	.profil-avatar-zone3 .container ul.inscription-errors li.btn-submit input.btn:hover{
 		background: #343833;
+		-webkit-transition:all 0.5s;
 	}
 	 .profil-update-zone3 .btn-modif,
 	 .profil-password-zone3 .btn-modif,
@@ -1777,10 +1869,12 @@ padding-top: 40px;
 		color:#343833;
 		text-transform: uppercase;
 		font-family: 'aleobold', Verdana, arial, sans-serif;
+		-webkit-transition:all 0.5s;
 	}
 	.custom-file-input:hover::before {
 	  background: #343833;
-	  color: white
+	  color: white;
+	  -webkit-transition:all 0.5s;
 	}
 	.profil-avatar-zone3 .container ul.inscription-errors li.inscription-errors{
 		list-style: none;
@@ -1897,10 +1991,12 @@ padding-top: 40px;
 	}
 	.zone-credit ul li a{
 		color: #343833;
+		-webkit-transition:all 0.5s;
 	}
 	.zone-credit ul li a:hover{
 		text-decoration: underline;
 		color: white;
+		-webkit-transition:all 0.5s;
 	}
 
 
@@ -1937,10 +2033,12 @@ font-weight: 900;
 background: #383433;
 cursor: pointer;
 font-family:'aleoregular',Verdana,arial,sans-serif;
+-webkit-transition:all 0.5s;
 }
 input.newsletter-footer[type="submit"]:hover{
 	background: white;
 	color:#383433;
+	-webkit-transition:all 0.5s;
 }
 
 footer .container .one-third.column{
@@ -1974,34 +2072,44 @@ footer .container .reseaux-sociaux ul li a{
 	width: 24px;
 	height: 23px;
 	display: block;
+	-webkit-transition:all 0.5s;
 }
 footer .container .reseaux-sociaux ul li:hover{
 	background: #383433;
+	-webkit-transition:all 0.5s;
 }
 
 footer .container .reseaux-sociaux ul li a.footer-facebook{
 	background: url(../images/facebook.png);
+	-webkit-transition:all 0.5s;
 }
 footer .container .reseaux-sociaux ul li a.footer-facebook:hover{
 	background: url(../images/facebook-hover.png);
+	-webkit-transition:all 0.5s;
 }
 footer .container .reseaux-sociaux ul li a.footer-twitter{
 	background: url(../images/twitter.png);
+	-webkit-transition:all 0.5s;
 }
 footer .container .reseaux-sociaux ul li a.footer-twitter:hover{
 	background: url(../images/twitter-hover.png);
+	-webkit-transition:all 0.5s;
 }
 footer .container .reseaux-sociaux ul li a.footer-google{
 	background: url(../images/google.png);
+	-webkit-transition:all 0.5s;
 }
 footer .container .reseaux-sociaux ul li a.footer-google:hover{
 	background: url(../images/google-hover.png);
+	-webkit-transition:all 0.5s;
 }
 footer .container .reseaux-sociaux ul li a.footer-pinterest{
 	background: url(../images/pinterest.png);
+	-webkit-transition:all 0.5s;
 }
 footer .container .reseaux-sociaux ul li a.footer-pinterest:hover{
 	background: url(../images/pinterest-hover.png);
+	-webkit-transition:all 0.5s;
 }
 
 footer .container .paypal div{

@@ -127,13 +127,13 @@ class Model {
             $result = $db->select(self::$tablename, '', self::$tablename . '.' . $order_by, $limit);
 
             if (isset($result) && !empty($result)) {
-                foreach ($result as $line) {
+                foreach ($result as $k => $line) {
                     if (isset($this->belongsTo) && !empty($this->belongsTo)) {
                         foreach ($this->belongsTo as $key => $value) {
                             $where = $value['tablename'] . '.id' . ' = ' . $line[$value['foreignkey']];
                             $select = $db->select($value['tablename'], $where);
                             if (isset($select) && !empty($select) && is_array($select)) {
-                                $line[$key] = $select[0];
+                                $result[$k][$key] = $select[0];
                             }
                         }
                     }
@@ -142,14 +142,14 @@ class Model {
                             $where = $value['tablename'] . '.' . $value['foreignkey'] . ' = ' . $line['id'];
                             $select = $db->select($value['tablename'], $where);
                             if (isset($select) && !empty($select) && is_array($select)) {
-                                $line[$key] = $select[0];
+                                $result[$k][$key] = $select[0];
                             }
                         }
                     }
                     if (isset($this->hasMany) && !empty($this->hasMany)) {
                         foreach ($this->hasMany as $key => $value) {
                             $where = $value['tablename'] . '.' . $value['foreignkey'] . ' = ' . $line['id'];
-                            $line[$key] = $db->select($value['tablename'], $where);
+                            $result[$k][$key] = $db->select($value['tablename'], $where);
                         }
                     }
                 }

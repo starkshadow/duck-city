@@ -27,13 +27,7 @@
 </div>
 
 
-<div class="gallery-zone3">    
-    <div class="container">
 
-
-        <div name="div-sort" class="div-tri">
-            <h3>Tri par : </h3>
-            <ul class="div-tri-niveau1">
 
 
     <div class="gallery-zone3">    

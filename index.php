@@ -1,16 +1,9 @@
-<?php session_start(); ?>
-<?php
-//récupération des données pour la vue
-$vars = array();
-if (isset($_SESSION['viewvars']) && !empty($_SESSION['viewvars'])):
-    $vars = $_SESSION['viewvars'];
-    unset($_SESSION['viewvars']);
-endif;
-?>
+
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
-
+<?php var_dump($_SERVER['PHP_SELF']); ?>
+<?php var_dump($_SESSION); ?>
 
 <!--<div id="bg-header">
     <h1>DUCK CITY</h1>

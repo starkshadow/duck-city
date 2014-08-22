@@ -11,8 +11,8 @@ if (!isset($_SESSION['nav']) || empty($_SESSION['nav'])):
         'last_page' => '',
         'refreshed' => false, //définit si la page a subi un refresh et est passée par l'action correspondante        
     );
-//s'il s'agit d'un refresh de la vue => rediriger vers l'action de la page
-elseif (isset($_SESSION['nav']['last_page']) && $_SESSION['nav']['last_page'] === $_SERVER['PHP_SELF'] && $_SESSION['nav']['refreshed'] === false):
+//s'il s'agit d'un refresh de la vue => rediriger vers l'action de la page --> exception s'il s'agit de la page d'accueil (vue que refresh la page d'accueil ne fait pas passer par un fichier php action)
+elseif ($_SERVER['PHP_SELF'] !== '/duck-city/index.php' && isset($_SESSION['nav']['last_page']) && $_SESSION['nav']['last_page'] === $_SERVER['PHP_SELF'] && $_SESSION['nav']['refreshed'] === false):
     //enregistrement de last_page
     $_SESSION['nav']['last_page'] = $_SERVER['PHP_SELF'];
     //création de l'url de l'action correspondante en remplaçant le dossier 'views' par 'actions' dans l'url

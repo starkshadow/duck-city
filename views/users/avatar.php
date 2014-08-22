@@ -13,21 +13,16 @@
     <div class="container">
         <div class="avatar">
             <?php if (!empty($_SESSION['user']) && isset($_SESSION['user']['avatar']) && !empty($_SESSION['user']['avatar'])): ?>
-            
-            <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
-                <?php $img = $_SESSION['user']['avatar'];?>
-            <?php else: ?>
-            <?php $img = DEFAULTAVATARIMG;?>
-            <?php endif; ?>
+                <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar'])): ?>
+                    <?php $img = $_SESSION['user']['avatar']; ?>
+                <?php else: ?>
+                    <?php $img = DEFAULTAVATARIMG; ?>
+                <?php endif; ?>
                 <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>">
-                    
-                        <img alt="Avatar ici" src="<?php echo $img; ?>" />
-                   
+                    <img alt="Avatar ici" src="<?php echo $img; ?>" />
                 </a>
                 <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>" class="btn-avatar"> Changer votre avatar</a>
-            
-            
-            
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -64,7 +59,7 @@
             </ul>
         </div>
 
-        <!--<p><?php echo 'Logo : ' . $vars['user']['logo']; ?></p>-->
+
     </div>
 </div>
 

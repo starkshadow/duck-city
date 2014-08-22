@@ -21,6 +21,12 @@ endif;
 ?>
 
 <?php
+if (!isset($nav_en_cours)):
+    $nav_en_cours = '';
+endif;
+?>
+
+<?php
 header('Pragma: no-cache');
 header('cache-Control: no-cache, must-revalidate'); // HTTP/1.1
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
@@ -138,18 +144,18 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
                                         <?php if (isset($_SESSION['user']['avatar_thumb']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar_thumb'])): ?>
                                             <?php $img = $_SESSION['user']['avatar_thumb']; ?>
                                         <?php else: ?>
-                                            <?php $img = DEFAULTDUCKIMG; ?>
-                                        <?php endif; ?>
+                                                <?php $img = DEFAULTDUCKIMG; ?>
+                                            <?php endif; ?>
                                         <a href="<?php echo WEBROOT . 'actions/users/profil.php'; ?>">
                                             <?php if (isset($_SESSION['user']['avatar_thumb']) && !empty($_SESSION['user']['avatar_thumb']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $_SESSION['user']['avatar_thumb'])): ?>
                                                 <img alt="Avatar photo de profil" src="<?php echo $img; ?>" />
-                                            <?php endif; ?>
+<?php endif; ?>
                                         </a>
                                     </li>
                                     <li class="connexion">
-                                        <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true): ?>                                                    
+                                            <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true): ?>                                                    
                                             <a href="<?php echo WEBROOT . 'actions/users/profil.php'; ?>">
-                                                <?php echo 'Bonjour ' . $_SESSION['user']['pseudo']; ?>
+    <?php echo 'Bonjour ' . $_SESSION['user']['pseudo']; ?>
                                             </a>
                                             <ul>                                                            
                                                 <li><a id="panier" href="<?php echo WEBROOT . 'views/products/panier.php'; ?>">Mon panier</a></li>
@@ -159,14 +165,14 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
                                         </li>
                                         <li>
                                             <a id="deconnection" href="<?php echo WEBROOT . 'actions/users/logout.php' ?>">Se déconnecter</a>
-                                        <?php else: ?>
+<?php else: ?>
                                             <li>
                                                 <a <?php if ($nav_en_cours == 'page-inscription') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/users/inscription.php'; ?>">Créer un compte</a>
                                             </li>
                                             <li>
                                                 <a <?php if ($nav_en_cours == 'page-connexion') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/users/connexion.php'; ?>">Connexion</a>
                                             </li>
-                                        <?php endif; ?>
+<?php endif; ?>
                                     </li>
                                 </ul>
                             </li>
@@ -184,13 +190,13 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
                     <div class="bg2"></div>
                     <div class="bg3"></div>
                 </div>
-            <?php endif; ?>
+                <?php endif; ?>
 
             <div class="box-prompt">
                 <?php if (isset($_SESSION['prompt']) && !empty($_SESSION['prompt'])): ?>
                     <div id="prompt" class="<?php echo $_SESSION['prompt']['class']; ?>"><?php echo $_SESSION['prompt']['msg']; ?></div>
-                    <?php unset($_SESSION['prompt']); ?>
-                <?php endif; ?>  
+    <?php unset($_SESSION['prompt']); ?>
+<?php endif; ?>  
             </div>
 
         </header>

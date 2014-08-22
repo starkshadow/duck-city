@@ -1,8 +1,8 @@
 $(window).load(function() {
     $('.panier-add-button').click(function() {
         var button = $(this);
-        var id = button.siblings('.panier-add-id').val();
-        var quantity = button.siblings('.panier-add-quantity').val();
+        var id = button.siblings('.btn-panier-add-id').val();
+        var quantity = button.siblings('.btn-panier-add-quantity').val();
         if (isNaN(quantity) === true || quantity <= 0) {
             quantity = 1;
         }
@@ -18,6 +18,6 @@ $(window).load(function() {
                 console.log(xhr);
                 console.log("Details: " + desc + "\nError:" + err);
             }
-        }); // end ajax call        
+        });
     });
 });

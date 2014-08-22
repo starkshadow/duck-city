@@ -28,8 +28,6 @@
 
 
 
-
-
     <div class="gallery-zone3">    
         <div class="container">
 
@@ -64,6 +62,7 @@
             </div>
 
 
+
         <?php if (isset($vars['products']) && !empty($vars['products']) && is_array($vars['products'])): ?>
             <?php foreach ($vars['products'] as $key => $product): ?>
                 <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $product['imgprofil'])): ?>
@@ -86,7 +85,6 @@
 
 
         <div name="div-pagination" class="div-pagination">
-
             <?php if (isset($vars['products_countpages']) && !empty($vars['products_countpages'])): ?>
                 <ul>
                     <?php //lien page précédente ?>
@@ -96,7 +94,6 @@
                     <?php endif; ?><li> <span>Page :</span></li>
                     <?php //liste liens pages ?>
                     <?php for ($i = 1; $i <= $vars['products_countpages']; $i++): ?>
-
                         <li>
                             <?php if ($i == $vars['current_page']): ?>
                                 <span><?php echo $i; ?></span>
@@ -118,13 +115,11 @@
 </div>
 
 
-
 <div class="gallery-zone4">
     <div class="container">
         <p class="texte-intro">Tu n'as pas trouvé le canard qui te correspond ?  </p>
     </div>
 </div>
-
 
 
 <div class="gallery-zone5">
@@ -135,8 +130,6 @@
 </div>
 
 
-
 <?php require $_SERVER['DOCUMENT_ROOT'] . WEBROOT . 'footer.php'; ?>
-
 </body>
 </html>

@@ -27,9 +27,6 @@
 </div>
 
 
-
-
-<<<<<<< HEAD
 <div class="gallery-zone3">    
     <div class="container">
 

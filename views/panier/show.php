@@ -13,6 +13,7 @@
 
 
 
+
     <div class="panier-zone1">
         <img src="<?php echo WEBROOT . 'images/bg-panier.jpg'; ?>" alt="bg-panier"/>
             <div class="title-page">

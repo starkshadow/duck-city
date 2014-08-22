@@ -117,9 +117,7 @@
                 </div>
             </div>
 
-            <?php else: ?>
-                     Aucun canard dans votre panier pour l'instant. Pourquoi ne pas faire un tour dans notre shop ?
-            <?php endif; ?>
+            
         
             
             <div class="clean"></div>
@@ -128,6 +126,13 @@
                 <a href="" class="btn btn-commander"> Commander</a>
                 <a id="empty-panier-btn" class="btn btn-commander" href="<?php echo WEBROOT . 'actions/panier/deleteBasket.php' ?>">Vider le Panier</a>
             </div>
+
+            <?php else: ?>
+                <div class="errors-panier">
+                    <p> Aucun canard dans votre panier pour l'instant. Pourquoi ne pas faire un tour dans notre shop ?</p>
+                    <a href="<?php echo WEBROOT . 'views/products/shop.php'; ?>" class="btn "> Aller sur le shop</a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 

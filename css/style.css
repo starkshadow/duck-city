@@ -1538,6 +1538,21 @@ padding-top: 40px;
 	float: right;
 	margin-right: 10px;
 }
+.errors-panier{
+	width: 500px;
+	margin: auto;
+	padding: 70px 0px;
+}
+.errors-panier p{
+	font-family: 'aleobold', Verdana, sans-serif, arial;
+	font-size: 22px;
+	color:#343833;
+	text-align: center;	
+}
+.errors-panier a{
+	display: table;
+	margin: auto;
+}
 
 	/*****************************************
 	*********** C O N N E X I O N ************

@@ -76,12 +76,18 @@ class Model {
      * Retourne le nombre d'objets dans la table
      * @return type
      */
-    public function count() {
+    public function count($col = '', $value = '') {
         try {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $result = $db->select(self::$tablename, '', '', '', '', 'COUNT(*)');
+            if (!empty($col) && !empty($value)) {
+                $where = self::$tablename . '.' . $col . ' = ' . $value;
+                $result = $db->select(self::$tablename, $where, '', '', '', 'COUNT(*)');
+            } else {
+                $result = $db->select(self::$tablename, '', '', '', '', 'COUNT(*)');
+            }
+
 
             if (isset($result) && !empty($result) && isset($result[0]) && !empty($result[0]) && isset($result[0]['COUNT(*)']) && (int) $result[0]['COUNT(*)']) {
                 return (int) $result[0]['COUNT(*)'];

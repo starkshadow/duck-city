@@ -8,7 +8,7 @@
         $('#delete-form').submit(function(e) {
             if (!confirm("Oublier mes canards pour toujours ?")) {
                 e.preventDefault();
-                return;
+                return false;
             }
         });
     });
@@ -29,9 +29,7 @@
                         <img alt="Avatar ici" src="<?php echo $_SESSION['user']['avatar']; ?>" />
                     <?php endif; ?>
                 </a>
-                <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>" class="btn-avatar"> Changer votre avatar</a>
-
-            
+                <a href="<?php echo WEBROOT . 'actions/users/avatar.php' ?>" class="btn-avatar"> Changer votre avatar</a>            
         </div>
     </div>
 </div>

@@ -37,7 +37,7 @@
             </ul>
             <h4>Prix:</h4>
             <p><?php echo utf8_encode($vars['product']['price']); ?>&euro;</p>
-            <input placeholder="quantité" class="btn-panier-add-quantity" type="number" />
+            <input placeholder="quantité" class="panier-add-quantity" type="number" />
             <input class="btn-panier-add-id" type="hidden" value="<?php echo $vars['product']['id']; ?>" />
             <input url="<?php echo $_SERVER['SERVER_NAME'] . WEBROOT . 'actions/panier/add.php'; ?>" type="button" class="panier-add-button" value="Ajouter au Panier"/>
         </div>

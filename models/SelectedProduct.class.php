@@ -73,4 +73,21 @@ class SelectedProduct extends Model {
         }
     }
 
+    
+    /**
+     * Vider le panier de l'utilisateur courant
+     * @param type $user_id
+     * @return type
+     */
+    public function deleteBasket($user_id = '') {
+        try {
+            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $status = $db->delete(self::$tablename, self::$tablename.'.user_id=' . $user_id);
+            return $status;
+        } catch (PDOException $ex) {
+            die($ex->getMessage());
+        }
+    }
+    
 }

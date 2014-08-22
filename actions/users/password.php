@@ -1,13 +1,13 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionconf.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/phpconf/actionconf.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/models/User.class.php';
 $model = new User();
 
 //vérification que l'utilisateur est connecté et que son compte existe
 if (!(isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true) && $model->uexists($_SESSION['user']['id'])) {
     //redirection vers la homepage si l'utilisateur n'est pas connecté
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
     exit();
 }
 
@@ -35,7 +35,7 @@ if (isset($_POST) && !empty($_POST)) {
                 'class' => 'success',
                 'msg' => 'Mot de passe modifié !',
             );
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/users/profil.php');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/actions/users/profil.php');
             exit();
         } else {
             //bypass le système de forcer le refresh
@@ -45,7 +45,7 @@ if (isset($_POST) && !empty($_POST)) {
                 'class' => 'error',
                 'msg' => 'Erreur lors de l\'enregistrement. R&eacute;essayez svp',
             );
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/password.php');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/password.php');
             exit();
         }
     } else {
@@ -58,7 +58,7 @@ if (isset($_POST) && !empty($_POST)) {
             'class' => 'error',
             'msg' => 'Des erreurs ont &eacute;t&eacute; trouv&eacute;es dans votre formulaire',
         );
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/password.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/password.php');
         exit();
     }
 }
@@ -71,14 +71,14 @@ else {
         if (isset($user) && !empty($user)) {
             $_SESSION['viewvars']['user']['pseudo'] = $user['pseudo'];
             $_SESSION['viewvars']['post_data'] = $user;
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/password.php');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/password.php');
             exit();
         } else {
             $_SESSION['prompt'] = array(
                 'class' => 'error',
                 'msg' => 'Les donn&eacute;es de votre compte n\'ont pas pu &ecirc;tre retrouv&eacute;es',
             );
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
             exit();
         }
     } else {
@@ -90,7 +90,7 @@ else {
         unset($_SESSION['user']);
         //ré-initialisation des données de l'utilisateur en session
         $_SESSION['user'] = array('logged' => false);
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
         exit();
     }
 }

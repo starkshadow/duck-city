@@ -1,13 +1,13 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionconf.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/phpconf/actionconf.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/models/User.class.php';
 $model = new User();
 
 //vérification que l'utilisateur est connecté et que son compte existe
 if (!(isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true) && $model->uexists($_SESSION['user']['id'])) {
     //redirection vers la homepage si l'utilisateur n'est pas connecté
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
     exit();
 }
 
@@ -29,7 +29,7 @@ if (isset($_POST) && !empty($_POST)) {
 
         if (isset($user) && !empty($user)) {
             //suppression des fichiers de l'utilisateur
-            $userdir = $_SERVER['DOCUMENT_ROOT'] . '/duck-city/data/users/' . $_SESSION['user']['id'];
+            $userdir = $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/data/users/' . $_SESSION['user']['id'];
 
             if (file_exists($userdir) && is_dir($userdir)) {
                 //parcours le dossier utilisateur
@@ -47,7 +47,7 @@ if (isset($_POST) && !empty($_POST)) {
              */
             $model->delete($_SESSION['user']['id']);
         }
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/users/logout.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/actions/users/logout.php');
         exit();
     } else {
         //bypass le système de refresh forcé de la vue
@@ -59,7 +59,7 @@ if (isset($_POST) && !empty($_POST)) {
             'class' => 'error',
             'msg' => 'Des erreurs ont &eacute;t&eacute; trouv&eacute;es dans votre formulaire',
         );
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/delete.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/delete.php');
         exit();
     }
 }
@@ -67,7 +67,7 @@ if (isset($_POST) && !empty($_POST)) {
 else {
     //vérifier si l'utilisateur existe en DB
     if ($model->uexists($_SESSION['user']['id'])) {
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/delete.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/delete.php');
         exit();
     } else {
         $_SESSION['prompt'] = array(
@@ -78,7 +78,7 @@ else {
         unset($_SESSION['user']);
         //ré-initialisation des données de l'utilisateur en session
         $_SESSION['user'] = array('logged' => false);
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
         exit();
     }
 }

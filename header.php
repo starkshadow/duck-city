@@ -2,9 +2,9 @@
 /**
  * define of global vars
  */
-define('WEBROOT', '/duck-city/');
-define('DEFAULTAVATARIMG', '/duck-city/images/default_avatar.jpg');
-define('DEFAULTDUCKIMG', '/duck-city/images/default_duck.png');
+define('WEBROOT', '/tfe/duck-city/');
+define('DEFAULTAVATARIMG', '/tfe/duck-city/images/default_avatar.jpg');
+define('DEFAULTDUCKIMG', '/tfe/duck-city/images/default_duck.png');
 ?>
 
 <?php

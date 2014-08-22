@@ -1,7 +1,7 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionconf.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/Product.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/phpconf/actionconf.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/models/Product.class.php';
 $model = new Product();
 
 
@@ -12,7 +12,7 @@ if (isset($_GET) && !empty($_GET) && isset($_GET['id']) && !empty($_GET['id']) &
 
     if (isset($product) && !empty($product)) {
         $_SESSION['viewvars']['product'] = $product;
-        $url = 'http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/products/details.php?' . http_build_query($_GET, '', '&');
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/products/details.php?' . http_build_query($_GET, '', '&');
         header('Location: ' . $url);
         exit();
     } else {
@@ -20,7 +20,7 @@ if (isset($_GET) && !empty($_GET) && isset($_GET['id']) && !empty($_GET['id']) &
             'class' => 'error',
             'msg' => 'Le canard que vous cherchez n\'existe plus',
         );
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/products/shop.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/actions/products/shop.php');
         exit();
         exit();
     }
@@ -29,6 +29,6 @@ if (isset($_GET) && !empty($_GET) && isset($_GET['id']) && !empty($_GET['id']) &
         'class' => 'error',
         'msg' => 'Une erreur s\'est produite. Veuillez recommencer.',
     );
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/products/shop.php');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/actions/products/shop.php');
     exit();
 }

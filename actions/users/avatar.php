@@ -1,16 +1,16 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionconf.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/class.upload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/phpconf/actionconf.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/models/class.upload.php';
 
 //vérification que l'utilisateur est connecté et donc a accès a la page de profil
 if (!(isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['user']['logged']) && $_SESSION['user']['logged'] === true)) {
     //redirection vers la homepage si l'utilisateur n'est pas connecté
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
     exit();
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/models/User.class.php';
 $model = new User();
 
 //si formulaire a été envoyé
@@ -30,13 +30,13 @@ if (isset($_POST) && !empty($_POST)) {
             //écraser le fichier avatar s'il existe
             $handle->file_overwrite = true;
             //exécution resize et enregistrement
-            $handle->process($_SERVER['DOCUMENT_ROOT'] . '/duck-city/data/users/' . $_SESSION['user']['id'] . '/');
+            $handle->process($_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/data/users/' . $_SESSION['user']['id'] . '/');
 
             //si aucune erreur pour l'image
             if ($handle->processed) {
                 $user = array(
                     'id' => $_SESSION['user']['id'],
-                    'avatar' => stripslashes('/duck-city/data/users/' . $_SESSION['user']['id'] . '/' . $handle->file_dst_name),
+                    'avatar' => stripslashes('/tfe/duck-city/data/users/' . $_SESSION['user']['id'] . '/' . $handle->file_dst_name),
                 );
                 //meme chose mais pour la thumbnail d'avatar
                 $handle->file_new_name_body = 'avatar_thumb';
@@ -46,9 +46,9 @@ if (isset($_POST) && !empty($_POST)) {
                 $handle->image_ratio_y = true;
 //                $handle->image_crop = array('45px');
                 //exécution resize et enregistrement
-                $handle->process($_SERVER['DOCUMENT_ROOT'] . '/duck-city/data/users/' . $_SESSION['user']['id'] . '/');
+                $handle->process($_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/data/users/' . $_SESSION['user']['id'] . '/');
                 if ($handle->processed) {
-                    $user['avatar_thumb'] = stripslashes('/duck-city/data/users/' . $_SESSION['user']['id'] . '/' . $handle->file_dst_name);
+                    $user['avatar_thumb'] = stripslashes('/tfe/duck-city/data/users/' . $_SESSION['user']['id'] . '/' . $handle->file_dst_name);
                 }
 
                 $handle->clean();
@@ -59,7 +59,7 @@ if (isset($_POST) && !empty($_POST)) {
                         'class' => 'success',
                         'msg' => 'Avatar modifié !',
                     );
-                    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/users/profil.php');
+                    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/actions/users/profil.php');
                     exit();
                 }
                 //si erreur update DB
@@ -84,7 +84,7 @@ if (isset($_POST) && !empty($_POST)) {
                         'class' => 'error',
                         'msg' => 'Erreur lors du changement d\'image. Veuillez recommencer',
                     );
-                    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/users/avatar.php');
+                    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/actions/users/avatar.php');
                     exit();
                 }
             }
@@ -97,7 +97,7 @@ if (isset($_POST) && !empty($_POST)) {
                     'class' => 'error',
                     'msg' => 'Erreur : ' . $handle->error,
                 );
-                header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/avatar.php');
+                header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/avatar.php');
                 exit();
             }
         } else {
@@ -108,7 +108,7 @@ if (isset($_POST) && !empty($_POST)) {
                 'class' => 'error',
                 'msg' => 'Erreur : Le fichier envoyé n\'est pas une image',
             );
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/avatar.php');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/avatar.php');
             exit();
         }
     } else {
@@ -120,7 +120,7 @@ if (isset($_POST) && !empty($_POST)) {
             'class' => 'error',
             'msg' => 'Erreur : ' . $handle->error,
         );
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/avatar.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/avatar.php');
         exit();
     }
 }
@@ -131,14 +131,14 @@ else {
         //récupérer les données utilisateur
         $user = $model->getone($_SESSION['user']['id']);
         if (isset($user) && !empty($user)) {
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/avatar.php');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/avatar.php');
             exit();
         } else {
             $_SESSION['prompt'] = array(
                 'class' => 'error',
                 'msg' => 'Les donn&eacute;es de votre compte n\'ont pas pu &ecirc;tre retrouv&eacute;es',
             );
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
             exit();
         }
     } else {
@@ -150,7 +150,7 @@ else {
         unset($_SESSION['user']);
         //ré-initialisation des données de l'utilisateur en session
         $_SESSION['user'] = array('logged' => false);
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
         exit();
     }
 }

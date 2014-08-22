@@ -45,7 +45,7 @@ class User extends Model {
      */
     public function getone($id = '', $email = '') {
         try {
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             if (isset($id) && !empty($id)) {
@@ -89,7 +89,7 @@ class User extends Model {
             }
 
             try {
-                $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+                $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 $result = $db->select(self::$tablename, $where);
@@ -147,7 +147,7 @@ class User extends Model {
         if (isset($vars['email']) && !empty($vars['email'])) {
             if (filter_var($vars['email'], FILTER_VALIDATE_EMAIL) !== false) {
                 try {
-                    $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+                    $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                     $where = 'email = "' . $vars['email'] . '" AND id != ' . $vars['id'];

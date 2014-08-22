@@ -1,6 +1,6 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/phpconf/viewconf.php'; ?>
 <?php $nav_en_cours = 'page-collection'; ?>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/header.php'; ?>
 </header>
 
 
@@ -31,7 +31,7 @@
             <h2 class="h2-title-zone">Peut-être le futur canard de ta collection ?</h2>
             <h3 class="h3-nom-duck"><a href="<?php echo WEBROOT . 'actions/products/details.php?id=21'; ?>">Le duck royal guard</a></h3>
             <div class="duck">
-                <a href="<?php echo WEBROOT . 'actions/products/details.php?id=21'; ?>"><img src="<?php echo '/duck-city/data/products/21/duck_royal_guard_p.png'; ?> "></a>
+                <a href="<?php echo WEBROOT . 'actions/products/details.php?id=21'; ?>"><img src="<?php echo '/tfe/duck-city/data/products/21/duck_royal_guard_p.png'; ?> "></a>
             </div>
         </div>
     </div>

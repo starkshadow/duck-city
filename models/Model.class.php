@@ -32,7 +32,7 @@ class Model {
      */
     public function exists($id) {
         try {
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $result = $db->select(self::$tablename, self::$tablename . '.id = ' . $id, '', '', '', 'COUNT(*)');
@@ -78,7 +78,7 @@ class Model {
      */
     public function count($col = '', $value = '') {
         try {
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             if (!empty($col) && !empty($value)) {
@@ -110,7 +110,7 @@ class Model {
             $order_by = 'created DESC';
             $limit = '15';
 
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             if (!empty($order)) {
@@ -173,7 +173,7 @@ class Model {
      */
     public function getone($id) {
         try {
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $result = $db->select(self::$tablename, self::$tablename . '.id = ' . $id);
@@ -217,7 +217,7 @@ class Model {
      */
     public function getlast($where = '') {
         try {
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = 'SELECT * FROM ' . self::$tablename;
@@ -271,7 +271,7 @@ class Model {
     public function add($vars) {
         try {
             $vars['created'] = $vars['modified'] = date('Y-m-d H:i:s');
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $db->insert(self::$tablename, $vars);
         } catch (PDOException $ex) {
@@ -288,7 +288,7 @@ class Model {
         try {
             $vars['modified'] = date('Y-m-d H:i:s');
             $data = $vars;
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $status = $db->update(self::$tablename, $vars, 'id=' . $vars['id']);
 
@@ -309,7 +309,7 @@ class Model {
      */
     public function delete($id) {
         try {
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $status = $db->delete(self::$tablename, 'id=' . $id);
             return $status;

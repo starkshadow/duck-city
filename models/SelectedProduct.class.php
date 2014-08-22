@@ -44,7 +44,7 @@ class SelectedProduct extends Model {
             //init comportement par défaut : les 15 derniers créés
             $order_by = 'created ASC';
 
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             if (!empty($user_id)) {
@@ -81,7 +81,7 @@ class SelectedProduct extends Model {
      */
     public function deleteBasket($user_id = '') {
         try {
-            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db = new db('mysql:dbname=fannycayzeele;host=127.0.0.1', 'fannycayzeele', 'aFzeYDmPEhiYuoJH');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $status = $db->delete(self::$tablename, self::$tablename.'.user_id=' . $user_id);
             return $status;

@@ -3,7 +3,7 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/User.class.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/models/User.class.php';
 
 if (isset($_POST) && !empty($_POST)) {
     $model = new User();
@@ -35,7 +35,7 @@ if (isset($_POST) && !empty($_POST)) {
                 'class' => 'success',
                 'msg' => 'Vous &ecirc;tes d&eacute;sormais inscrit !',
             );
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
             exit();
         } else {
             //bypass le système de forcer le refresh
@@ -46,7 +46,7 @@ if (isset($_POST) && !empty($_POST)) {
                 'class' => 'error',
                 'msg' => 'Erreur lors de l\'inscription. R&eacute;essayez svp',
             );
-            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/inscription.php');
+            header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/inscription.php');
             exit();
         }
     } else {
@@ -59,10 +59,10 @@ if (isset($_POST) && !empty($_POST)) {
             'class' => 'error',
             'msg' => 'Des erreurs ont &eacute;t&eacute; trouv&eacute;es dans votre formulaire',
         );
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/inscription.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/inscription.php');
         exit();
     }
 } else {
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/users/inscription.php');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/users/inscription.php');
     exit();
 }

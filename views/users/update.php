@@ -1,6 +1,6 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/phpconf/viewconf.php'; ?>
 <?php $nav_en_cours = 'page-user-update'; ?>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/header.php'; ?>
 
 <div class="profil-zone1">
     <img src="<?php echo WEBROOT . 'images/bg-parametre.jpg'; ?>">

@@ -1,7 +1,7 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/actionconf.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/models/Product.class.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/phpconf/actionconf.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/models/Product.class.php';
 $model = new Product();
 
 //récupérer les données utilisateur
@@ -37,7 +37,7 @@ $products = $model->getall($params['order'], $params['direction'], $params['limi
 //die(var_dump($products));
 
 if (isset($products) && !empty($products)) {
-    $url = 'http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/products/shop.php';
+    $url = 'http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/views/products/shop.php';
     $_SESSION['viewvars']['products'] = $products;
     $_SESSION['viewvars']['current_page'] = $params['page'];
     
@@ -63,6 +63,6 @@ if (isset($products) && !empty($products)) {
         'class' => 'error',
         'msg' => 'Les canards n\'ont pas pu &ecirc;tre retrouv&eacute;s',
     );
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city');
     exit();
 }

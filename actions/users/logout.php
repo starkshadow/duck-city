@@ -11,13 +11,13 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['us
         'class' => 'success',
         'msg' => 'Au revoir !',
     );
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
     exit();
 } else {
     $_SESSION['prompt'] = array(
         'class' => 'error',
         'msg' => 'Vous n\'&ecirc;tes pas connect&eacute;',
     );
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/');
+    header('Location: http://' . $_SERVER['SERVER_NAME'] . '/tfe/duck-city/');
     exit();
 }

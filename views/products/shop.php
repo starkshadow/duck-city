@@ -4,9 +4,9 @@
  * Correspond à duck-city/shop.php
  */
 ?>
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/phpconf/viewconf.php'; ?>
 <?php $nav_en_cours = 'page-shop'; ?>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/tfe/duck-city/header.php'; ?>
 </header>
 
 <script src="<?php echo WEBROOT . 'scripts/panier.js'; ?>"></script>

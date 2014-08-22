@@ -763,6 +763,76 @@ input.newsletter[type="submit"]:hover{
 	color:white;
 }
 
+
+/******* T R I    S H O P ************/
+
+.div-tri {
+	display: inline-block;
+	width: 100%;
+	height: 140px;
+}
+.div-tri h3{
+	float: left;
+	font-family: 'aleoregular', Verdana, sans-serif;
+	color:#343833;
+	padding: 5px 10px;
+}
+.div-tri ul.div-tri-niveau1{
+	float: left;
+	font-family: 'aleoregular', Verdana, sans-serif;
+	color:#343833;
+	padding: 0px;
+
+}
+.div-tri ul.div-tri-niveau1 span{
+	padding: 5px 10px;
+	border: 4px solid #343833;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 20px;
+}
+.div-tri ul.div-tri-niveau1 span.sortonit{
+	background: #343833;
+	color: white;
+}
+
+.div-tri ul.div-tri-niveau1 li {
+	float: left;
+	list-style: none;
+
+}
+.div-tri ul.div-tri-niveau1 li a{
+	color:#343833;
+	font-family: 'aleoregular', Verdana, sans-serif;
+	
+	line-height: 1.5;
+	display: inline-block;
+	margin: 5px 0px;
+}
+
+.div-tri ul.div-tri-niveau1 li ul{
+	padding-left: 0px;
+	margin-right: 10px;
+}
+.div-tri ul.div-tri-niveau1 li ul li {
+	float: none;
+	display: none;
+	background: #343833;
+	padding: 5px 10px;
+}
+.div-tri ul.div-tri-niveau1 li ul li a{
+	color:white;
+}
+.div-tri ul.div-tri-niveau1 li:hover ul li{
+	display: block;
+}
+.div-tri ul.div-tri-niveau1 li ul li:hover{
+	background: white;
+	
+}
+.div-tri ul.div-tri-niveau1 li ul li:hover a{
+	color:#343833;
+}
 /*****************************************
 ********** F I C H E    D U C K **********
 *****************************************/

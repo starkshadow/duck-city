@@ -29,9 +29,6 @@
 
 
 
-
-
-
     <div class="gallery-zone3">    
         <div class="container">
 
@@ -121,35 +118,30 @@
                             <li><a href="<?php echo WEBROOT . 'actions/products/shop.php?' . http_build_query($vars['GET'], '', '&') ?>">Page suivante</a></li>
                         <?php endif; ?>                
                     </ul>
-                <?php endif; ?>
             </div>
-
-
-
-
         </div>
     </div>
 
 
 
-    <div class="gallery-zone4">
-        <div class="container">
-            <p class="texte-intro">Tu n'as pas trouvé le canard qui te correspond ?  </p>
-        </div>
+<div class="gallery-zone4">
+    <div class="container">
+        <p class="texte-intro">Tu n'as pas trouvé le canard qui te correspond ?  </p>
     </div>
+</div>
 
 
 
-    <div class="gallery-zone5">
-        <div class="container">
-            <p>Ce n'est pas grave ! Viens créer ton canard unique en lui ajoutant des accessoires !</p>
-            <a href="personnalisation.php" class="btn">Créer ton canard</a>
-        </div>
+<div class="gallery-zone5">
+    <div class="container">
+        <p>Ce n'est pas grave ! Viens créer ton canard unique en lui ajoutant des accessoires !</p>
+        <a href="personnalisation.php" class="btn">Créer ton canard</a>
     </div>
+</div>
 
 
 
-    <?php require $_SERVER['DOCUMENT_ROOT'] . WEBROOT . 'footer.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . WEBROOT . 'footer.php'; ?>
 
 </body>
 </html>

@@ -199,7 +199,7 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
                                             <ul>                                                            
                                                 <li><a id="panier" href="<?php echo WEBROOT . 'actions/panier/show.php'; ?>">Mon panier</a></li>
                                                 <li><a id="profil" href="<?php echo WEBROOT . 'actions/users/profil.php'; ?>">Mon profil</a></li>
-                                                <li><a <?php if ($nav_en_cours == 'page-collection') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'views/products/ma-collection.php'; ?>">Ma collection</a></li>
+                                                <li><a <?php if ($nav_en_cours == 'page-collection') echo ' id="en-cours"'; ?> href="<?php echo WEBROOT . 'actions/products/macollection.php'; ?>">Ma collection</a></li>
                                             </ul>
                                         </li>
                                         <li>

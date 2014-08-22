@@ -1,9 +1,9 @@
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/duck-city/phpconf/viewconf.php'; ?>
 <?php $nav_en_cours = 'page-collection'; ?>
-<?php require "header.php"; ?>
-
-
-
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
 </header>
+
+<?php print_r($vars['boughtProducts']); ?>
 
 
 <div class="ma-collection-zone1">

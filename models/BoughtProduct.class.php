@@ -33,5 +33,4 @@ class BoughtProduct extends Model {
             ),
         );
     }
-
 }

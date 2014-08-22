@@ -15,12 +15,12 @@ if (!(isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['
     exit();
 }
 
-$model = new SelectedProduct();
+$selectedModel = new SelectedProduct();
 
 //vérification que le panier n'est pas vide
-if ($model->count('user_id', $_SESSION['user']['id'])) {
+if ($selectedModel->count('user_id', $_SESSION['user']['id'])) {
     //récupération du panier
-    $sproducts = $model->getBasket($_SESSION['user']['id']);
+    $sproducts = $selectedModel->getBasket($_SESSION['user']['id']);
 
     if (isset($sproducts) && !empty($sproducts)) {
         $mail = $_SESSION['user']['email'];
@@ -55,7 +55,7 @@ if ($model->count('user_id', $_SESSION['user']['id'])) {
         mail($mail, $sujet, $message_html, $header);
 
         //insertion DB dans archives
-        $bmodel = new BoughtProduct();
+        $boughtModel = new BoughtProduct();
         foreach ($sproducts as $sproduct) {
             $bproduct = array(
                 'product_id' => $sproduct['Product']['id'],
@@ -65,18 +65,22 @@ if ($model->count('user_id', $_SESSION['user']['id'])) {
                 'product_price' => $sproduct['Product']['price'],
                 'product_quantity' => $sproduct['quantity'],
             );
-            $bmodel->add($bproduct);
+//            (var_dump($bproduct));
+            $boughtModel->add($bproduct);
+            $selectedModel->delete($sproduct['id']);
         }
+//        die('END');
 
         //vider panier
-        $model->deleteBasket($_SESSION['user']['id']);
+       
+//        $selectedModel->deleteBasket($_SESSION['user']['id']);
 
         $_SESSION['prompt'] = array(
             'class' => 'success',
             'msg' => 'Votre commande a &eacute;t&eacute; effectu&eacute;e',
         );
 
-        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/views/panier/show.php');
+        header('Location: http://' . $_SERVER['SERVER_NAME'] . '/duck-city/actions/panier/show.php');
         exit();
     } else {
         

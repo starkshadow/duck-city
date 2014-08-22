@@ -24,6 +24,7 @@
             </h3>
 
             <div class="duck">
+
                 <img src="<?php echo WEBROOT . 'images/shop-galerie/duck-cowboy-p.png'; ?>">
             </div>
 
@@ -48,7 +49,7 @@
             </div>
 
         </div>
-
+        
     </div>
 
 </div>

@@ -8,6 +8,29 @@
 
 
 
+<!--
+            <?php //foreach ($vars['sproducts'] as $sproduct): ?>
+                <tr>
+                    <td><?php //echo utf8_encode($sproduct['Product']['name']); ?></td>
+                    <td><?php //echo utf8_encode($sproduct['Product']['price']) . '&euro;'; ?></td>
+                    <td><?php //echo utf8_encode($sproduct['quantity']); ?></td>
+                    <td><?php //echo utf8_encode(($sproduct['quantity'] * $sproduct['Product']['price']) . '&euro;'); ?></td>
+                </tr>
+            <?php //endforeach; ?>
+        </table>
+
+        <ul>
+            <li><a href="<?php //echo WEBROOT . 'actions/panier/order.php' ?>">Commander</a></li>
+            <li><a>Imprimer le Panier</a></li>
+            <li>
+                <a id="empty-panier-btn" href="<?php //echo WEBROOT . 'actions/panier/deleteBasket.php' ?>">Vider le Panier</a>
+            </li>
+        </ul>
+    <?php //else: ?>
+        Aucun canard dans votre panier pour l'instant. Pourquoi ne pas faire un tour dans notre shop ?
+    <?php //endif; ?>
+
+-->
 
 
 

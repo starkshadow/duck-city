@@ -86,9 +86,9 @@
                         <h4><?php echo utf8_encode($sproduct['Product']['name']); ?></h4>
                         <img src="<?php echo ($sproduct['Product']['imgprofil']); ?>" alt="image du duck ajouter au panier" />
                     </div>
-                    <div class="delete-product">
+                    <!--<div class="delete-product">
                         <a class="btn">&#xD7;</a>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="column-quantity">
                     <div>
@@ -105,11 +105,6 @@
                 </div>
             </div>
             <?php endforeach; ?>
-
-            
-
-            
-
 
             <div class="ligne-total">
                 <div class="title-ligne">
@@ -131,6 +126,7 @@
             <div class="ligne-commander">
                 <a href="" class="btn btn-continuer"> Continuer mes achats</a>
                 <a href="" class="btn btn-commander"> Commander</a>
+                <a id="empty-panier-btn" class="btn btn-commander" href="<?php echo WEBROOT . 'actions/panier/deleteBasket.php' ?>">Vider le Panier</a>
             </div>
         </div>
     </div>

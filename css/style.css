@@ -1406,9 +1406,12 @@ width: 15px;
 	float: left;
 
 }
-.panier-zone3 .title-tableau .column-product{
+.panier-zone3 .title-tableau .column-product p{
 	border-bottom:2px solid #343833;
 
+}
+.panier-zone3 .title-tableau .column-price{
+	font-family: 'aleoregular', Verdana, arial, sans-serif;
 }
 .panier-zone3 .title-tableau .column-quantity,
 .panier-zone3 .title-tableau .column-price,
@@ -1494,6 +1497,7 @@ font-family: 'aleobold',Verdana, arial, sans-serif;
 	line-height: 215px;
 	font-size: 24px;
 	margin-bottom: 0px;
+	font-family: 'aleoregular', Verdana, sans-serif, arial;
 }
 .panier-zone3 .ligne-total{
 	width: 300px;
@@ -1517,6 +1521,7 @@ padding-top: 40px;
 	text-align: center;
 	font-weight: 700;
 		font-size: 16px;
+		font-family: 'aleoregular', Verdana, sans-serif, arial;
 }
 .panier-zone3 .ligne-total .title-ligne p,
 .panier-zone3 .ligne-total .prix-ligne p{
@@ -1531,6 +1536,7 @@ padding-top: 40px;
 }
 .panier-zone3 .ligne-commander .btn-commander{
 	float: right;
+	margin-right: 10px;
 }
 
 	/*****************************************
@@ -2784,6 +2790,48 @@ footer .container .paypal div{
 
 	.profil-update-zone3 .container ul.inscription-errors li.inscription-errors input.numero {
 		width: 20px !important;
+	}
+
+	/***** PANIER *****/
+
+	.panier-zone3 .title-tableau .column-quantity, 
+	.panier-zone3 .title-tableau .column-price, 
+	.panier-zone3 .title-tableau .column-total{
+		display: none;
+	}
+	.panier-zone3 .column-product{
+		width: 100%;
+	}
+	.panier-zone3 .ligne-product .column-product .product{
+		width: 100%;
+	}
+	.panier-zone3 .ligne-product .column-quantity{
+		width: 50px;
+	}
+	.panier-zone3 .ligne-product .column-quantity {
+		width: 82px;
+		padding: 0px;
+	}
+	.panier-zone3 .ligne-product .column-quantity div{
+		margin: 0px;
+	}
+	.panier-zone3 .ligne-product .column-quantity p,
+	.panier-zone3 .ligne-product .column-price p {
+		line-height: 15px !important;
+	}
+	.panier-zone3 .ligne-product .column-total{
+		display: none;
+	}
+
+	.panier-zone3 .title-tableau, .panier-zone3 .ligne-product{
+		border-bottom:2px solid #343833; 
+	}
+	.panier-zone3 .ligne-commander .btn-continuer,
+	.panier-zone3 .ligne-commander .btn-commander{
+		margin: auto;
+		display: block;
+		float: none;
+		margin-bottom: 10px;
 	}
 
 

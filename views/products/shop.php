@@ -9,6 +9,7 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/duck-city/header.php'; ?>
 </header>
 
+<script src="<?php echo WEBROOT . 'scripts/panier.js'; ?>"></script>
 
 <div class="gallery-zone1">
     <img src="<?php echo WEBROOT . 'images/bg-shop.jpg'; ?>" />
@@ -74,6 +75,9 @@
                     <h3 class="h3-nom-duck"><a class="btn" href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><?php echo $product['name']; ?></a></h3>
                     <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><img src="<?php echo $img; ?>" alt="Image Canard"/></a>
                     <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><p><?php echo $product['price'] . '&euro;'; ?></p></a>
+                    <input placeholder="quantité" class="panier-add-quantity" type="number" />
+                    <input class="panier-add-id" type="hidden" value="<?php echo $product['id']; ?>" />                    
+                    <input url="<?php echo $_SERVER['SERVER_NAME'] . WEBROOT . 'actions/panier/add.php'; ?>" type="button" class="panier-add-button" value="Ajouter au Panier"/>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>

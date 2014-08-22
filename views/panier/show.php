@@ -12,7 +12,6 @@
         <h2 class="h2-title-page">Mon panier</h2>
     </div>
 </div>
-</div>
 
 
 

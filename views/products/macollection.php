@@ -24,10 +24,8 @@
             </h3>
 
             <div class="duck">
-
                 <img src="<?php echo WEBROOT . 'images/shop-galerie/duck-cowboy-p.png'; ?>">
             </div>
-
         </div>
         <div class="one-half column">
             <h2 class="h2-title-zone">Peut-être le futur canard de ta collection ?</h2>
@@ -47,7 +45,6 @@
             <div class="duck">
                 <img src="<?php echo $boughtProducts['Product']['imgprofil']; ?>">
             </div>
-
         </div>
         
     </div>

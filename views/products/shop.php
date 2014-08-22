@@ -26,49 +26,34 @@
     </div>
 </div>
 
-
-
-
-
-    <div class="gallery-zone3">    
-        <div class="container">
-
-
-            <div name="div-sort" class="div-tri">
-                   <h3>Tri par : </h3>
-                <ul class="div-tri-niveau1">
-
-                    <li> 
-                       <span class=" div-tri-nom <?php if (strpos($vars['current_sort'], 'name') !== false) echo 'sortonit' ?>">Nom</span>
-                        <ul>
-                            <li><a class="<?php if ($vars['current_sort'] == 'name.asc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=name&d=asc&l=15&p=1'; ?>">Nom &#x25B2;</a></li>
-                            <li><a class="<?php if ($vars['current_sort'] == 'name.desc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=name&d=desc&l=15&p=1'; ?>">Nom &#x25BC;</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span class="div-tri-prix <?php if (strpos($vars['current_sort'], 'price') !== false) echo 'sortonit' ?>">Prix</span>
-                        <ul>
-                            <li><a class="<?php if ($vars['current_sort'] == 'price.asc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=price&d=asc&l=15&p=1'; ?>">Prix &#x25B2;</a></li>
-                            <li><a class="<?php if ($vars['current_sort'] == 'price.desc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=price&d=desc&l=15&p=1'; ?>">Prix &#x25BC;</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span class=" div-tri-date <?php if (strpos($vars['current_sort'], 'created') !== false) echo 'sortonit' ?>">Nouveauté</span>
-                        <ul>
-                            <li><a class="<?php if ($vars['current_sort'] == 'created.desc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=created&d=desc&l=15&p=1'; ?>">Nouveauté &#x25B2;</a></li>
-                            <li><a class="<?php if ($vars['current_sort'] == 'created.asc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=created&d=asc&l=15&p=1'; ?>">Nouveauté &#x25BC;</a></li>
-                        </ul>
-                    </li>
-                    <!--<li>
-                        <span class="div-tri-modification <?php //if (strpos($vars['current_sort'], 'modified') !== false) echo 'sortonit' ?>">Dernière modification</span>
-                        <ul>
-                            <li><a class="<?php //if ($vars['current_sort'] == 'modified.asc') echo 'sortonit' ?>" href="<?php //echo WEBROOT . 'actions/products/shop.php?o=modified&d=asc&l=15&p=1'; ?>">Dernière modification &#x25B2;</a></li>
-                            <li><a class="<?php //if ($vars['current_sort'] == 'modified.desc') echo 'sortonit' ?>" href="<?php //echo WEBROOT . 'actions/products/shop.php?o=modified&d=desc&l=15&p=1'; ?>">Dernière modification &#x25BC;</a></li>
-                        </ul>
-                    </li>-->
-                </ul>
-            </div>
-
+<div class="gallery-zone3">    
+    <div class="container">
+        <div name="div-sort" class="div-tri">
+            <h3>Tri par : </h3>
+            <ul class="div-tri-niveau1">
+                <li> 
+                    <span class=" div-tri-nom <?php if (strpos($vars['current_sort'], 'name') !== false) echo 'sortonit' ?>">Nom</span>
+                    <ul>
+                        <li><a class="<?php if ($vars['current_sort'] == 'name.asc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=name&d=asc&l=15&p=1'; ?>">Nom &#x25B2;</a></li>
+                        <li><a class="<?php if ($vars['current_sort'] == 'name.desc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=name&d=desc&l=15&p=1'; ?>">Nom &#x25BC;</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="div-tri-prix <?php if (strpos($vars['current_sort'], 'price') !== false) echo 'sortonit' ?>">Prix</span>
+                    <ul>
+                        <li><a class="<?php if ($vars['current_sort'] == 'price.asc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=price&d=asc&l=15&p=1'; ?>">Prix &#x25B2;</a></li>
+                        <li><a class="<?php if ($vars['current_sort'] == 'price.desc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=price&d=desc&l=15&p=1'; ?>">Prix &#x25BC;</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class=" div-tri-date <?php if (strpos($vars['current_sort'], 'created') !== false) echo 'sortonit' ?>">Nouveauté</span>
+                    <ul>
+                        <li><a class="<?php if ($vars['current_sort'] == 'created.desc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=created&d=desc&l=15&p=1'; ?>">Nouveauté &#x25B2;</a></li>
+                        <li><a class="<?php if ($vars['current_sort'] == 'created.asc') echo 'sortonit' ?>" href="<?php echo WEBROOT . 'actions/products/shop.php?o=created&d=asc&l=15&p=1'; ?>">Nouveauté &#x25BC;</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
 
         <?php if (isset($vars['products']) && !empty($vars['products']) && is_array($vars['products'])): ?>
             <?php foreach ($vars['products'] as $key => $product): ?>
@@ -81,7 +66,7 @@
                     <h3 class="h3-nom-duck"><a class="btn" href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><?php echo $product['name']; ?></a></h3>
                     <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><img src="<?php echo $img; ?>" alt="Image Canard"/></a>
                     <a href="<?php echo WEBROOT . 'actions/products/details.php?id=' . $product['id']; ?>"><p><?php echo $product['price'] . '&euro;'; ?></p></a>  
-                    <input placeholder="quantité" class="panier-add-quantity" type="number" />
+                    <input placeholder="quantité" class="btn-panier-add-quantity" type="number" />
                     <input class="btn-panier-add-id" type="hidden" value="<?php echo $product['id']; ?>" />                    
                     <input url="<?php echo $_SERVER['SERVER_NAME'] . WEBROOT . 'actions/panier/add.php'; ?>" type="button" class="panier-add-button" value="Ajouter au Panier"/>
                 </div>
@@ -92,7 +77,6 @@
 
 
         <div name="div-pagination" class="div-pagination">
-
             <?php if (isset($vars['products_countpages']) && !empty($vars['products_countpages'])): ?>
                 <ul>
                     <?php //lien page précédente ?>
@@ -102,7 +86,6 @@
                     <?php endif; ?><li> <span>Page :</span></li>
                     <?php //liste liens pages ?>
                     <?php for ($i = 1; $i <= $vars['products_countpages']; $i++): ?>
-
                         <li>
                             <?php if ($i == $vars['current_page']): ?>
                                 <span><?php echo $i; ?></span>
@@ -124,13 +107,11 @@
 </div>
 
 
-
 <div class="gallery-zone4">
     <div class="container">
         <p class="texte-intro">Tu n'as pas trouvé le canard qui te correspond ?  </p>
     </div>
 </div>
-
 
 
 <div class="gallery-zone5">
@@ -141,8 +122,6 @@
 </div>
 
 
-
 <?php require $_SERVER['DOCUMENT_ROOT'] . WEBROOT . 'footer.php'; ?>
-
 </body>
 </html>

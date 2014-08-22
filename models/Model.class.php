@@ -51,22 +51,58 @@ class Model {
     }
 
     /**
-     * Récupérer toute la table
+     * Retourne le nombre d'objets dans la table
      * @return type
      */
-    public function getall($order = '', $limit = '') {
+    public function count() {
         try {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            if (!empty($order)) {
-                if (!empty($limit))
-                    $result = $db->select(self::$tablename, '', self::$tablename . '.' . $order);
-                else
-                    $result = $db->select(self::$tablename, '', self::$tablename . '.' . $order, $limit);
-            }else {
-                $result = $db->select(self::$tablename, '', self::$tablename . '.created desc');
+            $result = $db->select(self::$tablename, '', '', '', '', 'COUNT(*)');
+
+            if (isset($result) && !empty($result) && isset($result[0]) && !empty($result[0]) && isset($result[0]['COUNT(*)']) && (int) $result[0]['COUNT(*)']) {
+                return (int) $result[0]['COUNT(*)'];
+            } else {
+                return null;
             }
+        } catch (PDOException $ex) {
+            die($ex->getMessage());
+        }
+    }
+
+    /**
+     * Récupérer toute la table
+     * @return type
+     * Si page pas précisé => page 1 affichée par défaut
+     */
+    public function getall($order = '', $direction = '', $nb = '', $page = 1) {
+        try {
+            //init comportement par défaut : les 15 derniers créés
+            $order_by = 'created DESC';
+            $limit = '15';
+
+            $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            if (!empty($order)) {
+                //si direction set et = 'asc' ou 'desc'
+                if (!empty($direction) && (strtolower($direction) == 'asc' || strtolower($direction) == 'desc')) {
+                    $order_by = $order . ' ' . $direction;
+                } else {
+                    $order_by = $order . ' ASC';
+                }
+            }
+
+            //caclul pagination
+            if (!empty($nb)) {
+                $limit = $nb;
+                if ((int) $page && (int) $page != 1) {
+                    $limit = ($page - 1) * $nb . ',' . $limit;
+                }
+            }
+
+            $result = $db->select(self::$tablename, '', self::$tablename . '.' . $order_by, $limit);
 
             if (isset($result) && !empty($result)) {
                 foreach ($result as $line) {

@@ -17,6 +17,9 @@ elseif ($_SERVER['PHP_SELF'] !== '/duck-city/index.php' && isset($_SESSION['nav'
     $_SESSION['nav']['last_page'] = $_SERVER['PHP_SELF'];
     //création de l'url de l'action correspondante en remplaçant le dossier 'views' par 'actions' dans l'url
     $redirect = str_replace('views', 'actions', $_SERVER['PHP_SELF']);
+    if (isset($_GET) && !empty($_GET)) {
+        $redirect .= '?' . http_build_query($_GET, '', '&');
+    }
     //redirect
     header('Location: http://' . $_SERVER['SERVER_NAME'] . $redirect);
 else:

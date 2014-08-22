@@ -134,6 +134,7 @@ class db extends PDO {
         if (!empty($limit))
             $sql .= " LIMIT " . $limit;
         $sql .= ";";
+        
         return $this->run($sql, $bind);
     }
 

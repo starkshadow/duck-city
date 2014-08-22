@@ -20,7 +20,7 @@ if (isset($boughtProducts) && !empty($boughtProducts)) {
     $_SESSION['viewvars']['boughtProducts'] = $boughtProducts;
 }
 
-$lastproduct = $boughtModel->getlast($_SESSION['user']['id']);
+$lastproduct = $boughtModel->getlast('user_id = ' . $_SESSION['user']['id']);
 if (isset($lastproduct) && !empty($lastproduct)) {
     $_SESSION['viewvars']['lastproduct'] = $lastproduct;
 }

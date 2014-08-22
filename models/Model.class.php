@@ -220,7 +220,7 @@ class Model {
             $db = new db('mysql:dbname=duckcity;host=127.0.0.1', 'duck', 'city');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = 'SELECT * FROM ' . self::$tablename . ' ORDER BY created DESC LIMIT 1';
+            $sql = 'SELECT * FROM ' . self::$tablename;
 
             if (!empty($where)) {
                 $sql .= ' Where ' . $where . ' ';
